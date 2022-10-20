@@ -1,6 +1,6 @@
 ---
 title: "Gov 50 Final Project"
-author: "Your Name Here"
+author: "Kay Rollins"
 description: "My final project"
 output:
   distill::distill_article:
@@ -12,3 +12,4 @@ output:
 ## Project thoughts
 
 I am interested in exploring data related to...
+Right wing extremist groups in the US (oathkeepers, three percenters, etc) and what does or doesnt impact membership or group activity. I think group activity might be easier to track, because many groups don't have a membership roster (for obvious reasons). 
