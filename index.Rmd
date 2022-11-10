@@ -16,3 +16,138 @@ Right wing extremist groups in the US (oathkeepers, three percenters, etc) and w
 
 ##Project Proposal 
 Although I was originally planning on pursuing a project about militia membership, given the restrictions on that data I have decided to switch my project to one focused on the death penalty. My research question is does the death penalty deter violent crime and homicide? In this study, I plan to compare homicide and crime rates in counties where the death penalty is applied and counties where it is not. In order to do this analysis, I will try to use a difference in differences method to the extent that is possible with this data. First, I will utilize states with a recent abolition of the death penalty to directly compare the death penalty eligible crime rate in a county before and after the death penalty was abolished (for instance, comparing homicide rates in Fairfax county before and after 2021 when the death penalty was abolished in Virginia). Second, I will compare counties between states over time-- did the counties in states which maintained the death penalty have a lower rate of death-eligable crimes compared to similar counties over the same period of time in places without the death penalty? My data composed of all executions from 1976 to 2022 from the death penalty information center. I will be merging this data with the FBI crime data explorer database to compare crimes by type and county. My unit of analysis is a county's crime in one year. The explanatory variable of interest is whether there is the presence of a death penalty in a certain jurisdiction. This will be coded as 1 = death penalty possible and 0= death penalty not possible. My outcome variable will be the count of death penalty eligible crimes in a county in a certain year. For instance, if the variable were coded as "40", it means that there were 40 death penalty eligible crimes in the county in a year. This variable is measured based on the FBI's database. If I observe greater or equal levels of death penalty eligable crime in a county with the death penalty than one without it (or the same county either with or without it), then my hypothesis will be proved correct. If there is lower rates of these type of crimes in places with the death penalty, then my hypothesis would be wrong.
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(infer)
+```
+```{r}
+executions<-read_csv("DPIC Execution Database - U.S. Executions.csv")
+
+homicide<- read_csv("Death Data.csv")
+
+sentences <-read_csv("1991_2017_individualFIPS.csv-1991_2019_individualFIPS.csv")
+
+```
+
+
+```{r}
+#DP Sentences County by County 
+sentences_count <- sentences |> 
+  group_by(county,state,year,county_code) |>
+  summarize(ns=n())
+```
+
+```{r}
+##Execution Count by County 
+execution_count<- sentences |>
+  filter(Executed == "Executed") |>
+  mutate(ExecutionDate=lubridate::mdy(DateofExecution)) |>
+  mutate(ExecutionYear = lubridate::year(ExecutionDate)) |>
+  group_by(county, county_code, ExecutionYear) |>
+  summarize (ne=n())
+execution_count
+```
+##In retrospect I should have used a different dataset than the CDC stuff. I am going to load in a bunch of different things so that i can merge those to make a different dataset for the homicides. 
+```
+
+
+```{r}
+##Reading in new data
+full2022<- read_csv("2022f.csv")
+full2021<- read_csv("2021f.csv")
+full2020<- read_csv("2020f.csv")
+full2019<- read_csv("2019f.csv")
+full2018<- read_csv("2018f.csv")
+full2017<- read_csv("2017f.csv")
+full2016<- read_csv("2016f.csv")
+full2015<- read_csv("2015f.csv")
+full2014<- read_csv("2014f.csv")
+full2013<- read_csv("2013f.csv")
+full2012<- read_csv("2012f.csv")
+full2011<- read_csv("2011f.csv")
+full2010<-read_csv("2010f.csv")
+```
+
+```{r}
+##refine the data 
+hom2010<-full2010 |>
+  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`)|>
+  mutate(year = "2010")
+hom2011<- full2011 |>
+  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`)|>
+  mutate(year = "2011")
+hom2012<- full2012 |>
+  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`)|>
+  mutate(year = "2012")
+hom2013<- full2013 |>
+  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`)|>
+  mutate(year = "2013")
+hom2014<- full2014 |>
+  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`)|>
+  mutate(year = "2014")
+hom2015<- full2015 |>
+  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`)|>
+  mutate(year = "2015")
+hom2016<- full2016 |>
+  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`)|>
+  mutate(year = "2016")
+hom2017<- full2017 |>
+  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`)|>
+  mutate(year = "2017")
+hom2018<- full2018 |>
+  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`)|>
+  mutate(year = "2018")
+hom2019<-full2019 |>
+  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`)|>
+  mutate(year = "2019")
+hom2020<-full2020 |>
+  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`)|>
+  mutate(year = "2020")
+hom2021<-full2021 |>
+  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`)|>
+  mutate(year = "2021")
+hom2022<-full2022 |>
+  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`)|>
+  mutate(year = "2022")
+```
+
+```{r}
+##Make data into megafile 
+megafile<- rbind(hom2022,hom2021,hom2020,hom2019,hom2018,hom2017,hom2016,hom2014,hom2013,hom2012,hom2011,hom2010)
+
+```
+
+```{r}
+##make sure there is a county code column
+ megafile<-megafile|>
+  mutate(county_code = `5-digit FIPS Code`) 
+megafile
+```
+
+
+
+```{r}
+sentences_count$year <- as.integer(as.character(sentences_count$year))
+sentences_count
+
+megafile$year <- as.integer(as.character(megafile$year))
+megafile
+
+```
+
+
+```{r}
+test<-megafile|>
+  left_join(sentences_count) |>
+  select(county_code, state, county, year, `Homicides raw value`, ns)
+```
+
+```{r}
+alldata<-test|>
+  left_join(execution_count)
+```
+
+
