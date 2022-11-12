@@ -31,6 +31,11 @@ homicide<- read_csv("Death Data.csv")
 sentences <-read_csv("1991_2017_individualFIPS.csv-1991_2019_individualFIPS.csv")
 
 ```
+```{r}
+##Give Sentences a County_code category 
+sentences$county_code <- paste(sentences$fips_st,sentences$fips,sep="")
+
+```
 
 
 ```{r}
@@ -38,6 +43,7 @@ sentences <-read_csv("1991_2017_individualFIPS.csv-1991_2019_individualFIPS.csv"
 sentences_count <- sentences |> 
   group_by(county,state,year,county_code) |>
   summarize(ns=n())
+sentences_count
 ```
 
 ```{r}
@@ -50,9 +56,6 @@ execution_count<- sentences |>
   summarize (ne=n())
 execution_count
 ```
-##In retrospect I should have used a different dataset than the CDC stuff. I am going to load in a bunch of different things so that i can merge those to make a different dataset for the homicides. 
-```
-
 
 ```{r}
 ##Reading in new data
@@ -130,24 +133,49 @@ megafile
 
 
 ```{r}
+##make sentences and megafile years compatable and make state colum in megafile
 sentences_count$year <- as.integer(as.character(sentences_count$year))
 sentences_count
 
 megafile$year <- as.integer(as.character(megafile$year))
+
+
+names(megafile)[names(megafile) == "Name"] <- "county_name"
+names(megafile)[names(megafile) == "State Abbreviation"] <- "State_id"
+names(megafile)[names(megafile) == "Homicides raw value"] <- "Homicides_value"
+
+
 megafile
+```
+```{r}
+##give executions count a year column
+names(execution_count)[names(execution_count) == "ExecutionYear"] <- "year"
 
 ```
 
 
 ```{r}
-test<-megafile|>
+##Merging sentences, and megafile data 
+sentences_megafile<-megafile|>
   left_join(sentences_count) |>
-  select(county_code, state, county, year, `Homicides raw value`, ns)
+  select(county_code, State_id, county_name, year, Homicides_value, ns)
+alldata<-sentences_megafile|>
+  left_join(execution_count) |>
+  select(county_code, State_id, county_name, year, Homicides_value, ns, ne)
+alldata
 ```
 
 ```{r}
-alldata<-test|>
-  left_join(execution_count)
+alldata<- subset(alldata, alldata$county_code != "0" & alldata$county_code != "fipscode")
+
+alldata$Homicides_value <- as.integer(as.character(alldata$Homicides_value))
+homicidesvsexe<- alldata|>
+  group_by(ne) |>
+  summarize(Homicideave = mean(Homicides_value, na.rm = TRUE))
+
+ggplot(homicidesvsexe, aes(x = ne, y = Homicideave)) +
+geom_point() +
+  labs(title = "Homicide Rate in Death Penalty Counties VS Number of Executions that Year",x = "Number of executions", y = "Average Count of Homicides")
+
 ```
-
-
+This graph depicts the number of executions across all counties that executed someone and the average homicide rate for that county in the year they executed someone. From the graph, we can see that the more executions there are, the higher the homicide rate tends to be. 
