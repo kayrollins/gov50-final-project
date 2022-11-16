@@ -7,13 +7,6 @@ output:
     self_contained: false
 ---
 
-
-
-## Project thoughts
-
-I am interested in exploring data related to...
-Right wing extremist groups in the US (oathkeepers, three percenters, etc) and what does or doesnt impact membership or group activity. I think group activity might be easier to track, because many groups don't have a membership roster (for obvious reasons).
-
 ##Project Proposal 
 Although I was originally planning on pursuing a project about militia membership, given the restrictions on that data I have decided to switch my project to one focused on the death penalty. My research question is does the death penalty deter violent crime and homicide? In this study, I plan to compare homicide and crime rates in counties where the death penalty is applied and counties where it is not. In order to do this analysis, I will try to use a difference in differences method to the extent that is possible with this data. First, I will utilize states with a recent abolition of the death penalty to directly compare the death penalty eligible crime rate in a county before and after the death penalty was abolished (for instance, comparing homicide rates in Fairfax county before and after 2021 when the death penalty was abolished in Virginia). Second, I will compare counties between states over time-- did the counties in states which maintained the death penalty have a lower rate of death-eligable crimes compared to similar counties over the same period of time in places without the death penalty? My data composed of all executions from 1976 to 2022 from the death penalty information center. I will be merging this data with the FBI crime data explorer database to compare crimes by type and county. My unit of analysis is a county's crime in one year. The explanatory variable of interest is whether there is the presence of a death penalty in a certain jurisdiction. This will be coded as 1 = death penalty possible and 0= death penalty not possible. My outcome variable will be the count of death penalty eligible crimes in a county in a certain year. For instance, if the variable were coded as "40", it means that there were 40 death penalty eligible crimes in the county in a year. This variable is measured based on the FBI's database. If I observe greater or equal levels of death penalty eligable crime in a county with the death penalty than one without it (or the same county either with or without it), then my hypothesis will be proved correct. If there is lower rates of these type of crimes in places with the death penalty, then my hypothesis would be wrong.
 
@@ -42,7 +35,7 @@ sentences$county_code <- paste(sentences$fips_st,sentences$fips,sep="")
 #DP Sentences County by County 
 sentences_count <- sentences |> 
   group_by(county,state,year,county_code) |>
-  summarize(ns=n())
+  summarize(sent=n())
 sentences_count
 ```
 
@@ -53,7 +46,7 @@ execution_count<- sentences |>
   mutate(ExecutionDate=lubridate::mdy(DateofExecution)) |>
   mutate(ExecutionYear = lubridate::year(ExecutionDate)) |>
   group_by(county, county_code, ExecutionYear) |>
-  summarize (ne=n())
+  summarize (exs=n())
 execution_count
 ```
 
@@ -77,43 +70,43 @@ full2010<-read_csv("2010f.csv")
 ```{r}
 ##refine the data 
 hom2010<-full2010 |>
-  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`)|>
+  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`, `Violent crime raw value`)|>
   mutate(year = "2010")
 hom2011<- full2011 |>
-  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`)|>
+  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`, `Violent crime raw value`)|>
   mutate(year = "2011")
 hom2012<- full2012 |>
-  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`)|>
+  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`, `Violent crime raw value`)|>
   mutate(year = "2012")
 hom2013<- full2013 |>
-  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`)|>
+  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`, `Violent crime raw value`)|>
   mutate(year = "2013")
 hom2014<- full2014 |>
-  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`)|>
+  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`, `Violent crime raw value`)|>
   mutate(year = "2014")
 hom2015<- full2015 |>
-  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`)|>
+  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`, `Violent crime raw value`)|>
   mutate(year = "2015")
 hom2016<- full2016 |>
-  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`)|>
+  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`, `Violent crime raw value`)|>
   mutate(year = "2016")
 hom2017<- full2017 |>
-  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`)|>
+  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`, `Violent crime raw value`)|>
   mutate(year = "2017")
 hom2018<- full2018 |>
-  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`)|>
+  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`, `Violent crime raw value`)|>
   mutate(year = "2018")
 hom2019<-full2019 |>
-  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`)|>
+  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`, `Violent crime raw value`)|>
   mutate(year = "2019")
 hom2020<-full2020 |>
-  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`)|>
+  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`, `Violent crime raw value`)|>
   mutate(year = "2020")
 hom2021<-full2021 |>
-  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`)|>
+  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`, `Violent crime raw value`)|>
   mutate(year = "2021")
 hom2022<-full2022 |>
-  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`)|>
+  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`, `Violent crime raw value`)|>
   mutate(year = "2022")
 ```
 
@@ -143,6 +136,8 @@ megafile$year <- as.integer(as.character(megafile$year))
 names(megafile)[names(megafile) == "Name"] <- "county_name"
 names(megafile)[names(megafile) == "State Abbreviation"] <- "State_id"
 names(megafile)[names(megafile) == "Homicides raw value"] <- "Homicides_value"
+names(megafile)[names(megafile) == "Violent crime raw value"] <- "Violence_value"
+
 
 
 megafile
@@ -158,12 +153,33 @@ names(execution_count)[names(execution_count) == "ExecutionYear"] <- "year"
 ##Merging sentences, and megafile data 
 sentences_megafile<-megafile|>
   left_join(sentences_count) |>
-  select(county_code, State_id, county_name, year, Homicides_value, ns)
+  select(county_code, State_id, county_name, year,Violence_value, Homicides_value, sent)
 alldata<-sentences_megafile|>
   left_join(execution_count) |>
-  select(county_code, State_id, county_name, year, Homicides_value, ns, ne)
+  select(county_code, State_id, county_name, year, Violence_value, Homicides_value, exs, sent)
 alldata
 ```
+
+```{r}
+##Making Sent and Exs 0 if none are there
+alldata <- alldata |> 
+  mutate(exs = ifelse(is.na(exs), 0, exs))
+alldata <- alldata |>
+  mutate(sent = ifelse(is.na(sent), 0, sent))
+```
+
+```{r}
+## The first part of my analysis will be to compare the same counties before and after that state got rid of the death penalty. The states that eliminated the death penalty (or put in place a moratorium) within the time of my data (2010-2022) are Virginia 2021 (FIPS codes 51001-51840) Maryland 2013 (24001-24510) Washington 2018 (53001-53077) New Hampshire 2019 (33001-33019) Connecticut 2012 (09001-09015) Deleware 2016 (10001-10005) Colorado 2020 (08001-08125) Illinois 2011 (17001-17203) Pennsylvania 2015 (42001-42113) *California 2019 (06001-06115)* Oregon 2011 (41001-41071) *. In order to do this analysis, I need to create a new dataframe from my alldata one which only gives information for counties within these states (1) and tags the data as before or after the death penalty was eliminated (2)
+
+##1: 
+alldata$county_code <- as.numeric(as.character(alldata$county_code))
+
+alldata |>
+  subset(county_code == 51001:51840)
+
+
+```
+
 
 ```{r}
 alldata<- subset(alldata, alldata$county_code != "0" & alldata$county_code != "fipscode")
