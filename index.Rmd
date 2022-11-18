@@ -3,7 +3,7 @@ author: "Kay Rollins"
 description: "My final project"
 output:
   distill::distill_article:
-    self_contained: false
+    self_contained: false 
     
 ```{r}
 library(tidyverse)
@@ -303,11 +303,11 @@ mutate(sent = coalesce(sent, 0),
 ##First analysis! Does the elimination of a death penalty in a state lead to on average lower homicide rates-- Case of Maryland, which eliminated the DP in 2017
 
 alldata |>
-  filter (State == "Maryland")
-  group_by(DP) |>
+  group_by(DP)|>
+  filter (State == "Maryland")|>
   summarize(Mean_Homicide = mean(MNNM, na.rm = TRUE))
 
-##This table shows us that maryland's homicide count was higher before eliminating the death penalty than after eliminating it. While this is not causal, this is certainly in line with other findings about the effectivness of the death penalty. 
+##This table shows us that maryland's homicide count was higher (at roughly 5.6 homicides on average in each county) before eliminating the death penalty than after eliminating it (roughly 3.64 homicides per county). While this is not causal, this is certainly in line with other findings about the effectivness of the death penalty. 
 
 ## Also I feel the need to clarify that I have spent a lot of time on this project I am aware this is not a very detailed analysis but I promise you I have worked a lot (my code for the rest of this should illustrate that) and it has taken me many, many hours. I know these chekpoints are supposed to make sure we are actually doing work so I promise you I am doing work. I realized while doing this analysis that I didn't have the population data for each county yet so I would need to find a different dataset, load it in, and then merge it with my existing one to fully test my hypothesis and it is already almost 5pm and I have been working on this since noon. I will go back and add more work and do that later this week, but for now I am taking a break.
 
