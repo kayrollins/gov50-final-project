@@ -1517,9 +1517,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 
 <div class="d-article">
-<h2 id="project-thoughts">Project thoughts</h2>
-<p>I am interested in exploring data related to…
-Right wing extremist groups in the US (oathkeepers, three percenters, etc) and what does or doesnt impact membership or group activity. I think group activity might be easier to track, because many groups don’t have a membership roster (for obvious reasons).</p>
 <p>##Project Proposal
 Although I was originally planning on pursuing a project about militia membership, given the restrictions on that data I have decided to switch my project to one focused on the death penalty. My research question is does the death penalty deter violent crime and homicide? In this study, I plan to compare homicide and crime rates in counties where the death penalty is applied and counties where it is not. In order to do this analysis, I will try to use a difference in differences method to the extent that is possible with this data. First, I will utilize states with a recent abolition of the death penalty to directly compare the death penalty eligible crime rate in a county before and after the death penalty was abolished (for instance, comparing homicide rates in Fairfax county before and after 2021 when the death penalty was abolished in Virginia). Second, I will compare counties between states over time– did the counties in states which maintained the death penalty have a lower rate of death-eligable crimes compared to similar counties over the same period of time in places without the death penalty? My data composed of all executions from 1976 to 2022 from the death penalty information center. I will be merging this data with the FBI crime data explorer database to compare crimes by type and county. My unit of analysis is a county’s crime in one year. The explanatory variable of interest is whether there is the presence of a death penalty in a certain jurisdiction. This will be coded as 1 = death penalty possible and 0= death penalty not possible. My outcome variable will be the count of death penalty eligible crimes in a county in a certain year. For instance, if the variable were coded as “40”, it means that there were 40 death penalty eligible crimes in the county in a year. This variable is measured based on the FBI’s database. If I observe greater or equal levels of death penalty eligable crime in a county with the death penalty than one without it (or the same county either with or without it), then my hypothesis will be proved correct. If there is lower rates of these type of crimes in places with the death penalty, then my hypothesis would be wrong.</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -1550,12 +1547,12 @@ Although I was originally planning on pursuing a project about militia membershi
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#DP Sentences County by County </span></span>
 <span><span class='va'>sentences_count</span> <span class='op'>&lt;-</span> <span class='va'>sentences</span> <span class='op'>|&gt;</span> </span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>county</span>,<span class='va'>state</span>,<span class='va'>year</span>,<span class='va'>county_code</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>ns<span class='op'>=</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/context.html'>n</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>sent<span class='op'>=</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/context.html'>n</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></span>
 <span><span class='va'>sentences_count</span></span></code></pre>
 </div>
 <pre><code># A tibble: 3,203 × 5
 # Groups:   county, state, year [3,203]
-   county    state           year county_code    ns
+   county    state           year county_code  sent
    &lt;chr&gt;     &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;       &lt;int&gt;
  1 Abbeville South Carolina  1997 45001           1
  2 Abbeville South Carolina  2007 45001           1
@@ -1577,12 +1574,12 @@ Although I was originally planning on pursuing a project about militia membershi
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>ExecutionDate<span class='op'>=</span><span class='fu'>lubridate</span><span class='fu'>::</span><span class='fu'><a href='https://lubridate.tidyverse.org/reference/ymd.html'>mdy</a></span><span class='op'>(</span><span class='va'>DateofExecution</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>ExecutionYear <span class='op'>=</span> <span class='fu'>lubridate</span><span class='fu'>::</span><span class='fu'><a href='https://lubridate.tidyverse.org/reference/year.html'>year</a></span><span class='op'>(</span><span class='va'>ExecutionDate</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>county</span>, <span class='va'>county_code</span>, <span class='va'>ExecutionYear</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span> <span class='op'>(</span>ne<span class='op'>=</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/context.html'>n</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span> <span class='op'>(</span>exs<span class='op'>=</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/context.html'>n</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></span>
 <span><span class='va'>execution_count</span></span></code></pre>
 </div>
 <pre><code># A tibble: 519 × 4
 # Groups:   county, county_code [290]
-   county   county_code ExecutionYear    ne
+   county   county_code ExecutionYear   exs
    &lt;chr&gt;    &lt;chr&gt;               &lt;dbl&gt; &lt;int&gt;
  1 Accomack 51001                2004     1
  2 Aiken    45003                2004     1
@@ -1618,43 +1615,43 @@ Although I was originally planning on pursuing a project about militia membershi
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>##refine the data </span></span>
 <span><span class='va'>hom2010</span><span class='op'>&lt;-</span><span class='va'>full2010</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`5-digit FIPS Code`</span>, <span class='va'>`State Abbreviation`</span>, <span class='va'>`Name`</span>, <span class='va'>`Homicides raw value`</span>,<span class='va'>`Homicides numerator`</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`5-digit FIPS Code`</span>, <span class='va'>`State Abbreviation`</span>, <span class='va'>`Name`</span>, <span class='va'>`Homicides raw value`</span>,<span class='va'>`Homicides numerator`</span>, <span class='va'>`Violent crime raw value`</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>year <span class='op'>=</span> <span class='st'>"2010"</span><span class='op'>)</span></span>
 <span><span class='va'>hom2011</span><span class='op'>&lt;-</span> <span class='va'>full2011</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`5-digit FIPS Code`</span>, <span class='va'>`State Abbreviation`</span>, <span class='va'>`Name`</span>, <span class='va'>`Homicides raw value`</span>,<span class='va'>`Homicides numerator`</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`5-digit FIPS Code`</span>, <span class='va'>`State Abbreviation`</span>, <span class='va'>`Name`</span>, <span class='va'>`Homicides raw value`</span>,<span class='va'>`Homicides numerator`</span>, <span class='va'>`Violent crime raw value`</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>year <span class='op'>=</span> <span class='st'>"2011"</span><span class='op'>)</span></span>
 <span><span class='va'>hom2012</span><span class='op'>&lt;-</span> <span class='va'>full2012</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`5-digit FIPS Code`</span>, <span class='va'>`State Abbreviation`</span>, <span class='va'>`Name`</span>, <span class='va'>`Homicides raw value`</span>,<span class='va'>`Homicides numerator`</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`5-digit FIPS Code`</span>, <span class='va'>`State Abbreviation`</span>, <span class='va'>`Name`</span>, <span class='va'>`Homicides raw value`</span>,<span class='va'>`Homicides numerator`</span>, <span class='va'>`Violent crime raw value`</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>year <span class='op'>=</span> <span class='st'>"2012"</span><span class='op'>)</span></span>
 <span><span class='va'>hom2013</span><span class='op'>&lt;-</span> <span class='va'>full2013</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`5-digit FIPS Code`</span>, <span class='va'>`State Abbreviation`</span>, <span class='va'>`Name`</span>, <span class='va'>`Homicides raw value`</span>,<span class='va'>`Homicides numerator`</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`5-digit FIPS Code`</span>, <span class='va'>`State Abbreviation`</span>, <span class='va'>`Name`</span>, <span class='va'>`Homicides raw value`</span>,<span class='va'>`Homicides numerator`</span>, <span class='va'>`Violent crime raw value`</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>year <span class='op'>=</span> <span class='st'>"2013"</span><span class='op'>)</span></span>
 <span><span class='va'>hom2014</span><span class='op'>&lt;-</span> <span class='va'>full2014</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`5-digit FIPS Code`</span>, <span class='va'>`State Abbreviation`</span>, <span class='va'>`Name`</span>, <span class='va'>`Homicides raw value`</span>,<span class='va'>`Homicides numerator`</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`5-digit FIPS Code`</span>, <span class='va'>`State Abbreviation`</span>, <span class='va'>`Name`</span>, <span class='va'>`Homicides raw value`</span>,<span class='va'>`Homicides numerator`</span>, <span class='va'>`Violent crime raw value`</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>year <span class='op'>=</span> <span class='st'>"2014"</span><span class='op'>)</span></span>
 <span><span class='va'>hom2015</span><span class='op'>&lt;-</span> <span class='va'>full2015</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`5-digit FIPS Code`</span>, <span class='va'>`State Abbreviation`</span>, <span class='va'>`Name`</span>, <span class='va'>`Homicides raw value`</span>,<span class='va'>`Homicides numerator`</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`5-digit FIPS Code`</span>, <span class='va'>`State Abbreviation`</span>, <span class='va'>`Name`</span>, <span class='va'>`Homicides raw value`</span>,<span class='va'>`Homicides numerator`</span>, <span class='va'>`Violent crime raw value`</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>year <span class='op'>=</span> <span class='st'>"2015"</span><span class='op'>)</span></span>
 <span><span class='va'>hom2016</span><span class='op'>&lt;-</span> <span class='va'>full2016</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`5-digit FIPS Code`</span>, <span class='va'>`State Abbreviation`</span>, <span class='va'>`Name`</span>, <span class='va'>`Homicides raw value`</span>,<span class='va'>`Homicides numerator`</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`5-digit FIPS Code`</span>, <span class='va'>`State Abbreviation`</span>, <span class='va'>`Name`</span>, <span class='va'>`Homicides raw value`</span>,<span class='va'>`Homicides numerator`</span>, <span class='va'>`Violent crime raw value`</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>year <span class='op'>=</span> <span class='st'>"2016"</span><span class='op'>)</span></span>
 <span><span class='va'>hom2017</span><span class='op'>&lt;-</span> <span class='va'>full2017</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`5-digit FIPS Code`</span>, <span class='va'>`State Abbreviation`</span>, <span class='va'>`Name`</span>, <span class='va'>`Homicides raw value`</span>,<span class='va'>`Homicides numerator`</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`5-digit FIPS Code`</span>, <span class='va'>`State Abbreviation`</span>, <span class='va'>`Name`</span>, <span class='va'>`Homicides raw value`</span>,<span class='va'>`Homicides numerator`</span>, <span class='va'>`Violent crime raw value`</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>year <span class='op'>=</span> <span class='st'>"2017"</span><span class='op'>)</span></span>
 <span><span class='va'>hom2018</span><span class='op'>&lt;-</span> <span class='va'>full2018</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`5-digit FIPS Code`</span>, <span class='va'>`State Abbreviation`</span>, <span class='va'>`Name`</span>, <span class='va'>`Homicides raw value`</span>,<span class='va'>`Homicides numerator`</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`5-digit FIPS Code`</span>, <span class='va'>`State Abbreviation`</span>, <span class='va'>`Name`</span>, <span class='va'>`Homicides raw value`</span>,<span class='va'>`Homicides numerator`</span>, <span class='va'>`Violent crime raw value`</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>year <span class='op'>=</span> <span class='st'>"2018"</span><span class='op'>)</span></span>
 <span><span class='va'>hom2019</span><span class='op'>&lt;-</span><span class='va'>full2019</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`5-digit FIPS Code`</span>, <span class='va'>`State Abbreviation`</span>, <span class='va'>`Name`</span>, <span class='va'>`Homicides raw value`</span>,<span class='va'>`Homicides numerator`</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`5-digit FIPS Code`</span>, <span class='va'>`State Abbreviation`</span>, <span class='va'>`Name`</span>, <span class='va'>`Homicides raw value`</span>,<span class='va'>`Homicides numerator`</span>, <span class='va'>`Violent crime raw value`</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>year <span class='op'>=</span> <span class='st'>"2019"</span><span class='op'>)</span></span>
 <span><span class='va'>hom2020</span><span class='op'>&lt;-</span><span class='va'>full2020</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`5-digit FIPS Code`</span>, <span class='va'>`State Abbreviation`</span>, <span class='va'>`Name`</span>, <span class='va'>`Homicides raw value`</span>,<span class='va'>`Homicides numerator`</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`5-digit FIPS Code`</span>, <span class='va'>`State Abbreviation`</span>, <span class='va'>`Name`</span>, <span class='va'>`Homicides raw value`</span>,<span class='va'>`Homicides numerator`</span>, <span class='va'>`Violent crime raw value`</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>year <span class='op'>=</span> <span class='st'>"2020"</span><span class='op'>)</span></span>
 <span><span class='va'>hom2021</span><span class='op'>&lt;-</span><span class='va'>full2021</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`5-digit FIPS Code`</span>, <span class='va'>`State Abbreviation`</span>, <span class='va'>`Name`</span>, <span class='va'>`Homicides raw value`</span>,<span class='va'>`Homicides numerator`</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`5-digit FIPS Code`</span>, <span class='va'>`State Abbreviation`</span>, <span class='va'>`Name`</span>, <span class='va'>`Homicides raw value`</span>,<span class='va'>`Homicides numerator`</span>, <span class='va'>`Violent crime raw value`</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>year <span class='op'>=</span> <span class='st'>"2021"</span><span class='op'>)</span></span>
 <span><span class='va'>hom2022</span><span class='op'>&lt;-</span><span class='va'>full2022</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`5-digit FIPS Code`</span>, <span class='va'>`State Abbreviation`</span>, <span class='va'>`Name`</span>, <span class='va'>`Homicides raw value`</span>,<span class='va'>`Homicides numerator`</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`5-digit FIPS Code`</span>, <span class='va'>`State Abbreviation`</span>, <span class='va'>`Name`</span>, <span class='va'>`Homicides raw value`</span>,<span class='va'>`Homicides numerator`</span>, <span class='va'>`Violent crime raw value`</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>year <span class='op'>=</span> <span class='st'>"2022"</span><span class='op'>)</span></span></code></pre>
 </div>
 </div>
@@ -1671,22 +1668,23 @@ Although I was originally planning on pursuing a project about militia membershi
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>county_code <span class='op'>=</span> <span class='va'>`5-digit FIPS Code`</span><span class='op'>)</span> </span>
 <span><span class='va'>megafile</span></span></code></pre>
 </div>
-<pre><code># A tibble: 38,335 × 7
-   `5-digit FIPS Code` State Abb…¹ Name  Homic…² Homic…³ year  count…⁴
-   &lt;chr&gt;               &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;  
- 1 fipscode            state       coun… v015_r… v015_n… 2022  fipsco…
- 2 0                   US          Unit… 5.8658… 133391  2022  0      
- 3 1000                AL          Alab… 11.106… 3794    2022  1000   
- 4 1001                AL          Auta… 5.9083… 23      2022  1001   
- 5 1003                AL          Bald… 3.2763… 49      2022  1003   
- 6 1005                AL          Barb… 11.187… 20      2022  1005   
- 7 1007                AL          Bibb… 9.5341… 15      2022  1007   
- 8 1009                AL          Blou… 7.1666… 29      2022  1009   
- 9 1011                AL          Bull… 15.204… 11      2022  1011   
-10 1013                AL          Butl… 19.437… 27      2022  1013   
+<pre><code># A tibble: 38,335 × 8
+   5-digit FIPS …¹ State…² Name  Homic…³ Homic…⁴ Viole…⁵ year  count…⁶
+   &lt;chr&gt;           &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;  
+ 1 fipscode        state   coun… v015_r… v015_n… v043_r… 2022  fipsco…
+ 2 0               US      Unit… 5.8658… 133391  386.46… 2022  0      
+ 3 1000            AL      Alab… 11.106… 3794    479.91… 2022  1000   
+ 4 1001            AL      Auta… 5.9083… 23      272.28… 2022  1001   
+ 5 1003            AL      Bald… 3.2763… 49      203.66… 2022  1003   
+ 6 1005            AL      Barb… 11.187… 20      414.27… 2022  1005   
+ 7 1007            AL      Bibb… 9.5341… 15      89.349… 2022  1007   
+ 8 1009            AL      Blou… 7.1666… 29      482.69… 2022  1009   
+ 9 1011            AL      Bull… 15.204… 11      311.02… 2022  1011   
+10 1013            AL      Butl… 19.437… 27      581.58… 2022  1013   
 # … with 38,325 more rows, and abbreviated variable names
-#   ¹​`State Abbreviation`, ²​`Homicides raw value`,
-#   ³​`Homicides numerator`, ⁴​county_code</code></pre>
+#   ¹​`5-digit FIPS Code`, ²​`State Abbreviation`,
+#   ³​`Homicides raw value`, ⁴​`Homicides numerator`,
+#   ⁵​`Violent crime raw value`, ⁶​county_code</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -1696,7 +1694,7 @@ Although I was originally planning on pursuing a project about militia membershi
 </div>
 <pre><code># A tibble: 3,203 × 5
 # Groups:   county, state, year [3,203]
-   county    state           year county_code    ns
+   county    state           year county_code  sent
    &lt;chr&gt;     &lt;chr&gt;          &lt;int&gt; &lt;chr&gt;       &lt;int&gt;
  1 Abbeville South Carolina  1997 45001           1
  2 Abbeville South Carolina  2007 45001           1
@@ -1716,26 +1714,28 @@ Although I was originally planning on pursuing a project about militia membershi
 <span><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>megafile</span><span class='op'>)</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>megafile</span><span class='op'>)</span> <span class='op'>==</span> <span class='st'>"Name"</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='st'>"county_name"</span></span>
 <span><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>megafile</span><span class='op'>)</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>megafile</span><span class='op'>)</span> <span class='op'>==</span> <span class='st'>"State Abbreviation"</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='st'>"State_id"</span></span>
 <span><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>megafile</span><span class='op'>)</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>megafile</span><span class='op'>)</span> <span class='op'>==</span> <span class='st'>"Homicides raw value"</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='st'>"Homicides_value"</span></span>
+<span><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>megafile</span><span class='op'>)</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>megafile</span><span class='op'>)</span> <span class='op'>==</span> <span class='st'>"Violent crime raw value"</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='st'>"Violence_value"</span></span>
+<span></span>
 <span></span>
 <span></span>
 <span><span class='va'>megafile</span></span></code></pre>
 </div>
-<pre><code># A tibble: 38,335 × 7
-   `5-digit FIPS Code` State_id county…¹ Homic…² Homic…³  year count…⁴
-   &lt;chr&gt;               &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;   &lt;int&gt; &lt;chr&gt;  
- 1 fipscode            state    county   v015_r… v015_n…  2022 fipsco…
- 2 0                   US       United … 5.8658… 133391   2022 0      
- 3 1000                AL       Alabama  11.106… 3794     2022 1000   
- 4 1001                AL       Autauga… 5.9083… 23       2022 1001   
- 5 1003                AL       Baldwin… 3.2763… 49       2022 1003   
- 6 1005                AL       Barbour… 11.187… 20       2022 1005   
- 7 1007                AL       Bibb Co… 9.5341… 15       2022 1007   
- 8 1009                AL       Blount … 7.1666… 29       2022 1009   
- 9 1011                AL       Bullock… 15.204… 11       2022 1011   
-10 1013                AL       Butler … 19.437… 27       2022 1013   
+<pre><code># A tibble: 38,335 × 8
+   5-digit FIP…¹ State…² count…³ Homic…⁴ Homic…⁵ Viole…⁶  year count…⁷
+   &lt;chr&gt;         &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;int&gt; &lt;chr&gt;  
+ 1 fipscode      state   county  v015_r… v015_n… v043_r…  2022 fipsco…
+ 2 0             US      United… 5.8658… 133391  386.46…  2022 0      
+ 3 1000          AL      Alabama 11.106… 3794    479.91…  2022 1000   
+ 4 1001          AL      Autaug… 5.9083… 23      272.28…  2022 1001   
+ 5 1003          AL      Baldwi… 3.2763… 49      203.66…  2022 1003   
+ 6 1005          AL      Barbou… 11.187… 20      414.27…  2022 1005   
+ 7 1007          AL      Bibb C… 9.5341… 15      89.349…  2022 1007   
+ 8 1009          AL      Blount… 7.1666… 29      482.69…  2022 1009   
+ 9 1011          AL      Bulloc… 15.204… 11      311.02…  2022 1011   
+10 1013          AL      Butler… 19.437… 27      581.58…  2022 1013   
 # … with 38,325 more rows, and abbreviated variable names
-#   ¹​county_name, ²​Homicides_value, ³​`Homicides numerator`,
-#   ⁴​county_code</code></pre>
+#   ¹​`5-digit FIPS Code`, ²​State_id, ³​county_name, ⁴​Homicides_value,
+#   ⁵​`Homicides numerator`, ⁶​Violence_value, ⁷​county_code</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -1748,45 +1748,78 @@ Although I was originally planning on pursuing a project about militia membershi
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>##Merging sentences, and megafile data </span></span>
 <span><span class='va'>sentences_megafile</span><span class='op'>&lt;-</span><span class='va'>megafile</span><span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate-joins.html'>left_join</a></span><span class='op'>(</span><span class='va'>sentences_count</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>county_code</span>, <span class='va'>State_id</span>, <span class='va'>county_name</span>, <span class='va'>year</span>, <span class='va'>Homicides_value</span>, <span class='va'>ns</span><span class='op'>)</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>county_code</span>, <span class='va'>State_id</span>, <span class='va'>county_name</span>, <span class='va'>year</span>,<span class='va'>Violence_value</span>, <span class='va'>Homicides_value</span>, <span class='va'>sent</span><span class='op'>)</span></span>
 <span><span class='va'>alldata</span><span class='op'>&lt;-</span><span class='va'>sentences_megafile</span><span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate-joins.html'>left_join</a></span><span class='op'>(</span><span class='va'>execution_count</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>county_code</span>, <span class='va'>State_id</span>, <span class='va'>county_name</span>, <span class='va'>year</span>, <span class='va'>Homicides_value</span>, <span class='va'>ns</span>, <span class='va'>ne</span><span class='op'>)</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>county_code</span>, <span class='va'>State_id</span>, <span class='va'>county_name</span>, <span class='va'>year</span>, <span class='va'>Violence_value</span>, <span class='va'>Homicides_value</span>, <span class='va'>exs</span>, <span class='va'>sent</span><span class='op'>)</span></span>
 <span><span class='va'>alldata</span></span></code></pre>
 </div>
-<pre><code># A tibble: 38,336 × 7
-   county_code State_id county_name     year Homicides_v…¹    ns    ne
-   &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;         &lt;int&gt; &lt;int&gt;
- 1 fipscode    state    county          2022 v015_rawvalue    NA    NA
- 2 0           US       United States   2022 5.865883882      NA    NA
- 3 1000        AL       Alabama         2022 11.10688545      NA    NA
- 4 1001        AL       Autauga County  2022 5.908389142      NA    NA
- 5 1003        AL       Baldwin County  2022 3.276377851      NA    NA
- 6 1005        AL       Barbour County  2022 11.18774718      NA    NA
- 7 1007        AL       Bibb County     2022 9.534100299      NA    NA
- 8 1009        AL       Blount County   2022 7.166616418      NA    NA
- 9 1011        AL       Bullock County  2022 15.2047107       NA    NA
-10 1013        AL       Butler County   2022 19.43774522      NA    NA
-# … with 38,326 more rows, and abbreviated variable name
-#   ¹​Homicides_value</code></pre>
+<pre><code># A tibble: 38,336 × 8
+   county_code State_id county_name   year Viole…¹ Homic…²   exs  sent
+   &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;        &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;int&gt; &lt;int&gt;
+ 1 fipscode    state    county        2022 v043_r… v015_r…    NA    NA
+ 2 0           US       United Stat…  2022 386.46… 5.8658…    NA    NA
+ 3 1000        AL       Alabama       2022 479.91… 11.106…    NA    NA
+ 4 1001        AL       Autauga Cou…  2022 272.28… 5.9083…    NA    NA
+ 5 1003        AL       Baldwin Cou…  2022 203.66… 3.2763…    NA    NA
+ 6 1005        AL       Barbour Cou…  2022 414.27… 11.187…    NA    NA
+ 7 1007        AL       Bibb County   2022 89.349… 9.5341…    NA    NA
+ 8 1009        AL       Blount Coun…  2022 482.69… 7.1666…    NA    NA
+ 9 1011        AL       Bullock Cou…  2022 311.02… 15.204…    NA    NA
+10 1013        AL       Butler Coun…  2022 581.58… 19.437…    NA    NA
+# … with 38,326 more rows, and abbreviated variable names
+#   ¹​Violence_value, ²​Homicides_value</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>alldata</span><span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span><span class='op'>(</span><span class='va'>alldata</span>, <span class='va'>alldata</span><span class='op'>$</span><span class='va'>county_code</span> <span class='op'>!=</span> <span class='st'>"0"</span> <span class='op'>&amp;</span> <span class='va'>alldata</span><span class='op'>$</span><span class='va'>county_code</span> <span class='op'>!=</span> <span class='st'>"fipscode"</span><span class='op'>)</span></span>
-<span></span>
-<span><span class='va'>alldata</span><span class='op'>$</span><span class='va'>Homicides_value</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/integer.html'>as.integer</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/character.html'>as.character</a></span><span class='op'>(</span><span class='va'>alldata</span><span class='op'>$</span><span class='va'>Homicides_value</span><span class='op'>)</span><span class='op'>)</span></span>
-<span><span class='va'>homicidesvsexe</span><span class='op'>&lt;-</span> <span class='va'>alldata</span><span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>ne</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>Homicideave <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>Homicides_value</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span></span>
-<span></span>
-<span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>homicidesvsexe</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>ne</span>, y <span class='op'>=</span> <span class='va'>Homicideave</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
-<span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
-<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Homicide Rate in Death Penalty Counties VS Number of Executions that Year"</span>,x <span class='op'>=</span> <span class='st'>"Number of executions"</span>, y <span class='op'>=</span> <span class='st'>"Average Count of Homicides"</span><span class='op'>)</span></span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>##Making Sent and Exs 0 if none are there</span></span>
+<span><span class='va'>alldata</span> <span class='op'>&lt;-</span> <span class='va'>alldata</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>exs <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/ifelse.html'>ifelse</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>exs</span><span class='op'>)</span>, <span class='fl'>0</span>, <span class='va'>exs</span><span class='op'>)</span><span class='op'>)</span></span>
+<span><span class='va'>alldata</span> <span class='op'>&lt;-</span> <span class='va'>alldata</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>sent <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/ifelse.html'>ifelse</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>sent</span><span class='op'>)</span>, <span class='fl'>0</span>, <span class='va'>sent</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
 </div>
-<p><img src="index_files/figure-html5/unnamed-chunk-13-1.png" width="624" /></p>
 </div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>## The first part of my analysis will be to compare the same counties before and after that state got rid of the death penalty. The states that eliminated the death penalty (or put in place a moratorium) within the time of my data (2010-2022) are Virginia 2021 (FIPS codes 51001-51840) Maryland 2013 (24001-24510) Washington 2018 (53001-53077) New Hampshire 2019 (33001-33019) Connecticut 2012 (09001-09015) Deleware 2016 (10001-10005) Colorado 2020 (08001-08125) Illinois 2011 (17001-17203) Pennsylvania 2015 (42001-42113) *California 2019 (06001-06115)* Oregon 2011 (41001-41071) *. In order to do this analysis, I need to create a new dataframe from my alldata one which only gives information for counties within these states (1) and tags the data as before or after the death penalty was eliminated (2)</span></span>
+<span></span>
+<span><span class='co'>##1: </span></span>
+<span><span class='va'>alldata</span><span class='op'>$</span><span class='va'>county_code</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/character.html'>as.character</a></span><span class='op'>(</span><span class='va'>alldata</span><span class='op'>$</span><span class='va'>county_code</span><span class='op'>)</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>alldata</span><span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>county_code</span> <span class='op'>&gt;</span> <span class='fl'>51000</span> <span class='op'>&amp;</span> <span class='va'>county_code</span> <span class='op'>&lt;</span> <span class='fl'>51841</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>DP <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span><span class='va'>year</span> <span class='op'>&gt;</span> <span class='fl'>2021</span>, <span class='fl'>0</span>, <span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code># A tibble: 1,602 × 9
+   county_code State…¹ count…²  year Viole…³ Homic…⁴   exs  sent    DP
+         &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1       51001 VA      Accoma…  2022 225.86… 12.256…     0     0     0
+ 2       51003 VA      Albema…  2022 100.24… 1.8580…     0     0     0
+ 3       51005 VA      Allegh…  2022 195.93… &lt;NA&gt;        0     0     0
+ 4       51007 VA      Amelia…  2022 117.10… &lt;NA&gt;        0     0     0
+ 5       51009 VA      Amhers…  2022 133.08… &lt;NA&gt;        0     0     0
+ 6       51011 VA      Appoma…  2022 113.91… &lt;NA&gt;        0     0     0
+ 7       51013 VA      Arling…  2022 149.40… 1.1005…     0     0     0
+ 8       51015 VA      August…  2022 124.89… 2.0917…     0     0     0
+ 9       51017 VA      Bath C…  2022 111.22… &lt;NA&gt;        0     0     0
+10       51019 VA      Bedfor…  2022 82.536… 3.2858…     0     0     0
+# … with 1,592 more rows, and abbreviated variable names ¹​State_id,
+#   ²​county_name, ³​Violence_value, ⁴​Homicides_value</code></pre>
+</div>
+<pre><code>FROM THE CHECKPOINT 3: 
+alldata&lt;- subset(alldata, alldata$county_code != &quot;0&quot; &amp; alldata$county_code != &quot;fipscode&quot;)
+
+alldata$Homicides_value &lt;- as.integer(as.character(alldata$Homicides_value))
+homicidesvsexe&lt;- alldata|&gt;
+  group_by(ne) |&gt;
+  summarize(Homicideave = mean(Homicides_value, na.rm = TRUE))
+
+ggplot(homicidesvsexe, aes(x = ne, y = Homicideave)) +
+geom_point() +
+  labs(title = &quot;Homicide Rate in Death Penalty Counties VS Number of Executions that Year&quot;,x = &quot;Number of executions&quot;, y = &quot;Average Count of Homicides&quot;)
+</code></pre>
 <p>This graph depicts the number of executions across all counties that executed someone and the average homicide rate for that county in the year they executed someone. From the graph, we can see that the more executions there are, the higher the homicide rate tends to be.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

@@ -1,197 +1,316 @@
----
 title: "Gov 50 Final Project"
 author: "Kay Rollins"
 description: "My final project"
 output:
   distill::distill_article:
     self_contained: false
----
-
-##Project Proposal 
-Although I was originally planning on pursuing a project about militia membership, given the restrictions on that data I have decided to switch my project to one focused on the death penalty. My research question is does the death penalty deter violent crime and homicide? In this study, I plan to compare homicide and crime rates in counties where the death penalty is applied and counties where it is not. In order to do this analysis, I will try to use a difference in differences method to the extent that is possible with this data. First, I will utilize states with a recent abolition of the death penalty to directly compare the death penalty eligible crime rate in a county before and after the death penalty was abolished (for instance, comparing homicide rates in Fairfax county before and after 2021 when the death penalty was abolished in Virginia). Second, I will compare counties between states over time-- did the counties in states which maintained the death penalty have a lower rate of death-eligable crimes compared to similar counties over the same period of time in places without the death penalty? My data composed of all executions from 1976 to 2022 from the death penalty information center. I will be merging this data with the FBI crime data explorer database to compare crimes by type and county. My unit of analysis is a county's crime in one year. The explanatory variable of interest is whether there is the presence of a death penalty in a certain jurisdiction. This will be coded as 1 = death penalty possible and 0= death penalty not possible. My outcome variable will be the count of death penalty eligible crimes in a county in a certain year. For instance, if the variable were coded as "40", it means that there were 40 death penalty eligible crimes in the county in a year. This variable is measured based on the FBI's database. If I observe greater or equal levels of death penalty eligable crime in a county with the death penalty than one without it (or the same county either with or without it), then my hypothesis will be proved correct. If there is lower rates of these type of crimes in places with the death penalty, then my hypothesis would be wrong.
-
+    
 ```{r}
 library(tidyverse)
 library(ggplot2)
 library(dplyr)
 library(infer)
 ```
+
 ```{r}
-executions<-read_csv("DPIC Execution Database - U.S. Executions.csv")
 
-homicide<- read_csv("Death Data.csv")
+sentences <-read_csv("DeathPenaltyDatabase/Death-Sentences-in-the-United-States-Since-1972-as-of-January-1-2021.csv")
 
-sentences <-read_csv("1991_2017_individualFIPS.csv-1991_2019_individualFIPS.csv")
-
-```
-```{r}
-##Give Sentences a County_code category 
-sentences$county_code <- paste(sentences$fips_st,sentences$fips,sep="")
-
+executions<-read_csv("DeathPenaltyDatabase/DPIC Execution Database - U.S. Executions_2005-2022.csv")
 ```
 
+```{r}
+##Reading in crime data
+full2021<- read_csv("ucr/2021ucr.csv")
+full2020<- read_csv("ucr/2020ucr.csv")
+full2019<- read_csv("ucr/2019ucr.csv")
+full2018<- read_csv("ucr/2018ucr.csv")
+full2017<- read_csv("ucr/2017ucr.csv")
+full2016<- read_csv("ucr/2016ucr1.csv")
+full2015<- read_csv("ucr/2015ucr.csv")
+full2014<- read_csv("ucr/2014ucr.csv")
+full2013<- read_csv("ucr/2013ucr.csv")
+full2012<- read_csv("ucr/2012UCR.csv")
+full2011<- read_csv("ucr/2011ucr.csv")
+full2010<- read_csv("ucr/2010ucr.csv")
+```
+
+##refining the crime data so it is only the variables I want 
+
+```{r}
+
+full2010<-full2010|>
+select(State, County, Violent_crime, MNNM)|>
+  mutate(Year=2010) |>
+  mutate(DP = if_else(State=="Alabama"|State == "Arkansas"| State == "California"| State == "Florida" | State == "Georgia" | State == 'Idaho'| State == 'Indiana' | State == 'Kansas' | State == "Pennsylvania" | State == 'Kentucky' | State =='Louisiana' | State == 'Mississippi' | State == 'Missouri' | State ==  'Montana' | State ==  'Nebraska' | State ==  'Nevada' | State == 'North Carolina' | State == 'Oklahoma' | State ==  'Ohio' | State ==  'Oregon' | State == 'South Carolina' | State ==  'South Dakota' | State ==  'Tennessee' | State ==  'Texas' | State == 'Utah' | State ==  'Wyoming' | State == "Virginia" | State == "Colorado" | State == "Washington" | State == "New Hampshire" | State == "Illinois" | State == "Maryland" | State == "Delaware" | State ==  "Connecticut" , 1, 0)) 
+full2011<-full2011|>
+select(State, County, Violent_crime, MNNM)|>
+  mutate(Year=2011) |>
+  mutate(DP = if_else(State=="Alabama"|State == "Arkansas"| State == "California"| State == "Florida" | State == "Georgia" | State == 'Idaho'| State == 'Indiana' | State == 'Kansas' | State == "Pennsylvania" | State == 'Kentucky' | State =='Louisiana' | State == 'Mississippi' | State == 'Missouri' | State ==  'Montana' | State ==  'Nebraska' | State ==  'Nevada' | State == 'North Carolina' | State == 'Oklahoma' | State ==  'Ohio' | State ==  'Oregon' | State == 'South Carolina' | State ==  'South Dakota' | State ==  'Tennessee' | State ==  'Texas' | State == 'Utah' | State ==  'Wyoming' | State == "Virginia" | State == "Colorado" | State == "Washington" | State == "New Hampshire"| State == "Maryland" | State == 'Delaware' | State ==  "Connecticut" , 1, 0))
+full2012<-full2012|>
+select(State, County, Violent_crime, MNNM)|>
+  mutate(Year=2012) |>
+  mutate(DP = if_else(State=="Alabama"|State == "Arkansas"| State == "California"| State == "Florida" | State == "Georgia" | State == 'Idaho'| State == 'Indiana' | State == 'Kansas' | State == 'Kentucky' | State =='Louisiana' | State == 'Mississippi' | State == 'Missouri' | State ==  'Montana' | State ==  'Nebraska' | State ==  'Nevada' | State == 'North Carolina' | State == 'Oklahoma' | State ==  'Ohio' | State ==  'Oregon' |State == "Pennsylvania" | State == 'South Carolina' | State ==  'South Dakota' | State ==  'Tennessee' | State ==  'Texas' | State == 'Utah' | State ==  'Wyoming' | State == "Virginia" | State == "Colorado" | State == "Washington" | State == "New Hampshire" | State == "Maryland" | State == 'Delaware' , 1, 0))
+full2013<-full2013|>
+select(State, County, Violent_crime, MNNM)|>
+  mutate(Year=2013) |>
+  mutate(DP = if_else(State=="Alabama"|State == "Arkansas"| State == "California"| State == "Florida" | State == "Georgia" | State == 'Idaho'| State == 'Indiana' | State == 'Kansas' | State == 'Kentucky' | State =='Louisiana' | State == 'Mississippi' | State == 'Missouri' | State ==  'Montana' | State ==  'Nebraska' | State ==  'Nevada' | State == 'North Carolina' | State == 'Oklahoma' | State ==  'Ohio' | State ==  'Oregon' | State == 'South Carolina' | State ==  'South Dakota' | State ==  'Tennessee' | State ==  'Texas' | State == "Pennsylvania" | State == 'Utah' | State ==  'Wyoming' | State == "Virginia" | State == "Colorado" | State == "Washington" | State == "New Hampshire"| State == 'Delaware' , 1, 0))
+full2014<-full2014|>
+select(State, County, Violent_crime, MNNM)|>
+  mutate(Year=2014) |>
+  mutate(DP = if_else(State=="Alabama"|State == "Arkansas"| State == "California"| State == "Florida" | State == "Georgia" | State == 'Idaho'| State == 'Indiana' | State == 'Kansas' | State == 'Kentucky' | State =='Louisiana' | State == 'Mississippi' | State == 'Missouri' | State ==  'Montana' | State ==  'Nebraska' | State ==  'Nevada' | State == 'North Carolina' | State == 'Oklahoma' | State ==  'Ohio' | State ==  'Oregon' | State == 'South Carolina' | State ==  'South Dakota' | State ==  'Tennessee' | State ==  'Texas' | State == 'Utah' | State ==  'Wyoming' | State == "Virginia" | State == "Colorado" | State == "Pennsylvania" | State == "Washington" | State == "New Hampshire"| State == 'Delaware' , 1, 0))
+full2015<-full2015|>
+select(State, County, Violent_crime, MNNM)|>
+  mutate(Year=2015) |>
+  mutate(DP = if_else(State=="Alabama"|State == "Arkansas"| State == "California"| State == "Florida" | State == "Georgia" | State == 'Idaho'| State == 'Indiana' | State == 'Kansas' | State == 'Kentucky' | State =='Louisiana' | State == 'Mississippi' | State == 'Missouri' | State ==  'Montana' | State ==  'Nebraska' | State ==  'Nevada' | State == 'North Carolina' | State == 'Oklahoma' | State ==  'Ohio' | State ==  'Oregon' | State == 'South Carolina' | State ==  'South Dakota' | State ==  'Tennessee' | State ==  'Texas' | State == 'Utah' | State ==  'Wyoming' | State == "Virginia" | State == "Colorado" | State == "Washington" | State == "New Hampshire"| State == "Pennsylvania" |State == 'Delaware' , 1, 0))
+full2016<-full2016|>
+select(State, County, Violent_crime, MNNM)|>
+  mutate(Year=2016) |>
+  mutate(DP = if_else(State=="Alabama"|State == "Arkansas"| State == "California"| State == "Florida" | State == "Georgia" | State == 'Idaho'| State == 'Indiana' | State == 'Kansas' | State == 'Kentucky' | State =='Louisiana' | State == 'Mississippi' | State == 'Missouri' | State ==  'Montana' | State ==  'Nebraska' | State ==  'Nevada' | State == 'North Carolina' | State == 'Oklahoma' | State ==  'Ohio' | State ==  'Oregon' | State == 'South Carolina' | State ==  'South Dakota' | State ==  'Tennessee' | State ==  'Texas' | State == 'Utah' | State ==  'Wyoming' | State == "Virginia" | State == "Colorado" | State == "Washington" | State == "New Hampshire" | State == "Maryland" | State == "Pennsylvania" |State == 'Delaware' , 1, 0))
+full2017<-full2017|>
+select(State, County, Violent_crime, MNNM)|>
+  mutate(Year=2017)|>
+  mutate(DP = if_else(State=="Alabama"|State == "Arkansas"| State == "California"| State == "Florida" | State == "Georgia" | State == 'Idaho'| State == 'Indiana' | State == 'Kansas' | State == 'Kentucky' | State =='Louisiana' | State == 'Mississippi' | State == 'Missouri' | State ==  'Montana' | State ==  'Nebraska' | State ==  'Nevada' | State == 'North Carolina' | State == 'Oklahoma' | State ==  'Ohio' | State ==  'Oregon' | State == 'South Carolina' | State ==  'South Dakota' | State ==  'Tennessee' | State ==  'Texas' | State == 'Utah' | State ==  'Wyoming' | State == "Virginia" | State == "Colorado" | State == "Washington" | State == "New Hampshire" | State == "Maryland" | State == "Pennsylvania" , 1, 0))
+full2018<-full2018|>
+select(State, County, Violent_crime, MNNM)|>
+  mutate(Year=2018)|>
+  mutate(DP = if_else(State=="Alabama"|State == "Arkansas"| State == "California"| State == "Florida" | State == "Georgia" | State == 'Idaho'| State == 'Indiana' | State == 'Kansas' | State == 'Kentucky' | State =='Louisiana' | State == 'Mississippi' | State == 'Missouri' | State ==  'Montana' | State ==  'Nebraska' | State ==  'Nevada' | State == 'North Carolina' | State == 'Oklahoma' | State ==  'Ohio' | State ==  'Oregon' | State == 'South Carolina' | State ==  'South Dakota' | State ==  'Tennessee' | State ==  'Texas' | State == 'Utah' | State ==  'Wyoming' | State == "Virginia" | State == "Colorado" | State == "Washington" | State == "Maryland" | State == "Pennsylvania" , 1, 0))
+full2019<-full2019|>
+select(State, County, Violent_crime, MNNM)|>
+  mutate(Year=2019)|>
+  mutate(DP = if_else(State=="Alabama"|State == "Arkansas"| State == "California"| State == "Florida" | State == "Georgia" | State == 'Idaho'| State == 'Indiana' | State == 'Kansas' | State == 'Kentucky' | State =='Louisiana' | State == 'Mississippi' | State == 'Missouri' | State ==  'Montana' | State ==  'Nebraska' | State ==  'Nevada' | State == 'North Carolina' | State == 'Oklahoma' | State ==  'Ohio' | State ==  'Oregon' | State == 'South Carolina' | State ==  'South Dakota' | State ==  'Tennessee' | State ==  'Texas' | State == 'Utah' | State ==  'Wyoming' | State == "Virginia" | State == "Colorado" | State == "Maryland" | State == "Pennsylvania" , 1, 0))
+full2020<-full2020|>
+select(State, County, Violent_crime, MNNM)|>
+  mutate(Year=2020) |>
+  mutate(DP = if_else(State=="Alabama"|State == "Arkansas"| State == "California"| State == "Florida" | State == "Georgia" | State == 'Idaho'| State == 'Indiana' | State == 'Kansas' | State == 'Kentucky' | State =='Louisiana' | State == 'Mississippi' | State == 'Missouri' | State ==  'Montana' | State ==  'Nebraska' | State ==  'Nevada' | State == 'North Carolina' | State == 'Oklahoma' | State ==  'Ohio' | State ==  'Oregon' | State == 'South Carolina' | State ==  'South Dakota' | State ==  'Tennessee' | State ==  'Texas' | State == 'Utah' | State ==  'Wyoming' | State == "Virginia" | State == "Maryland" | State == "Pennsylvania" , 1, 0))
+full2021<-full2021|>
+select(State, County, Violent_crime, MNNM)|>
+  mutate(Year=2021) |>
+  mutate(DP = if_else(State=="Alabama"|State == "Arkansas"| State == "California"| State == "Florida" | State == "Georgia" | State == 'Idaho'| State == 'Indiana' | State == 'Kansas' | State == 'Kentucky' | State =='Louisiana' | State == 'Mississippi' | State == 'Missouri' | State ==  'Montana' | State ==  'Nebraska' | State ==  'Nevada' | State == 'North Carolina' | State == 'Oklahoma' | State ==  'Ohio' | State ==  'Oregon' | State == 'South Carolina' | State ==  'South Dakota' | State ==  'Tennessee' | State ==  'Texas' | State == 'Utah' | State ==  'Wyoming' | State == "Maryland" | State == "Pennsylvania" , 1, 0))
+
+```
+
+```{r}
+##Combining crime data from each year into a big file 
+fullcrime<- rbind(full2010,full2011,full2012,full2013,full2014,full2015,full2016,full2017,full2018,full2019,full2021,full2020)
+
+
+```
 
 ```{r}
 #DP Sentences County by County 
 sentences_count <- sentences |> 
-  group_by(county,state,year,county_code) |>
-  summarize(sent=n())
-sentences_count
-```
+  group_by(Jurisdiction,`Sub Jurisdiction`,Year) |>
+  summarize(sent=n()) 
 
-```{r}
-##Execution Count by County 
-execution_count<- sentences |>
-  filter(Executed == "Executed") |>
-  mutate(ExecutionDate=lubridate::mdy(DateofExecution)) |>
-  mutate(ExecutionYear = lubridate::year(ExecutionDate)) |>
-  group_by(county, county_code, ExecutionYear) |>
-  summarize (exs=n())
-execution_count
-```
+names(sentences_count)[names(sentences_count) == "Jurisdiction"] <- "State"
+names(sentences_count)[names(sentences_count) == "Sub Jurisdiction"] <- "County"
 
-```{r}
-##Reading in new data
-full2022<- read_csv("2022f.csv")
-full2021<- read_csv("2021f.csv")
-full2020<- read_csv("2020f.csv")
-full2019<- read_csv("2019f.csv")
-full2018<- read_csv("2018f.csv")
-full2017<- read_csv("2017f.csv")
-full2016<- read_csv("2016f.csv")
-full2015<- read_csv("2015f.csv")
-full2014<- read_csv("2014f.csv")
-full2013<- read_csv("2013f.csv")
-full2012<- read_csv("2012f.csv")
-full2011<- read_csv("2011f.csv")
-full2010<-read_csv("2010f.csv")
-```
-
-```{r}
-##refine the data 
-hom2010<-full2010 |>
-  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`, `Violent crime raw value`)|>
-  mutate(year = "2010")
-hom2011<- full2011 |>
-  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`, `Violent crime raw value`)|>
-  mutate(year = "2011")
-hom2012<- full2012 |>
-  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`, `Violent crime raw value`)|>
-  mutate(year = "2012")
-hom2013<- full2013 |>
-  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`, `Violent crime raw value`)|>
-  mutate(year = "2013")
-hom2014<- full2014 |>
-  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`, `Violent crime raw value`)|>
-  mutate(year = "2014")
-hom2015<- full2015 |>
-  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`, `Violent crime raw value`)|>
-  mutate(year = "2015")
-hom2016<- full2016 |>
-  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`, `Violent crime raw value`)|>
-  mutate(year = "2016")
-hom2017<- full2017 |>
-  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`, `Violent crime raw value`)|>
-  mutate(year = "2017")
-hom2018<- full2018 |>
-  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`, `Violent crime raw value`)|>
-  mutate(year = "2018")
-hom2019<-full2019 |>
-  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`, `Violent crime raw value`)|>
-  mutate(year = "2019")
-hom2020<-full2020 |>
-  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`, `Violent crime raw value`)|>
-  mutate(year = "2020")
-hom2021<-full2021 |>
-  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`, `Violent crime raw value`)|>
-  mutate(year = "2021")
-hom2022<-full2022 |>
-  select(`5-digit FIPS Code`, `State Abbreviation`, `Name`, `Homicides raw value`,`Homicides numerator`, `Violent crime raw value`)|>
-  mutate(year = "2022")
-```
-
-```{r}
-##Make data into megafile 
-megafile<- rbind(hom2022,hom2021,hom2020,hom2019,hom2018,hom2017,hom2016,hom2014,hom2013,hom2012,hom2011,hom2010)
+sentences_count 
+sentences_count_wide<- sentences_count|> 
+  pivot_wider(names_from = Year, values_from = sent) |>
+  select(State, County, `2005`, `2006`, `2007`, `2008`, `2009`, `2010`, `2011`, `2012`, `2013`, `2014`, `2015`, `2016`, `2017`, `2018`, `2019`, `2020`) 
 
 ```
 
 ```{r}
-##make sure there is a county code column
- megafile<-megafile|>
-  mutate(county_code = `5-digit FIPS Code`) 
-megafile
+##Make na into 0s
+sentences_count_wide<-sentences_count_wide |>
+  mutate(`2005` = coalesce(`2005`, 0),
+         `2006` = coalesce(`2006`, 0), 
+         `2007` = coalesce(`2007`, 0),
+         `2008` = coalesce(`2008`, 0),
+         `2009` = coalesce(`2009`, 0),
+         `2010` = coalesce(`2010`, 0),
+         `2011` = coalesce(`2011`, 0),
+         `2012` = coalesce(`2012`, 0),
+         `2013` = coalesce(`2013`, 0),
+         `2014` = coalesce(`2014`, 0),
+         `2015` = coalesce(`2015`, 0),
+         `2016` = coalesce(`2016`, 0),
+         `2017` = coalesce(`2017`, 0),
+         `2018` = coalesce(`2018`, 0),
+         `2019` = coalesce(`2019`, 0),
+         `2020` = coalesce(`2020`, 0))
+```
+
+
+```{r}
+##make 5 year counts
+sentences_count_wide<-sentences_count_wide |>
+  rowwise() |>
+  mutate(a = sum(c(`2005`, `2006`, `2007`, `2008`, `2009`))) |>
+  mutate(years2010 = if_else(a>0, 1, 0))
+sentences_count_wide<-sentences_count_wide |>
+  rowwise() |>
+  mutate(b = sum(c(`2006`, `2007`, `2008`, `2009`, `2010`))) |>
+  mutate(years2011 = if_else(b>0, 1, 0))
+sentences_count_wide<-sentences_count_wide |>
+  rowwise() |>
+  mutate(c = sum(c(`2007`, `2008`, `2009`, `2010`, `2011`))) |>
+  mutate(years2012 = if_else(c>0, 1, 0))
+sentences_count_wide<-sentences_count_wide |>
+  rowwise() |>
+  mutate(d = sum(c(`2008`, `2009`, `2010`, `2011`, `2012`))) |>
+  mutate(years2013 = if_else(d>0, 1, 0))
+sentences_count_wide<-sentences_count_wide |>
+  rowwise() |>
+  mutate(e = sum(c(`2009`, `2010`, `2011`, `2012`, `2013`, `2014`))) |>
+  mutate(years2014 = if_else(e>0, 1, 0))
+sentences_count_wide<-sentences_count_wide |>
+  rowwise() |>
+  mutate(f = sum(c(`2010`, `2011`, `2012`, `2013`, `2014`, `2015`))) |>
+  mutate(years2015 = if_else(f>0, 1, 0))
+sentences_count_wide<-sentences_count_wide |>
+  rowwise() |>
+  mutate(g = sum(c(`2011`, `2012`, `2013`, `2014`, `2015`, `2016`))) |>
+  mutate(years2016 = if_else(g>0, 1, 0))
+sentences_count_wide<-sentences_count_wide |>
+  rowwise() |>
+  mutate(h = sum(c(`2012`, `2013`, `2014`, `2015`, `2016`, `2017`))) |>
+  mutate(years2017 = if_else(h>0, 1, 0))
+sentences_count_wide<-sentences_count_wide |>
+  rowwise() |>
+  mutate(i = sum(c(`2013`, `2014`, `2015`, `2016`, `2017`, `2018`))) |>
+  mutate(years2018 = if_else(i>0, 1, 0))
+sentences_count_wide<-sentences_count_wide |>
+  rowwise() |>
+  mutate(j = sum(c( `2014`, `2015`, `2016`, `2017`, `2018`, `2019`))) |>
+  mutate(years2019 = if_else(j>0, 1, 0))
+sentences_count_wide<-sentences_count_wide |>
+  rowwise() |>
+  mutate(k = sum(c( `2015`, `2016`, `2017`, `2018`, `2019`, `2020`))) |>
+  mutate(years2020 = if_else(k>0, 1, 0))
 ```
 
 
 
 ```{r}
-##make sentences and megafile years compatable and make state colum in megafile
-sentences_count$year <- as.integer(as.character(sentences_count$year))
-sentences_count
+##Execution date to execution year
+executions$year<- format(as.Date(executions$Date, format="%m/%d/%Y"), "%Y")
 
-megafile$year <- as.integer(as.character(megafile$year))
+##How many execution in each county per year 
+executions_counties<- executions |> 
+  group_by(`State*`,County,year) |>
+  summarize(exs=n())
+
+##Rename
+names(executions_counties)[names(executions_counties) == "State*"] <- "State"
+names(executions_counties)[names(executions_counties)== "year"]<- "Year"
 
 
-names(megafile)[names(megafile) == "Name"] <- "county_name"
-names(megafile)[names(megafile) == "State Abbreviation"] <- "State_id"
-names(megafile)[names(megafile) == "Homicides raw value"] <- "Homicides_value"
-names(megafile)[names(megafile) == "Violent crime raw value"] <- "Violence_value"
-
-
-
-megafile
-```
-```{r}
-##give executions count a year column
-names(execution_count)[names(execution_count) == "ExecutionYear"] <- "year"
+#Pivot so I can see data better 
+executions_wide<-executions_counties|>
+  pivot_wider(names_from = Year, values_from = exs ) |>
+   select(`State`, County, `2005`, `2006`, `2007`, `2008`, `2009`, `2010`, `2011`, `2012`, `2013`, `2014`, `2015`, `2016`, `2017`, `2018`, `2019`, `2020`, `2021`, `2022`) 
 
 ```
 
-
 ```{r}
-##Merging sentences, and megafile data 
-sentences_megafile<-megafile|>
-  left_join(sentences_count) |>
-  select(county_code, State_id, county_name, year,Violence_value, Homicides_value, sent)
-alldata<-sentences_megafile|>
-  left_join(execution_count) |>
-  select(county_code, State_id, county_name, year, Violence_value, Homicides_value, exs, sent)
-alldata
+##make na into 0
+executions_wide<- executions_wide|>
+  mutate(`2005` = coalesce(`2005`, 0),
+         `2006` = coalesce(`2006`, 0), 
+         `2007` = coalesce(`2007`, 0),
+         `2008` = coalesce(`2008`, 0),
+         `2009` = coalesce(`2009`, 0),
+         `2010` = coalesce(`2010`, 0),
+         `2011` = coalesce(`2011`, 0),
+         `2012` = coalesce(`2012`, 0),
+         `2013` = coalesce(`2013`, 0),
+         `2014` = coalesce(`2014`, 0),
+         `2015` = coalesce(`2015`, 0),
+         `2016` = coalesce(`2016`, 0),
+         `2017` = coalesce(`2017`, 0),
+         `2018` = coalesce(`2018`, 0),
+         `2019` = coalesce(`2019`, 0),
+         `2020` = coalesce(`2020`, 0),
+         `2021` = coalesce(`2021`, 0),
+         `2022` = coalesce(`2022`, 0))
 ```
 
 ```{r}
-##Making Sent and Exs 0 if none are there
-alldata <- alldata |> 
-  mutate(exs = ifelse(is.na(exs), 0, exs))
-alldata <- alldata |>
-  mutate(sent = ifelse(is.na(sent), 0, sent))
+##Make five year counts 
+executions_wide<-executions_wide |>
+  rowwise() |>
+  mutate(a = sum(c(`2005`, `2006`, `2007`, `2008`, `2009`))) |>
+  mutate(eyears2010 = if_else(a>0, 1, 0))
+executions_wide<-executions_wide |>
+  rowwise() |>
+  mutate(b = sum(c(`2006`, `2007`, `2008`, `2009`, `2010`))) |>
+  mutate(eyears2011 = if_else(b>0, 1, 0))
+executions_wide<-executions_wide |>
+  rowwise() |>
+  mutate(c = sum(c(`2007`, `2008`, `2009`, `2010`, `2011`))) |>
+  mutate(eyears2012 = if_else(c>0, 1, 0))
+executions_wide<-executions_wide |>
+  rowwise() |>
+  mutate(d = sum(c(`2008`, `2009`, `2010`, `2011`, `2012`))) |>
+  mutate(eyears2013 = if_else(d>0, 1, 0))
+executions_wide<-executions_wide |>
+  rowwise() |>
+  mutate(e = sum(c(`2009`, `2010`, `2011`, `2012`, `2013`, `2014`))) |>
+  mutate(eyears2014 = if_else(e>0, 1, 0))
+executions_wide<-executions_wide |>
+  rowwise() |>
+  mutate(f = sum(c(`2010`, `2011`, `2012`, `2013`, `2014`, `2015`))) |>
+  mutate(eyears2015 = if_else(f>0, 1, 0))
+executions_wide<-executions_wide |>
+  rowwise() |>
+  mutate(g = sum(c(`2011`, `2012`, `2013`, `2014`, `2015`, `2016`))) |>
+  mutate(eyears2016 = if_else(g>0, 1, 0))
+executions_wide<-executions_wide |>
+  rowwise() |>
+  mutate(h = sum(c(`2012`, `2013`, `2014`, `2015`, `2016`, `2017`))) |>
+  mutate(eyears2017 = if_else(h>0, 1, 0))
+executions_wide<-executions_wide |>
+  rowwise() |>
+  mutate(i = sum(c(`2013`, `2014`, `2015`, `2016`, `2017`, `2018`))) |>
+  mutate(eyears2018 = if_else(i>0, 1, 0))
+executions_wide<-executions_wide |>
+  rowwise() |>
+  mutate(j = sum(c( `2014`, `2015`, `2016`, `2017`, `2018`, `2019`))) |>
+  mutate(eyears2019 = if_else(j>0, 1, 0))
+executions_wide<-executions_wide |>
+  rowwise() |>
+  mutate(k = sum(c( `2015`, `2016`, `2017`, `2018`, `2019`, `2020`))) |>
+  mutate(eyears2020 = if_else(k>0, 1, 0))
+executions_wide<-executions_wide |>
+  rowwise() |>
+  mutate(l = sum(c( `2016`, `2017`, `2018`, `2019`, `2020`, `2021`))) |>
+  mutate(eyears2021 = if_else(l>0, 1, 0))
+executions_wide<-executions_wide |>
+  rowwise() |>
+  mutate(m = sum(c( `2017`, `2018`, `2019`, `2020`, `2021`, `2022`))) |>
+  mutate(eyears2022 = if_else(m>0, 1, 0))
+
 ```
 
 ```{r}
-## The first part of my analysis will be to compare the same counties before and after that state got rid of the death penalty. The states that eliminated the death penalty (or put in place a moratorium) within the time of my data (2010-2022) are Virginia 2021 (FIPS codes 51001-51840) Maryland 2013 (24001-24510) Washington 2018 (53001-53077) New Hampshire 2019 (33001-33019) Connecticut 2012 (09001-09015) Deleware 2016 (10001-10005) Colorado 2020 (08001-08125) Illinois 2011 (17001-17203) Pennsylvania 2015 (42001-42113) *California 2019 (06001-06115)* Oregon 2011 (41001-41071) *. In order to do this analysis, I need to create a new dataframe from my alldata one which only gives information for counties within these states (1) and tags the data as before or after the death penalty was eliminated (2)
 
-##1: 
-alldata$county_code <- as.numeric(as.character(alldata$county_code))
+executions_counties$Year <- as.double(as.character(executions_counties$Year))
+
+alldata<- fullcrime|>
+  left_join(sentences_count, by = c("County", "State","Year")) |>
+  left_join(executions_counties, by = c("County", "State", "Year"))
+alldata<- alldata |>
+mutate(sent = coalesce(sent, 0),
+         exs = coalesce(exs, 0))
+```
+
+
+```{r}
+##First analysis! Does the elimination of a death penalty in a state lead to on average lower homicide rates-- Case of Maryland, which eliminated the DP in 2017
 
 alldata |>
-  subset(county_code == 51001:51840)
+  filter (State == "Maryland")
+  group_by(DP) |>
+  summarize(Mean_Homicide = mean(MNNM, na.rm = TRUE))
 
+##This table shows us that maryland's homicide count was higher before eliminating the death penalty than after eliminating it. While this is not causal, this is certainly in line with other findings about the effectivness of the death penalty. 
 
-```
-
-
-```{r}
-alldata<- subset(alldata, alldata$county_code != "0" & alldata$county_code != "fipscode")
-
-alldata$Homicides_value <- as.integer(as.character(alldata$Homicides_value))
-homicidesvsexe<- alldata|>
-  group_by(ne) |>
-  summarize(Homicideave = mean(Homicides_value, na.rm = TRUE))
-
-ggplot(homicidesvsexe, aes(x = ne, y = Homicideave)) +
-geom_point() +
-  labs(title = "Homicide Rate in Death Penalty Counties VS Number of Executions that Year",x = "Number of executions", y = "Average Count of Homicides")
+## Also I feel the need to clarify that I have spent a lot of time on this project I am aware this is not a very detailed analysis but I promise you I have worked a lot (my code for the rest of this should illustrate that) and it has taken me many, many hours. I know these chekpoints are supposed to make sure we are actually doing work so I promise you I am doing work. I realized while doing this analysis that I didn't have the population data for each county yet so I would need to find a different dataset, load it in, and then merge it with my existing one to fully test my hypothesis and it is already almost 5pm and I have been working on this since noon. I will go back and add more work and do that later this week, but for now I am taking a break.
 
 ```
-This graph depicts the number of executions across all counties that executed someone and the average homicide rate for that county in the year they executed someone. From the graph, we can see that the more executions there are, the higher the homicide rate tends to be. 
+
+

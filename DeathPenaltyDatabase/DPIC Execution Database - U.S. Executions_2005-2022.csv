@@ -1,0 +1,612 @@
+Date,Name,Age,Gender,Race,"Number, Race, and Sex of Victims",State*,County,Region*,Method,Juvenile,Federal,Volunteer,Foreign National
+1/4/2005,James Porter,33,Male,White,1 Latinx Male,Texas,Bowie ,South,Lethal Injection,No,No,Yes,No
+1/19/2005,Donald Beardslee,61,Male,White,2 White Females,California,San Mateo ,West,Lethal Injection,No,No,No,No
+1/25/2005,Troy Kunkle,38,Male,White,1 White Male,Texas,Nueces ,South,Lethal Injection,No,No,No,No
+1/25/2005,Timothy Carr,34,Male,White,1 White Male,Georgia,Monroe ,South,Lethal Injection,No,No,No,No
+2/17/2005,Dennis Bagwell,41,Male,White,4 White Females,Texas,Atascosa ,South,Lethal Injection,No,No,No,No
+3/1/2005,Stephen Mobley,39,Male,White,1 White Male,Georgia,Hall ,South,Lethal Injection,No,No,No,No
+3/8/2005,William Smith,47,Male,Black,1 Black Female,Ohio,Hamilton ,Midwest,Lethal Injection,No,No,No,No
+3/8/2005,George Hopper,50,Male,White,1 White Female,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+3/10/2005,Donald Wallace,47,Male,White,2 White Males,Indiana,Vigo ,Midwest,Lethal Injection,No,No,No,No
+3/11/2005,William Powell,58,Male,White,1 White Female,North Carolina,Cleveland ,South,Lethal Injection,No,No,No,
+3/15/2005,Jimmy Slaughter,57,Male,White,2 White Females,Oklahoma,Oklahoma ,South,Lethal Injection,No,No,No,No
+3/16/2005,Stanley Hall,37,Male,Black,1 White Female,Missouri,St. Louis ,Midwest,Lethal Injection,No,No,No,No
+4/5/2005,Glen Ocha,47,Male,White,1 White Female,Florida,Osceola ,South,Lethal Injection,No,No,Yes,No
+4/15/2005,Richard Longworth,36,Male,White,2 White Males,South Carolina,Spartanburg ,South,Lethal Injection,No,No,No,No
+4/20/2005,Douglas Roberts,42,Male,White,1 Latinx Male,Texas,Harris ,South,Lethal Injection,No,No,No,No
+4/21/2005,Bill Benefiel,48,Male,White,1 White Female,Indiana,Vigo ,Midwest,Lethal Injection,No,No,No,No
+4/27/2005,Donald Jones,38,Male,Black,1 Black Female,Missouri,St. Louis city,Midwest,Lethal Injection,No,No,No,No
+4/28/2005,Mario Centobie,39,Male,White,1 White Male,Alabama,St. Clair ,South,Lethal Injection,No,No,Yes,No
+5/3/2005,Lonnie Pursley,43,Male,White,1 White Male,Texas,Polk ,South,Lethal Injection,No,No,No,No
+5/6/2005,Earl Richmond,43,Male,Black,1 Black Male,North Carolina,Cumberland ,South,Lethal Injection,No,No,No,No
+5/12/2005,George Miller,37,Male,Black,1 White Male,Oklahoma,Oklahoma ,South,Lethal Injection,No,No,No,
+5/13/2005,Michael Ross,45,Male,White,4 White Females,Connecticut,New London ,Northeast,Lethal Injection,No,No,Yes,No
+5/18/2005,Vernon Brown,51,Male,Black,1 Black Female,Missouri,St. Louis city,Midwest,Lethal Injection,No,No,No,No
+5/18/2005,Bryan Wolfe,44,Male,Black,1 Black Female,Texas,Jefferson ,South,Lethal Injection,No,No,No,No
+5/19/2005,Richard Cartwright,31,Male,White,1 Latinx Male,Texas,Nueces ,South,Lethal Injection,No,No,No,No
+5/25/2005,Gregory Johnson,40,Male,White,1 White Female,Indiana,Madison ,Midwest,Lethal Injection,No,No,No,No
+6/2/2005,Jerry Henderson,58,Male,White,1 White Male,Alabama,Talladega ,South,Lethal Injection,No,No,No,No
+6/7/2005,Alexander Martinez,28,Male,Latinx,1 White Female,Texas,Harris ,South,Lethal Injection,No,No,Yes,No
+7/12/2005,Robert Conklin,44,Male,White,1 White Male,Georgia,Fulton ,South,Lethal Injection,No,No,No,No
+7/19/2005,Michael Pennington,37,Male,Black,1 White Male,Oklahoma,Comanche ,South,Lethal Injection,No,No,No,No
+7/27/2005,Kevin Conner,38,Male,White,3 White Males,Indiana,Marion ,Midwest,Lethal Injection,No,No,Yes,No
+7/28/2005,David Martinez,29,Male,Latinx,1 White Female,Texas,Travis ,South,Lethal Injection,No,No,No,No
+8/4/2005,George Sibley,62,Male,White,1 White Male,Alabama,Lee ,South,Lethal Injection,No,No,No,No
+8/10/2005,Gary Sterling,38,Male,Black,1 White Male,Texas,Navarro ,South,Lethal Injection,No,No,No,No
+8/11/2005,Kenneth Turrentine,52,Male,Black,1 Black Female,Oklahoma,Tulsa ,South,Lethal Injection,No,No,No,No
+8/23/2005,Robert Shields,30,Male,White,1 White Female,Texas,Galveston ,South,Lethal Injection,No,No,No,No
+8/31/2005,Timothy Johnston,44,Male,White,1 White Female,Missouri,St. Louis city,Midwest,Lethal Injection,No,No,No,No
+9/14/2005,Frances Newton,40,Female,Black,2 Black Males,Texas,Harris ,South,Lethal Injection,No,No,No,No
+9/22/2005,John Peoples,48,Male,White,1 White Female,Alabama,Talladega ,South,Lethal Injection,No,No,No,
+9/27/2005,Herman Ashworth,32,Male,White,1 White Male,Ohio,Licking ,Midwest,Lethal Injection,No,No,Yes,
+9/28/2005,Alan Matheney,54,Male,White,1 White Female,Indiana,Lake ,Midwest,Lethal Injection,No,No,No,No
+10/6/2005,Ronald Howard,32,Male,Black,1 White Male,Texas,Travis ,South,Lethal Injection,No,No,No,No
+10/20/2005,Luis Ramirez,42,Male,Latinx,1 Latinx Male,Texas,Tom Green ,South,Lethal Injection,No,No,No,No
+10/25/2005,William Williams,48,Male,Black,3 White Males,Ohio,Summit ,Midwest,Lethal Injection,No,No,No,No
+10/26/2005,Marlin Gray,38,Male,Black,1 White Female,Missouri,St. Louis city,Midwest,Lethal Injection,No,No,No,
+11/3/2005,Melvin White,55,Male,White,1 White Female,Texas,Pecos ,South,Lethal Injection,No,No,No,No
+11/4/2005,Brian Steckel,36,Male,White,1 White Female,Delaware,New Castle ,South,Lethal Injection,No,No,No,No
+11/4/2005,Arthur Wise,51,Male,Black,3 White Males,South Carolina,Aiken ,South,Lethal Injection,No,No,Yes,No
+11/9/2005,Charles Thacker,38,Male,White,1 White Female,Texas,Harris ,South,Lethal Injection,No,No,No,
+11/11/2005,Steven Van McHone,35,Male,White,1 White Male,North Carolina,Surry ,South,Lethal Injection,No,No,No,No
+11/15/2005,Robert Rowell,50,Male,White,1 Latinx Male,Texas,Harris ,South,Lethal Injection,No,No,No,No
+11/16/2005,Shannon Thomas,34,Male,Black,2 Latinx Males,Texas,Harris ,South,Lethal Injection,No,No,No,No
+11/18/2005,Elias Syriani,67,Male,Other Race,1 Other Race Female,North Carolina,Mecklenburg ,South,Lethal Injection,No,No,No,No
+11/28/2005,Eric Nance,45,Male,White,1 White Female,Arkansas,Hot Spring ,South,Lethal Injection,No,No,No,No
+11/29/2005,John Hicks,49,Male,Black,2 Black Females,Ohio,Hamilton ,Midwest,Lethal Injection,No,No,No,No
+12/2/2005,Kenneth Boyd,57,Male,White,1 White Male,North Carolina,Rockingham ,South,Lethal Injection,No,No,No,No
+12/2/2005,Shawn Humphries,33,Male,White,1 White Male,South Carolina,Greenville ,South,Lethal Injection,No,No,No,No
+12/5/2005,Wesley Baker,47,Male,Black,1 White Female,Maryland,Baltimore ,South,Lethal Injection,No,No,No,No
+12/13/2005,Stanley Williams,51,Male,Black,1 White Male,California,Los Angeles ,West,Lethal Injection,No,No,No,No
+12/14/2005,John Nixon,77,Male,White,1 White Female,Mississippi,Rankin ,South,Lethal Injection,No,No,No,No
+1/17/2006,Clarence Allen,76,Male,American Indian or Alaska Native,2 White Males,California,Glenn ,West,Lethal Injection,No,No,No,No
+1/20/2006,Perrie Simpson,43,Male,Black,1 White Male,North Carolina,Rockingham ,South,Lethal Injection,No,No,No,No
+1/25/2006,Marion Dudley,33,Male,Black,2 Latinx Males,Texas,Harris ,South,Lethal Injection,No,No,No,No
+1/27/2006,Marvin Bieghler,58,Male,White,1 White Male,Indiana,Howard ,Midwest,Lethal Injection,No,No,No,No
+1/31/2006,Jaime Elizalde,34,Male,Latinx,2 Latinx Males,Texas,Harris ,South,Lethal Injection,No,No,No,No
+2/7/2006,Glenn Benner,43,Male,White,2 White Females,Ohio,Summit ,Midwest,Lethal Injection,No,No,No,No
+2/8/2006,Robert Neville,31,Male,White,1 American Indian or Alaska Native Male,Texas,Tarrant ,South,Lethal Injection,No,No,No,No
+2/15/2006,Clyde Smith,32,Male,Black,1 White Male,Texas,Harris ,South,Lethal Injection,No,No,No,No
+3/15/2006,Tommie Hughes,31,Male,Black,1 Black Female,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+3/17/2006,Patrick Moody,39,Male,White,1 White Male,North Carolina,Davidson ,South,Lethal Injection,No,No,No,No
+3/22/2006,Robert Salazar,27,Male,Latinx,1 Latinx Female,Texas,Lubbock ,South,Lethal Injection,No,No,No,No
+3/29/2006,Kevin Kincy,38,Male,Black,1 Black Male,Texas,Harris ,South,Lethal Injection,No,No,No,No
+4/18/2006,Richard Thornburg,40,Male,White,3 White Males,Oklahoma,Grady ,South,Lethal Injection,No,No,No,No
+4/21/2006,Willie Brown,61,Male,Black,1 Black Female,North Carolina,Martin ,South,Lethal Injection,No,No,No,No
+4/26/2006,Daryl Mack,47,Male,Black,1 White Female,Nevada,Washoe ,West,Lethal Injection,No,No,Yes,No
+4/27/2006,Dexter Vinson,43,Male,Black,1 White Female,Virginia,Portsmouth city,South,Lethal Injection,No,No,No,No
+5/2/2006,Joseph Clark,57,Male,Black,1 White Male,Ohio,Lucas ,Midwest,Lethal Injection,No,No,No,No
+5/4/2006,Jackie Wilson,40,Male,Latinx,1 White Female,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+5/17/2006,Jermaine Herron,27,Male,Black,1 White Male,Texas,Refugio ,South,Lethal Injection,No,No,No,No
+5/24/2006,Jesus Aguilar,42,Male,Latinx,1 Latinx Male,Texas,Cameron ,South,Lethal Injection,No,No,No,No
+6/1/2006,John Boltz,74,Male,White,1 White Male,Oklahoma,Pottawatomie ,South,Lethal Injection,No,No,No,No
+6/6/2006,Timothy Titsworth,34,Male,White,1 White Female,Texas,Randall ,South,Lethal Injection,No,No,No,No
+6/20/2006,Lamont Reese,28,Male,Black,3 Black Males,Texas,Tarrant ,South,Lethal Injection,No,No,No,No
+6/27/2006,Angel Resendiz,46,Male,Latinx,1 Latinx Female,Texas,Harris ,South,Lethal Injection,No,No,No,Yes
+6/28/2006,Sedley Alley,51,Male,White,1 White Female,Tennessee,Shelby ,South,Lethal Injection,No,No,No,No
+7/11/2006,Derrick O'Brien,31,Male,Black,2 White Females,Texas,Harris ,South,Lethal Injection,No,No,No,No
+7/12/2006,Rocky Barton,49,Male,White,1 White Female,Ohio,Warren ,Midwest,Lethal Injection,No,No,Yes,No
+7/14/2006,William Downs,39,Male,White,1 Black Male,South Carolina,Aiken ,South,Lethal Injection,No,No,Yes,No
+7/19/2006,Mauriceo Brown,31,Male,Black,1 White Male,Texas,Bexar ,South,Lethal Injection,No,No,No,No
+7/20/2006,Robert Anderson,40,Male,White,1 White Female,Texas,Potter ,South,Lethal Injection,No,No,No,No
+7/20/2006,Brandon Hedrick,27,Male,White,1 Black Female,Virginia,Appomattox ,South,Electrocution,No,No,No,No
+7/27/2006,Michael Lenz,42,Male,White,1 White Male,Virginia,Augusta ,South,Lethal Injection,No,No,No,No
+8/3/2006,William Wyatt,41,Male,Black,1 Black Male,Texas,Bowie ,South,Lethal Injection,No,No,No,No
+8/8/2006,Darrell Ferguson,28,Male,White,1 White Male,Ohio,Montgomery ,Midwest,Lethal Injection,No,No,Yes,No
+8/11/2006,David Dawson,49,Male,White,2 White Males,Montana,Yellowstone ,West,Lethal Injection,No,No,Yes,No
+8/17/2006,Richard Hinojosa,45,Male,Latinx,1 White Female,Texas,Bexar ,South,Lethal Injection,No,No,No,No
+8/18/2006,Samuel Flippen,37,Male,White,1 White Female,North Carolina,Forsyth ,South,Lethal Injection,No,No,No,No
+8/24/2006,Justin Fuller,27,Male,Black,1 White Male,Texas,Smith ,South,Lethal Injection,No,No,No,No
+8/29/2006,Eric Patton,49,Male,Black,1 White Female,Oklahoma,Oklahoma ,South,Lethal Injection,No,No,No,No
+8/31/2006,James Malicoat,31,Male,White,1 White Female,Oklahoma,Grady ,South,Lethal Injection,No,No,No,No
+8/31/2006,Derrick Frazier,29,Male,Black,1 White Male,Texas,Refugio ,South,Lethal Injection,No,No,No,No
+9/12/2006,Farley Matchett,43,Male,Black,1 Black Male,Texas,Harris ,South,Lethal Injection,No,No,No,No
+9/20/2006,Clarence Hill,48,Male,Black,1 White Male,Florida,Escambia ,South,Lethal Injection,No,No,No,No
+10/18/2006,Arthur Rutherford,57,Male,White,1 White Female,Florida,Santa Rosa ,South,Lethal Injection,No,No,No,No
+10/18/2006,Bobby Wilcher,43,Male,White,2 White Females,Mississippi,Scott ,South,Lethal Injection,No,No,No,No
+10/24/2006,Jeffrey Lundgren,56,Male,White,1 White Male,Ohio,Lake ,Midwest,Lethal Injection,No,No,No,No
+10/25/2006,Danny Rolling,52,Male,White,1 Latinx Male,Florida,Alachua ,South,Lethal Injection,No,No,No,No
+10/25/2006,Gregory Summers,48,Male,White,2 White Males,Texas,Denton ,South,Lethal Injection,No,No,No,No
+10/26/2006,Larry Hutcherson,37,Male,White,1 White Female,Alabama,Mobile ,South,Lethal Injection,No,No,No,No
+11/1/2006,Donell Jackson,33,Male,Black,1 Black Male,Texas,Harris ,South,Lethal Injection,No,No,No,No
+11/8/2006,Willie Shannon,33,Male,Black,1 Latinx Male,Texas,Harris ,South,Lethal Injection,No,No,No,No
+11/9/2006,John Schmitt,33,Male,White,1 Black Male,Virginia,Chesterfield ,South,Lethal Injection,No,No,No,No
+12/13/2006,Angel Diaz,55,Male,Latinx,1 White Male,Florida,Miami-Dade ,South,Lethal Injection,No,No,No,No
+1/9/2007,Corey Hamilton,38,Male,Black,3 White Males,Oklahoma,Tulsa ,South,Lethal Injection,No,No,No,No
+1/10/2007,Carlos Granados,36,Male,Latinx,1 Latinx Female,Texas,Williamson ,South,Lethal Injection,No,No,No,No
+1/17/2007,Jonathan Moore,33,Male,White,1 Latinx Male,Texas,Bexar ,South,Lethal Injection,No,No,No,No
+1/30/2007,Christopher Swift,31,Male,White,2 White Females,Texas,Denton ,South,Lethal Injection,No,No,Yes,No
+2/7/2007,James Jackson,47,Male,Black,3 Black Females,Texas,Harris ,South,Lethal Injection,No,No,No,No
+2/22/2007,Newton Anderson,30,Male,White,1 White Male,Texas,Smith ,South,Lethal Injection,No,No,No,No
+2/27/2007,Donald Miller,44,Male,White,2 White Males,Texas,Harris ,South,Lethal Injection,No,No,No,No
+3/6/2007,Robert Perez,48,Male,Latinx,2 Latinx Males,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+3/7/2007,Joseph Nichols,45,Male,Black,1 White Male,Texas,Harris ,South,Lethal Injection,No,No,No,No
+3/20/2007,Charles Nealy,42,Male,Black,1 Asian Male,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+3/28/2007,Vincent Gutierrez,28,Male,Latinx,1 Latinx Male,Texas,Bexar ,South,Lethal Injection,No,No,No,No
+3/29/2007,Roy Pippin,51,Male,White,2 Latinx Males,Texas,Harris ,South,Lethal Injection,No,No,No,No
+4/11/2007,James Clark,38,Male,White,1 White Female,Texas,Denton ,South,Lethal Injection,No,No,No,No
+4/24/2007,James Filiaggi,41,Male,White,1 White Female,Ohio,Lorain ,Midwest,Lethal Injection,No,No,No,No
+4/26/2007,Ryan Dickson,30,Male,White,1 White Male,Texas,Potter ,South,Lethal Injection,No,No,No,No
+5/3/2007,Aaron Jones,55,Male,Black,1 White Male,Alabama,Blount ,South,Lethal Injection,No,No,No,No
+5/4/2007,David Woods,42,Male,White,1 Latinx Male,Indiana,DeKalb ,Midwest,Lethal Injection,No,No,No,No
+5/9/2007,Philip Workman,53,Male,White,1 White Male,Tennessee,Shelby ,South,Lethal Injection,No,No,No,No
+5/16/2007,Charles Smith,41,Male,White,1 White Male,Texas,Pecos ,South,Lethal Injection,No,No,No,No
+5/22/2007,Robert Comer,50,Male,White,1 White Male,Arizona,Maricopa ,West,Lethal Injection,No,No,Yes,No
+5/24/2007,Christopher Newton,37,Male,White,1 White Male,Ohio,Richland ,Midwest,Lethal Injection,No,No,Yes,No
+6/6/2007,Michael Griffith,56,Male,White,1 White Female,Texas,Harris ,South,Lethal Injection,No,No,No,No
+6/15/2007,Michael Lambert,36,Male,White,1 White Male,Indiana,Delaware ,Midwest,Lethal Injection,No,No,No,No
+6/20/2007,Lionell Rodriguez,36,Male,Latinx,1 Asian Female,Texas,Harris ,South,Lethal Injection,No,No,No,No
+6/21/2007,Gilberto Reyes,33,Male,Latinx,1 Latinx Female,Texas,Bailey ,South,Lethal Injection,No,No,No,No
+6/22/2007,Calvin Shuler,40,Male,Black,1 White Male,South Carolina,Dorchester ,South,Lethal Injection,No,No,No,No
+6/26/2007,Jimmy Bland,49,Male,White,1 White Male,Oklahoma,Tillman ,South,Lethal Injection,No,No,No,No
+6/26/2007,Patrick Knight,39,Male,White,1 White Male,Texas,Randall ,South,Lethal Injection,No,No,No,No
+6/26/2007,John Hightower,63,Male,Black,3 Black Females,Georgia,Morgan ,South,Lethal Injection,No,No,No,No
+7/11/2007,Elijah Page,25,Male,White,1 White Male,South Dakota,Lawrence ,Midwest,Lethal Injection,No,No,Yes,No
+7/24/2007,Lonnie Johnson,44,Male,Black,2 White Males,Texas,Harris ,South,Lethal Injection,No,No,No,No
+7/26/2007,Darrell Grayson,46,Male,Black,1 White Female,Alabama,Shelby ,South,Lethal Injection,No,No,No,No
+8/15/2007,Kenneth Parr,27,Male,Black,1 White Female,Texas,Matagorda ,South,Lethal Injection,No,No,No,No
+8/21/2007,Frank Welch,46,Male,White,1 White Female,Oklahoma,Garvin ,South,Lethal Injection,No,No,No,No
+8/22/2007,Johnny Conner,32,Male,Black,1 Asian Female,Texas,Harris ,South,Lethal Injection,No,No,No,No
+8/23/2007,Luther Williams,47,Male,Black,1 White Male,Alabama,Tuscaloosa ,South,Lethal Injection,No,No,No,No
+8/28/2007,DaRoyce Mosley,32,Male,Black,3 White Males,Texas,Gregg ,South,Lethal Injection,No,No,No,No
+8/29/2007,John Amador,32,Male,Latinx,1 White Male,Texas,Bexar ,South,Lethal Injection,No,No,No,No
+9/5/2007,Tony Roach,30,Male,White,1 White Female,Texas,Potter ,South,Lethal Injection,No,No,No,No
+9/12/2007,Daryl Holton,45,Male,White,3 White Males,Tennessee,Bedford ,South,Electrocution,No,No,Yes,No
+9/20/2007,Clifford Kimmel,32,Male,White,1 White Male,Texas,Bexar ,South,Lethal Injection,No,No,No,No
+9/25/2007,Michael Richard,49,Male,Black,1 White Female,Texas,Harris ,South,Lethal Injection,No,No,No,No
+5/6/2008,William Lynd,53,Male,White,1 White Female,Georgia,Berrien ,South,Lethal Injection,No,No,No,No
+5/21/2008,Earl Berry,49,Male,White,1 White Female,Mississippi,Chickasaw ,South,Lethal Injection,No,No,No,No
+5/27/2008,Kevin Green,31,Male,Black,1 White Female,Virginia,Brunswick ,South,Lethal Injection,No,No,No,No
+6/4/2008,Curtis Osborne,37,Male,Black,1 Black Male,Georgia,Spalding ,South,Lethal Injection,No,No,No,No
+6/6/2008,David Hill,48,Male,White,1 White Male,South Carolina,Aiken ,South,Lethal Injection,No,No,Yes,No
+6/11/2008,Karl Chamberlain,37,Male,White,1 White Female,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+6/17/2008,Terry Short,47,Male,White,1 Asian Male,Oklahoma,Oklahoma ,South,Lethal Injection,No,No,No,No
+6/20/2008,James Reed,49,Male,Black,1 Black Male,South Carolina,Charleston ,South,Electrocution,No,No,No,No
+6/25/2008,Robert Yarbrough,30,Male,Black,1 White Male,Virginia,Mecklenburg ,South,Lethal Injection,No,No,No,No
+7/1/2008,Mark Schwab,39,Male,White,1 Latinx Male,Florida,Brevard ,South,Lethal Injection,No,No,No,No
+7/10/2008,Carlton Turner,29,Male,Black,1 Black Male,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+7/10/2008,Kent Jackson,26,Male,Black,1 White Female,Virginia,Newport News city,South,Lethal Injection,No,No,No,No
+7/23/2008,Dale Bishop,34,Male,White,1 White Male,Mississippi,Lee ,South,Lethal Injection,No,No,No,No
+7/23/2008,Derrick Sonnier,40,Male,Black,1 Black Male,Texas,Harris ,South,Lethal Injection,No,No,No,No
+7/24/2008,Christopher Emmett,36,Male,White,1 White Male,Virginia,Danville city,South,Lethal Injection,No,No,No,No
+7/31/2008,Larry Davis,40,Male,Black,1 White Male,Texas,Potter ,South,Lethal Injection,No,No,No,No
+8/5/2008,Jose Medellin,33,Male,Latinx,2 White Females,Texas,Harris ,South,Lethal Injection,No,No,No,Yes
+8/7/2008,Heliberto Chi,29,Male,Latinx,1 White Male,Texas,Tarrant ,South,Lethal Injection,No,No,No,Yes
+8/12/2008,Leon Dorsey,32,Male,Black,2 White Males,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+8/14/2008,Michael Rodriguez,45,Male,Latinx,1 White Male,Texas,Dallas ,South,Lethal Injection,No,No,Yes,No
+9/16/2008,Jack Alderman,57,Male,White,1 White Female,Georgia,Chatham ,South,Lethal Injection,No,No,No,No
+9/17/2008,William Murray,39,Male,White,1 White Female,Texas,Kaufman ,South,Lethal Injection,No,No,No,No
+9/23/2008,Richard Henyard,34,Male,Black,2 Black Females,Florida,Lake ,South,Lethal Injection,No,No,No,No
+9/25/2008,Jessie Cummings,52,Male,White,1 White Female,Oklahoma,Coal ,South,Lethal Injection,No,No,No,No
+10/14/2008,Richard Cooey,41,Male,White,2 White Females,Ohio,Summit ,Midwest,Lethal Injection,No,No,No,No
+10/14/2008,Alvin Kelly,57,Male,White,2 White Males,Texas,Gregg ,South,Lethal Injection,No,No,No,No
+10/16/2008,Kevin Watts,27,Male,Black,1 Asian Male,Texas,Bexar ,South,Lethal Injection,No,No,No,No
+10/21/2008,Joseph Ries,29,Male,White,1 White Male,Texas,Hopkins ,South,Lethal Injection,No,No,No,No
+10/28/2008,Eric Nenno,47,Male,White,1 White Female,Texas,Harris ,South,Lethal Injection,No,No,No,No
+10/30/2008,Gregory Wright,42,Male,White,1 White Female,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+11/6/2008,Elkie Taylor,46,Male,Black,1 Black Male,Texas,Tarrant ,South,Lethal Injection,No,No,No,No
+11/12/2008,George Whitaker,36,Male,Black,1 Black Female,Texas,Harris ,South,Lethal Injection,No,No,No,No
+11/13/2008,Denard Manns,42,Male,Black,1 White Female,Texas,Bell ,South,Lethal Injection,No,No,No,No
+11/19/2008,Gregory Bryant-Bey,53,Male,Black,1 White Male,Ohio,Lucas ,Midwest,Lethal Injection,No,No,No,No
+11/20/2008,Robert Hudson,45,Male,Black,1 Black Female,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+11/21/2008,Marco Chapman,37,Male,White,1 White Male,Kentucky,Gallatin ,South,Lethal Injection,No,No,Yes,No
+12/5/2008,Joseph Gardner,38,Male,Black,1 White Female,South Carolina,Dorchester ,South,Lethal Injection,No,No,No,No
+1/14/2009,Curtis Moore,40,Male,Black,2 Black Males,Texas,Tarrant ,South,Lethal Injection,No,No,No,No
+1/15/2009,James Callahan,62,Male,White,1 White Female,Alabama,Calhoun ,South,Lethal Injection,No,No,No,No
+1/21/2009,Frank Moore,49,Male,Black,2 Black Males,Texas,Bexar ,South,Lethal Injection,No,No,No,No
+1/22/2009,Darwin Brown,32,Male,Black,1 White Male,Oklahoma,Tulsa ,South,Lethal Injection,No,No,No,No
+1/22/2009,Reginald Perkins,53,Male,Black,1 Black Female,Texas,Tarrant ,South,Lethal Injection,No,No,No,No
+1/28/2009,Virgil Martinez,41,Male,Latinx,2 Latinx Males,Texas,Brazoria ,South,Lethal Injection,No,No,No,No
+1/29/2009,Ricardo Ortiz,46,Male,Latinx,1 Latinx Male,Texas,El Paso ,South,Lethal Injection,No,No,No,No
+2/4/2009,Steve Henley,55,Male,White,1 White Male,Tennessee,Jackson ,South,Lethal Injection,No,No,No,No
+2/4/2009,David Martinez,36,Male,Latinx,1 Latinx Male,Texas,Bexar ,South,Lethal Injection,No,No,Yes,No
+2/10/2009,Dale Scheanette,35,Male,Black,1 Black Female,Texas,Tarrant ,South,Lethal Injection,No,No,No,No
+2/11/2009,Wayne Tompkins,51,Male,White,1 White Female,Florida,Hillsborough ,South,Lethal Injection,No,No,No,No
+2/12/2009,Danny Bradley,49,Male,White,1 White Female,Alabama,Calhoun ,South,Lethal Injection,No,No,No,No
+2/12/2009,Johnny Johnson,51,Male,Black,1 Black Female,Texas,Harris ,South,Lethal Injection,No,No,No,No
+2/19/2009,Edward Bell,44,Male,Black,1 White Male,Virginia,Frederick ,South,Lethal Injection,No,No,No,Yes
+2/20/2009,Luke Williams,56,Male,White,1 White Male,South Carolina,Edgefield ,South,Lethal Injection,No,No,No,No
+3/3/2009,Willie Pondexter,34,Male,Black,1 White Female,Texas,Red River ,South,Lethal Injection,No,No,No,No
+3/4/2009,Kenneth Morris,38,Male,Black,1 White Male,Texas,Harris ,South,Lethal Injection,No,No,No,No
+3/10/2009,James Martinez,34,Male,Latinx,1 White Male,Texas,Tarrant ,South,Lethal Injection,No,No,No,No
+3/10/2009,Robert Newland,65,Male,White,1 White Female,Georgia,Glynn ,South,Lethal Injection,No,No,No,No
+3/11/2009,Luis Salazar,38,Male,Latinx,1 Latinx Female,Texas,Bexar ,South,Lethal Injection,No,No,No,No
+4/15/2009,Michael Rosales,35,Male,Latinx,1 Black Female,Texas,Lubbock ,South,Lethal Injection,No,No,No,No
+4/16/2009,Jimmy Dill,49,Male,Black,1 Black Male,Alabama,Jefferson ,South,Lethal Injection,No,No,No,No
+4/29/2009,William Mize,52,Male,White,1 White Male,Georgia,Oconee ,South,Lethal Injection,No,No,No,No
+4/30/2009,Derrick Johnson,28,Male,Black,1 Black Female,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+5/8/2009,Thomas Ivey,34,Male,Black,2 White Males,South Carolina,Orangeburg ,South,Lethal Injection,No,No,No,No
+5/14/2009,Willie McNair,44,Male,Black,1 White Female,Alabama,Montgomery ,South,Lethal Injection,No,No,No,No
+5/14/2009,Donald Gilson,48,Male,White,1 White Male,Oklahoma,Cleveland ,South,Lethal Injection,No,No,No,No
+5/19/2009,Michael Riley,51,Male,Black,1 White Female,Texas,Wood ,South,Lethal Injection,No,No,No,No
+5/20/2009,Dennis Skillicorn,49,Male,White,1 White Male,Missouri,Lafayette ,Midwest,Lethal Injection,No,No,No,No
+6/2/2009,Terry Hankins,34,Male,White,1 White Male,Texas,Tarrant ,South,Lethal Injection,No,No,No,No
+6/3/2009,Daniel Wilson,39,Male,White,1 White Female,Ohio,Lorain ,Midwest,Lethal Injection,No,No,No,No
+6/11/2009,Jack Trawick,62,Male,White,1 White Female,Alabama,Jefferson ,South,Lethal Injection,No,No,Yes,No
+7/9/2009,Michael DeLozier,32,Male,White,2 White Males,Oklahoma,McCurtain ,South,Lethal Injection,No,No,No,No
+7/14/2009,John Fautenberry,45,Male,White,1 White Male,Ohio,Hamilton ,Midwest,Lethal Injection,No,No,No,No
+7/21/2009,Marvallous Keene,36,Male,Black,1 Black Female,Ohio,Montgomery ,Midwest,Lethal Injection,No,No,No,No
+8/18/2009,Jason Getsy,33,Male,White,1 White Female,Ohio,Trumbull ,Midwest,Lethal Injection,No,No,No,No
+8/19/2009,John Marek,45,Male,White,1 White Female,Florida,Broward ,South,Lethal Injection,No,No,No,No
+9/16/2009,Stephen Moody,52,Male,White,1 White Male,Texas,Harris ,South,Lethal Injection,No,No,No,No
+9/22/2009,Christopher Coleman,37,Male,Black,3 Latinx Males,Texas,Harris ,South,Lethal Injection,No,No,No,No
+10/8/2009,Max Payne,38,Male,White,1 White Male,Alabama,Cullman ,South,Lethal Injection,No,No,No,No
+10/20/2009,Mark McClain,42,Male,White,1 White Female,Georgia,Richmond ,South,Lethal Injection,No,No,No,No
+10/27/2009,Reginald Blanton,28,Male,Black,1 Latinx Male,Texas,Bexar ,South,Lethal Injection,No,No,No,No
+11/5/2009,Khristian Oliver,32,Male,Black,1 White Male,Texas,Nacogdoches ,South,Lethal Injection,No,No,No,No
+11/10/2009,Yosvanis Valle,34,Male,Latinx,1 Latinx Male,Texas,Harris ,South,Lethal Injection,No,No,No,Yes
+11/10/2009,John Muhammad,48,Male,Black,1 White Male,Virginia,Prince William ,South,Lethal Injection,No,No,No,No
+11/17/2009,Larry Elliott,60,Male,White,1 White Female,Virginia,Prince William ,South,Electrocution,No,No,No,No
+11/18/2009,Danielle Simpson,30,Male,Black,1 White Female,Texas,Anderson ,South,Lethal Injection,No,No,No,No
+11/19/2009,Robert Thompson,34,Male,Black,1 Other Race Male,Texas,Harris ,South,Lethal Injection,No,No,No,No
+12/2/2009,Cecil Johnson,53,Male,Black,3 Black Males,Tennessee,Davidson ,South,Lethal Injection,No,No,No,No
+12/3/2009,Bobby Woods,44,Male,White,1 White Female,Texas,Llano ,South,Lethal Injection,No,No,No,No
+12/8/2009,Kenneth Biros,51,Male,White,1 White Female,Ohio,Trumbull ,Midwest,Lethal Injection,No,No,No,No
+12/11/2009,Matthew Wrinkles,49,Male,White,2 White Males,Indiana,Vanderburgh ,Midwest,Lethal Injection,No,No,No,No
+1/7/2010,Vernon Smith,37,Male,Black,1 White Male,Ohio,Lucas ,Midwest,Lethal Injection,No,No,No,No
+1/7/2010,Kenneth Mosley,51,Male,Black,1 White Male,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+1/7/2010,Gerald Bordelon,47,Male,White,1 White Female,Louisiana,Livingston Parish,South,Lethal Injection,No,No,Yes,No
+1/12/2010,Gary Johnson,59,Male,White,2 White Males,Texas,Walker ,South,Lethal Injection,No,No,No,No
+1/14/2010,Julius Young,60,Male,Black,1 Black Male,Oklahoma,Tulsa ,South,Lethal Injection,No,No,No,No
+2/4/2010,Mark Brown,37,Male,Black,1 White Male,Ohio,Mahoning ,Midwest,Lethal Injection,No,No,No,No
+2/16/2010,Martin Grossman,45,Male,White,1 White Female,Florida,Pinellas ,South,Lethal Injection,No,No,No,No
+3/2/2010,Michael Sigala,32,Male,Latinx,1 Latinx Male,Texas,Collin ,South,Lethal Injection,No,No,No,No
+3/11/2010,Joshua Maxwell,31,Male,White,1 Latinx Male,Texas,Bexar ,South,Lethal Injection,No,No,No,No
+3/16/2010,Lawrence Reynolds,43,Male,White,1 White Female,Ohio,Summit ,Midwest,Lethal Injection,No,No,No,No
+3/18/2010,Paul Powell,31,Male,White,1 White Female,Virginia,Prince William ,South,Electrocution,No,No,No,No
+3/30/2010,Franklin Alix,34,Male,Black,1 Black Male,Texas,Harris ,South,Lethal Injection,No,No,No,No
+4/20/2010,Darryl Durr,46,Male,Black,1 White Female,Ohio,Cuyahoga ,Midwest,Lethal Injection,No,No,No,No
+4/22/2010,William Berkley,31,Male,White,1 Latinx Female,Texas,El Paso ,South,Lethal Injection,No,No,No,No
+4/27/2010,Samuel Bustamante,40,Male,Latinx,1 Latinx Male,Texas,Fort Bend ,South,Lethal Injection,No,No,No,No
+5/12/2010,Kevin Varga,41,Male,White,1 White Male,Texas,Hunt ,South,Lethal Injection,No,No,No,No
+5/13/2010,Michael Beuke,48,Male,White,1 White Male,Ohio,Hamilton ,Midwest,Lethal Injection,No,No,No,No
+5/13/2010,Billy Galloway,41,Male,White,1 White Male,Texas,Hunt ,South,Lethal Injection,No,No,No,No
+5/19/2010,Rogelio Cannady,37,Male,Latinx,1 Latinx Female,Texas,Bee ,South,Lethal Injection,No,No,No,No
+5/19/2010,Paul Woodward,62,Male,White,1 White Female,Mississippi,Perry ,South,Lethal Injection,No,No,No,No
+5/20/2010,Gerald Holland,72,Male,White,1 White Female,Mississippi,Harrison ,South,Lethal Injection,No,No,No,No
+5/20/2010,Darick Walker,37,Male,Black,2 Black Males,Virginia,Henrico ,South,Lethal Injection,No,No,No,No
+5/25/2010,John Alba,54,Male,Latinx,1 Latinx Female,Texas,Collin ,South,Lethal Injection,No,No,No,No
+5/27/2010,Thomas Whisenhant,63,Male,White,1 White Female,Alabama,Mobile ,South,Lethal Injection,No,No,No,No
+6/2/2010,George Jones,36,Male,Black,1 Black Male,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+6/9/2010,Melbert Ford,49,Male,White,2 White Females,Georgia,Newton ,South,Lethal Injection,No,No,No,No
+6/10/2010,John Parker,42,Male,White,1 White Female,Alabama,Colbert ,South,Lethal Injection,No,No,No,No
+6/15/2010,David Powell,59,Male,White,1 Latinx Male,Texas,Travis ,South,Lethal Injection,No,No,No,No
+6/18/2010,Ronnie Gardner,49,Male,White,1 White Male,Utah,Salt Lake ,West,Firing Squad,No,No,No,No
+7/1/2010,Michael Perry,28,Male,White,1 White Female,Texas,Montgomery ,South,Lethal Injection,No,No,No,No
+7/13/2010,William Garner,37,Male,Black,1 Black Male,Ohio,Hamilton ,Midwest,Lethal Injection,No,No,No,No
+7/20/2010,Derrick Jackson,42,Male,Black,2 White Males,Texas,Harris ,South,Lethal Injection,No,No,No,No
+7/21/2010,Joseph Burns,42,Male,White,1 White Male,Mississippi,Lee ,South,Lethal Injection,No,No,No,No
+8/10/2010,Roderick Davie,38,Male,Black,1 White Female,Ohio,Trumbull ,Midwest,Lethal Injection,No,No,No,No
+8/12/2010,Michael Land,41,Male,White,1 White Female,Alabama,Jefferson ,South,Lethal Injection,No,No,No,No
+8/17/2010,Peter Cantu,35,Male,Latinx,2 White Females,Texas,Harris ,South,Lethal Injection,No,No,No,No
+9/9/2010,Holly Wood,50,Male,Black,1 Black Female,Alabama,Pike ,South,Lethal Injection,No,No,No,No
+9/10/2010,Cal Brown,52,Male,White,1 White Female,Washington,King ,West,Lethal Injection,No,No,No,No
+9/23/2010,Teresa Lewis,41,Female,White,2 White Males,Virginia,Pittsylvania ,South,Lethal Injection,No,No,No,No
+9/27/2010,Brandon Rhode,31,Male,White,2 White Males,Georgia,Jones ,South,Lethal Injection,No,No,No,No
+10/6/2010,Michael Benge,49,Male,White,1 White Female,Ohio,Butler ,Midwest,Lethal Injection,No,No,No,No
+10/14/2010,Donald Wackerly,41,Male,White,1 Asian Male,Oklahoma,Sequoyah ,South,Lethal Injection,No,No,No,No
+10/21/2010,Larry Wooten,51,Male,Black,1 Black Male,Texas,Lamar ,South,Lethal Injection,No,No,No,No
+10/26/2010,Jeffrey Landrigan,50,Male,American Indian or Alaska Native,1 White Male,Arizona,Maricopa ,West,Lethal Injection,No,No,No,No
+11/4/2010,Phillip Hallford,63,Male,White,1 White Male,Alabama,Dale ,South,Lethal Injection,No,No,No,No
+12/16/2010,John Duty,58,Male,White,1 White Male,Oklahoma,Pittsburg ,South,Lethal Injection,No,No,No,No
+1/6/2011,Billy Alverson,39,Male,Black,1 White Male,Oklahoma,Tulsa ,South,Lethal Injection,No,No,No,No
+1/11/2011,Jeffrey Matthews,38,Male,White,1 White Male,Oklahoma,Cleveland ,South,Lethal Injection,No,No,No,No
+1/13/2011,Leroy White,52,Male,Black,1 Black Female,Alabama,Madison ,South,Lethal Injection,No,No,No,No
+1/25/2011,Emmanuel Hammond,45,Male,Black,1 White Female,Georgia,Fulton ,South,Lethal Injection,No,No,No,No
+2/9/2011,Martin Link,47,Male,White,1 White Female,Missouri,St. Louis city,Midwest,Lethal Injection,No,No,No,No
+2/15/2011,Michael Hall,31,Male,White,1 White Female,Texas,Tarrant ,South,Lethal Injection,No,No,No,No
+2/17/2011,Frank Spisak,59,Male,White,1 White Male,Ohio,Cuyahoga ,Midwest,Lethal Injection,No,No,No,No
+2/22/2011,Timothy Adams,42,Male,Black,1 Black Male,Texas,Harris ,South,Lethal Injection,No,No,No,No
+3/10/2011,Johnnie Baston,37,Male,Black,1 Asian Male,Ohio,Lucas ,Midwest,Lethal Injection,No,No,No,No
+3/29/2011,Eric King,47,Male,Black,2 White Males,Arizona,Maricopa ,West,Lethal Injection,No,No,No,No
+3/31/2011,William Boyd,45,Male,White,1 White Male,Alabama,Calhoun ,South,Lethal Injection,No,No,No,No
+4/12/2011,Clarence Carter,49,Male,Black,1 Black Male,Ohio,Hamilton ,Midwest,Lethal Injection,No,No,No,No
+5/3/2011,Cary Kerr,46,Male,White,1 White Female,Texas,Tarrant ,South,Lethal Injection,No,No,No,No
+5/6/2011,Jeffrey Motts,36,Male,White,1 White Male,South Carolina,Greenville ,South,Lethal Injection,No,No,Yes,No
+5/10/2011,Benny Stevens,52,Male,White,3 White Males,Mississippi,Marion ,South,Lethal Injection,No,No,No,No
+5/17/2011,Daniel Bedford,63,Male,White,1 White Female,Ohio,Hamilton ,Midwest,Lethal Injection,No,No,No,No
+5/17/2011,Rodney Gray,39,Male,Black,1 White Female,Mississippi,Newton ,South,Lethal Injection,No,No,No,No
+5/19/2011,Jason Williams,42,Male,White,3 White Males,Alabama,Mobile ,South,Lethal Injection,No,No,No,No
+5/25/2011,Donald Beaty,56,Male,White,1 White Female,Arizona,Maricopa ,West,Lethal Injection,No,No,No,No
+6/1/2011,Gayland Bradford,42,Male,Black,1 White Male,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+6/16/2011,Lee Taylor,32,Male,White,1 Black Male,Texas,Bowie ,South,Lethal Injection,No,No,No,No
+6/16/2011,Eddie Powell,41,Male,Black,1 White Female,Alabama,Tuscaloosa ,South,Lethal Injection,No,No,No,No
+6/21/2011,Milton Mathis,32,Male,Black,1 Black Male,Texas,Fort Bend ,South,Lethal Injection,No,No,No,No
+6/23/2011,Roy Blankenship,55,Male,White,1 White Female,Georgia,Chatham ,South,Lethal Injection,No,No,No,No
+6/30/2011,Richard Bible,49,Male,White,1 White Female,Arizona,Coconino ,West,Lethal Injection,No,No,No,No
+7/7/2011,Humberto Leal,38,Male,Latinx,1 Latinx Female,Texas,Bexar ,South,Lethal Injection,No,No,No,Yes
+7/19/2011,Thomas West,52,Male,White,1 White Male,Arizona,Pima ,West,Lethal Injection,No,No,No,No
+7/20/2011,Mark Stroman,41,Male,White,1 Asian Male,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+7/21/2011,Andrew DeYoung,37,Male,White,1 White Male,Georgia,Cobb ,South,Lethal Injection,No,No,No,No
+7/29/2011,Robert Jackson,38,Male,White,1 White Female,Delaware,New Castle ,South,Lethal Injection,No,No,No,No
+8/10/2011,Martin Robles,33,Male,Latinx,2 Latinx Males,Texas,Nueces ,South,Lethal Injection,No,No,No,No
+8/18/2011,Jerry Jackson,30,Male,Black,1 White Female,Virginia,Williamsburg city,South,Lethal Injection,No,No,No,No
+9/13/2011,Steven Woods,31,Male,White,1 White Male,Texas,Denton ,South,Lethal Injection,No,No,No,No
+9/21/2011,Lawrence Brewer,44,Male,White,1 Black Male,Texas,Jasper ,South,Lethal Injection,No,No,No,No
+9/21/2011,Troy Davis,41,Male,Black,1 White Male,Georgia,Chatham ,South,Lethal Injection,No,No,No,No
+9/22/2011,Derrick Mason,37,Male,Black,1 White Female,Alabama,Madison ,South,Lethal Injection,No,No,No,No
+9/28/2011,Manuel Valle,61,Male,Latinx,1 Latinx Male,Florida,Miami-Dade ,South,Lethal Injection,No,No,No,Yes
+10/20/2011,Christopher Johnson,38,Male,White,1 White Male,Alabama,Escambia ,South,Lethal Injection,No,No,Yes,No
+10/27/2011,Frank Garcia,39,Male,Latinx,1 Latinx Male,Texas,Bexar ,South,Lethal Injection,No,No,No,No
+11/15/2011,Reginald Brooks,66,Male,Black,3 Black Males,Ohio,Cuyahoga ,Midwest,Lethal Injection,No,No,No,No
+11/15/2011,Oba Chandler,65,Male,White,3 White Females,Florida,Hillsborough ,South,Lethal Injection,No,No,No,No
+11/16/2011,Guadalupe Esparza,46,Male,Latinx,1 Latinx Female,Texas,Bexar ,South,Lethal Injection,No,No,No,No
+11/18/2011,Paul Rhoades,54,Male,White,2 White Females,Idaho,Bingham ,West,Lethal Injection,No,No,No,No
+1/5/2012,Gary Welch,49,Male,White,1 White Male,Oklahoma,Ottawa ,South,Lethal Injection,No,No,No,No
+1/26/2012,Rodrigo Hernandez,39,Male,Latinx,1 White Female,Texas,Bexar ,South,Lethal Injection,No,No,No,No
+2/8/2012,Edwin Turner,38,Male,White,2 Black Males,Mississippi,Carroll ,South,Lethal Injection,No,No,No,No
+2/15/2012,Robert Waterhouse,65,Male,White,1 White Female,Florida,Pinellas ,South,Lethal Injection,No,No,No,No
+2/29/2012,Robert Moorman,63,Male,White,1 White Female,Arizona,Pinal ,West,Lethal Injection,No,No,No,No
+2/29/2012,George Rivas,41,Male,Latinx,1 White Male,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+3/7/2012,Keith Thurmond,52,Male,White,1 White Male,Texas,Montgomery ,South,Lethal Injection,No,No,No,No
+3/8/2012,Robert Towery,47,Male,White,1 White Male,Arizona,Maricopa ,West,Lethal Injection,No,No,No,No
+3/15/2012,Timothy Stemple,46,Male,White,1 White Female,Oklahoma,Tulsa ,South,Lethal Injection,No,No,No,No
+3/20/2012,Larry Puckett,35,Male,White,1 White Female,Mississippi,Forrest ,South,Lethal Injection,No,No,No,No
+3/22/2012,William Mitchell,61,Male,Black,1 White Female,Mississippi,Harrison ,South,Lethal Injection,No,No,No,No
+3/28/2012,Jesse Hernandez,47,Male,Latinx,1 Latinx Male,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+4/12/2012,David Gore,58,Male,White,1 White Female,Florida,Pinellas ,South,Lethal Injection,No,No,No,No
+4/18/2012,Mark Wiles,49,Male,White,1 White Male,Ohio,Portage ,Midwest,Lethal Injection,No,No,No,No
+4/20/2012,Shannon Johnson,28,Male,Black,1 Black Male,Delaware,New Castle ,South,Lethal Injection,No,No,Yes,No
+4/25/2012,Thomas Kemp,63,Male,White,1 Latinx Male,Arizona,Pima ,West,Lethal Injection,No,No,No,No
+4/26/2012,Beunka Adams,29,Male,Black,1 White Male,Texas,Cherokee ,South,Lethal Injection,No,No,No,No
+5/1/2012,Michael Selsor,57,Male,White,1 White Male,Oklahoma,Tulsa ,South,Lethal Injection,No,No,No,No
+6/5/2012,Henry Jackson,47,Male,Black,2 Black Males,Mississippi,Leflore ,South,Lethal Injection,No,No,No,No
+6/12/2012,Richard Leavitt,53,Male,White,1 White Female,Idaho,Bingham ,West,Lethal Injection,No,No,No,No
+6/12/2012,Jan Brawner,34,Male,White,3 White Females,Mississippi,Tate ,South,Lethal Injection,No,No,No,No
+6/20/2012,Gary Simmons,49,Male,White,1 White Male,Mississippi,Jackson ,South,Lethal Injection,No,No,No,No
+6/27/2012,Samuel Lopez,49,Male,Latinx,1 Latinx Female,Arizona,Maricopa ,West,Lethal Injection,No,No,No,No
+7/18/2012,Yokamon Hearn,33,Male,Black,1 White Male,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+8/7/2012,Marvin Wilson,54,Male,Black,1 Black Male,Texas,Jefferson ,South,Lethal Injection,No,No,No,No
+8/8/2012,Daniel Cook,51,Male,White,1 White Male,Arizona,Mohave ,West,Lethal Injection,No,No,No,No
+8/14/2012,Michael Hooper,40,Male,White,2 White Females,Oklahoma,Canadian ,South,Lethal Injection,No,No,No,No
+9/20/2012,Donald Palmer,47,Male,White,2 White Males,Ohio,Belmont ,Midwest,Lethal Injection,No,No,No,No
+9/20/2012,Robert Harris,40,Male,Black,1 Latinx Male,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+9/25/2012,Cleve Foster,47,Male,White,1 Black Female,Texas,Tarrant ,South,Lethal Injection,No,No,No,No
+10/10/2012,Jonathan Green,44,Male,Black,1 White Female,Texas,Montgomery ,South,Lethal Injection,No,No,No,No
+10/15/2012,Eric Robert,50,Male,White,1 White Male,South Dakota,Minnehaha ,Midwest,Lethal Injection,No,No,Yes,No
+10/24/2012,Bobby Hines,40,Male,White,1 White Female,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+10/30/2012,Donald Moeller,60,Male,White,1 White Female,South Dakota,Lincoln ,Midwest,Lethal Injection,No,No,No,No
+10/31/2012,Donnie Roberts,41,Male,White,1 White Female,Texas,Polk ,South,Lethal Injection,No,No,No,No
+11/6/2012,Garry Allen,56,Male,Black,1 Black Female,Oklahoma,Oklahoma ,South,Lethal Injection,No,No,No,No
+11/8/2012,Mario Swain,33,Male,Black,1 White Female,Texas,Gregg ,South,Lethal Injection,No,No,No,No
+11/13/2012,Brett Hartman,38,Male,White,1 White Female,Ohio,Summit ,Midwest,Lethal Injection,No,No,No,No
+11/14/2012,Ramon Hernandez,41,Male,Latinx,1 Latinx Female,Texas,Bexar ,South,Lethal Injection,No,No,No,No
+11/15/2012,Preston Hughes,46,Male,Black,1 Black Male,Texas,Harris ,South,Lethal Injection,No,No,No,No
+12/4/2012,George Ochoa,38,Male,Latinx,1 Latinx Female,Oklahoma,Oklahoma ,South,Lethal Injection,No,No,No,No
+12/5/2012,Richard Stokley,60,Male,White,2 White Females,Arizona,Cochise ,West,Lethal Injection,No,No,No,No
+12/11/2012,Manuel Pardo,56,Male,Latinx,5 Latinx Males,Florida,Miami-Dade ,South,Lethal Injection,No,No,No,No
+1/16/2013,Robert Gleason,42,Male,White,1 White Male,Virginia,Wise ,South,Electrocution,No,No,Yes,No
+2/21/2013,Carl Blue,48,Male,Black,1 Black Female,Texas,Brazos ,South,Lethal Injection,No,No,No,No
+2/21/2013,Andrew Cook,38,Male,White,1 White Female,Georgia,Monroe ,South,Lethal Injection,No,No,No,No
+3/6/2013,Frederick Treesh,48,Male,White,1 Black Male,Ohio,Lake ,Midwest,Lethal Injection,No,No,No,No
+3/12/2013,Steven Thacker,42,Male,White,1 White Female,Oklahoma,Mayes ,South,Lethal Injection,No,No,No,No
+4/9/2013,Rickey Lewis,50,Male,Black,1 White Male,Texas,Smith ,South,Lethal Injection,No,No,No,No
+4/10/2013,Larry Mann,59,Male,White,1 White Female,Florida,Pinellas ,South,Lethal Injection,No,No,No,No
+4/16/2013,Ronnie Threadgill,40,Male,Black,1 Black Male,Texas,Navarro ,South,Lethal Injection,No,No,No,No
+4/25/2013,Richard Cobb,29,Male,White,1 White Male,Texas,Cherokee ,South,Lethal Injection,No,No,No,No
+5/1/2013,Steven Smith,46,Male,White,1 White Female,Ohio,Richland ,Midwest,Lethal Injection,No,No,No,No
+5/7/2013,Carroll Parr,35,Male,Black,1 Latinx Male,Texas,McLennan ,South,Lethal Injection,No,No,No,No
+5/15/2013,Jeffrey Williams,37,Male,Black,1 White Male,Texas,Harris ,South,Lethal Injection,No,No,No,No
+5/29/2013,Elmer Carroll,56,Male,White,1 White Female,Florida,Orange ,South,Lethal Injection,No,No,No,No
+6/12/2013,Elroy Chester,44,Male,Black,1 White Male,Texas,Jefferson ,South,Lethal Injection,No,No,No,No
+6/12/2013,William Van Poyck,58,Male,White,1 White Male,Florida,Palm Beach ,South,Lethal Injection,No,No,No,No
+6/18/2013,James DeRosa,36,Male,White,1 White Male,Oklahoma,Le Flore ,South,Lethal Injection,No,No,No,No
+6/25/2013,Brian Davis,39,Male,Black,1 Black Female,Oklahoma,Kay ,South,Lethal Injection,No,No,No,No
+6/26/2013,Kimberly McCarthy,52,Female,Black,1 White Female,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+7/16/2013,John Quintanilla,36,Male,Latinx,1 White Male,Texas,Victoria ,South,Lethal Injection,No,No,No,No
+7/18/2013,Vaughn Ross,41,Male,Black,1 White Male,Texas,Lubbock ,South,Lethal Injection,No,No,No,No
+7/25/2013,Andrew Lackey,29,Male,White,1 White Male,Alabama,Limestone ,South,Lethal Injection,No,No,Yes,No
+7/31/2013,Douglas Feldman,55,Male,White,1 White Male,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+8/5/2013,John Ferguson,65,Male,Black,6 Black Males,Florida,Miami-Dade ,South,Lethal Injection,No,No,No,No
+9/10/2013,Anthony Banks,60,Male,Black,1 Asian Female,Oklahoma,Tulsa ,South,Lethal Injection,No,No,No,No
+9/19/2013,Robert Garza,30,Male,Latinx,4 Latinx Females,Texas,Hidalgo ,South,Lethal Injection,No,No,No,No
+9/25/2013,Harry Mitts,61,Male,White,1 White Male,Ohio,Cuyahoga ,Midwest,Lethal Injection,No,No,No,No
+9/26/2013,Arturo Diaz,37,Male,Latinx,1 White Male,Texas,Hidalgo ,South,Lethal Injection,No,No,No,No
+10/1/2013,Marshall Gore,50,Male,White,1 White Female,Florida,Columbia ,South,Lethal Injection,No,No,No,No
+10/9/2013,Edward Schad,71,Male,White,1 White Male,Arizona,Yavapai ,West,Lethal Injection,No,No,No,No
+10/9/2013,Michael Yowell,43,Male,White,1 White Male,Texas,Lubbock ,South,Lethal Injection,No,No,No,No
+10/15/2013,William Happ,51,Male,White,1 White Female,Florida,Lake ,South,Lethal Injection,No,No,No,No
+10/23/2013,Robert Jones,43,Male,White,3 White Females,Arizona,Pima ,West,Lethal Injection,No,No,No,No
+11/12/2013,Darius Kimbrough,40,Male,Black,1 White Female,Florida,Orange ,South,Lethal Injection,No,No,No,No
+11/12/2013,Jamie McCoskey,49,Male,White,1 White Male,Texas,Harris ,South,Lethal Injection,No,No,No,No
+11/20/2013,Joseph Franklin,63,Male,White,1 White Male,Missouri,St. Louis ,Midwest,Lethal Injection,No,No,No,No
+12/3/2013,Jerry Martin,43,Male,White,1 White Female,Texas,Leon ,South,Lethal Injection,No,No,Yes,No
+12/10/2013,Ronald Lott,53,Male,Black,2 White Females,Oklahoma,Oklahoma ,South,Lethal Injection,No,No,No,No
+12/11/2013,Allen Nicklasson,41,Male,White,1 White Male,Missouri,Lafayette ,Midwest,Lethal Injection,No,No,No,No
+12/17/2013,Johnny Black,48,Male,White,1 White Male,Oklahoma,Stephens ,South,Lethal Injection,No,No,No,No
+1/7/2014,Askari Muhammad,62,Male,Black,1 White Male,Florida,Bradford ,South,Lethal Injection,No,No,No,No
+1/9/2014,Michael Wilson,38,Male,Black,1 White Male,Oklahoma,Tulsa ,South,Lethal Injection,No,No,No,No
+1/16/2014,Dennis McGuire,53,Male,White,1 White Female,Ohio,Preble ,Midwest,Lethal Injection,No,No,No,No
+1/22/2014,Edgar Tamayo,46,Male,Latinx,1 White Male,Texas,Harris ,South,Lethal Injection,No,No,No,Yes
+1/23/2014,Kenneth Hogan,52,Male,White,1 White Female,Oklahoma,Oklahoma ,South,Lethal Injection,No,No,No,No
+1/29/2014,Herbert Smulls,56,Male,Black,1 White Male,Missouri,St. Louis ,Midwest,Lethal Injection,No,No,No,No
+2/5/2014,Suzanne Basso,59,Female,White,1 White Male,Texas,Harris ,South,Lethal Injection,No,No,No,No
+2/12/2014,Juan Chavez,46,Male,Latinx,1 White Male,Florida,Miami-Dade ,South,Lethal Injection,No,No,No,Yes
+2/26/2014,Michael Taylor,47,Male,Black,1 White Female,Missouri,Jackson ,Midwest,Lethal Injection,No,No,No,No
+2/26/2014,Paul Howell,48,Male,Black,1 White Male,Florida,Jefferson ,South,Lethal Injection,No,No,No,No
+3/19/2014,Ray Jasper,33,Male,Black,1 Latinx Male,Texas,Bexar ,South,Lethal Injection,No,No,No,No
+3/20/2014,Robert Henry,55,Male,Black,1 White Female,Florida,Broward ,South,Lethal Injection,No,No,No,No
+3/26/2014,Jeffrey Ferguson,59,Male,White,1 White Female,Missouri,St. Louis ,Midwest,Lethal Injection,No,No,No,No
+3/27/2014,Anthony Doyle,29,Male,Black,1 Asian Female,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+4/3/2014,Tommy Sells,49,Male,White,1 White Female,Texas,Val Verde ,South,Lethal Injection,No,No,No,No
+4/9/2014,Ramiro Hernandez,44,Male,Latinx,1 White Male,Texas,Bandera ,South,Lethal Injection,No,No,No,Yes
+4/16/2014,Jose Villegas,39,Male,Latinx,1 Latinx Male,Texas,Nueces ,South,Lethal Injection,No,No,No,No
+4/23/2014,William Rousan,57,Male,White,1 White Female,Missouri,St. Francois ,Midwest,Lethal Injection,No,No,No,No
+4/23/2014,Robert Hendrix,47,Male,White,1 White Male,Florida,Lake ,South,Lethal Injection,No,No,No,No
+4/29/2014,Clayton Lockett,38,Male,Black,1 White Female,Oklahoma,Noble ,South,Lethal Injection,No,No,No,No
+6/17/2014,Marcus Wellons,58,Male,Black,1 Black Female,Georgia,Cobb ,South,Lethal Injection,No,No,No,No
+6/18/2014,John Winfield,46,Male,Black,2 Black Females,Missouri,St. Louis ,Midwest,Lethal Injection,No,No,No,No
+6/18/2014,John Henry,63,Male,Black,1 White Female,Florida,Pasco ,South,Lethal Injection,No,No,No,No
+7/10/2014,Eddie Davis,45,Male,White,1 White Female,Florida,Polk ,South,Lethal Injection,No,No,No,No
+7/16/2014,John Middleton,54,Male,White,2 White Males,Missouri,Harrison ,Midwest,Lethal Injection,No,No,No,No
+7/23/2014,Joseph Wood,55,Male,White,1 White Male,Arizona,Pima ,West,Lethal Injection,No,No,No,No
+8/6/2014,Michael Worthington,43,Male,White,1 White Female,Missouri,St. Charles ,Midwest,Lethal Injection,No,No,No,No
+9/10/2014,Earl Ringo,40,Male,Black,1 White Female,Missouri,Boone ,Midwest,Lethal Injection,No,No,No,No
+9/10/2014,Willie Trottie,45,Male,Black,1 Black Male,Texas,Harris ,South,Lethal Injection,No,No,No,No
+9/17/2014,Lisa Coleman,38,Female,Black,1 Black Male,Texas,Tarrant ,South,Lethal Injection,No,No,No,No
+10/28/2014,Miguel Paredes,32,Male,Latinx,1 Latinx Female,Texas,Bexar ,South,Lethal Injection,No,No,No,No
+11/13/2014,Chadwick Banks,43,Male,Black,1 Black Female,Florida,Gadsden ,South,Lethal Injection,No,No,No,No
+11/19/2014,Leon Taylor,56,Male,Black,1 White Male,Missouri,Jackson ,Midwest,Lethal Injection,No,No,No,No
+12/9/2014,Robert Holsey,49,Male,Black,1 White Male,Georgia,Baldwin ,South,Lethal Injection,No,No,No,No
+12/10/2014,Paul Goodwin,48,Male,White,1 White Female,Missouri,St. Louis ,Midwest,Lethal Injection,No,No,No,No
+1/13/2015,Andrew Brannan,66,Male,White,1 White Male,Georgia,Laurens ,South,Lethal Injection,No,No,No,No
+1/15/2015,Johnny Kormondy,42,Male,White,1 White Male,Florida,Escambia ,South,Lethal Injection,No,No,No,No
+1/15/2015,Charles Warner,47,Male,Black,1 Black Female,Oklahoma,Oklahoma ,South,Lethal Injection,No,No,No,No
+1/21/2015,Arnold Prieto,41,Male,Latinx,1 Latinx Male,Texas,Bexar ,South,Lethal Injection,No,No,No,No
+1/27/2015,Warren Hill,54,Male,Black,1 White Male,Georgia,Lee ,South,Lethal Injection,No,No,No,No
+1/29/2015,Robert Ladd,57,Male,Black,1 White Female,Texas,Smith ,South,Lethal Injection,No,No,No,No
+2/4/2015,Donald Newbury,52,Male,White,1 White Male,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+2/11/2015,Walter Storey,47,Male,White,1 White Female,Missouri,St. Charles ,Midwest,Lethal Injection,No,No,No,No
+3/11/2015,Manuel Vasquez,46,Male,Latinx,1 Latinx Female,Texas,Bexar ,South,Lethal Injection,No,No,No,No
+3/17/2015,Cecil Clayton,74,Male,White,1 White Male,Missouri,Barry ,Midwest,Lethal Injection,No,No,No,No
+4/9/2015,Kent Sprouse,42,Male,White,1 White Male,Texas,Ellis ,South,Lethal Injection,No,No,No,No
+4/14/2015,Andre Cole,52,Male,Black,1 Black Male,Missouri,St. Louis ,Midwest,Lethal Injection,No,No,No,No
+4/15/2015,Manuel Garza,34,Male,Latinx,1 Latinx Male,Texas,Bexar ,South,Lethal Injection,No,No,No,No
+5/12/2015,Derrick Charles,32,Male,Black,2 Black Females,Texas,Harris ,South,Lethal Injection,No,No,No,No
+6/3/2015,Lester Bower,67,Male,White,4 White Males,Texas,Grayson ,South,Lethal Injection,No,No,No,No
+6/9/2015,Richard Strong,47,Male,Black,2 Black Females,Missouri,St. Louis ,Midwest,Lethal Injection,No,No,No,No
+6/18/2015,Gregory Russeau,45,Male,Black,1 White Male,Texas,Smith ,South,Lethal Injection,No,No,No,No
+7/14/2015,David Zink,55,Male,White,1 White Female,Missouri,St. Clair ,Midwest,Lethal Injection,No,No,No,No
+8/12/2015,Daniel Lopez,27,Male,Latinx,1 White Male,Texas,Nueces ,South,Lethal Injection,No,No,Yes,No
+9/1/2015,Roderick Nunley,50,Male,Black,1 White Female,Missouri,Jackson ,Midwest,Lethal Injection,No,No,No,No
+9/30/2015,Kelly Gissendaner,47,Female,White,1 White Male,Georgia,Gwinnett ,South,Lethal Injection,No,No,No,No
+10/1/2015,Alfredo Prieto,49,Male,Latinx,1 White Male,Virginia,Fairfax ,South,Lethal Injection,No,No,No,Yes
+10/6/2015,Juan Garcia,35,Male,Latinx,1 Latinx Male,Texas,Harris ,South,Lethal Injection,No,No,No,No
+10/14/2015,Licho Escamilla,33,Male,Latinx,1 White Male,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+10/29/2015,Jerry Correll,59,Male,White,4 White Females,Florida,Orange ,South,Lethal Injection,No,No,No,No
+11/18/2015,Raphael Holiday,36,Male,Black,3 Black Females,Texas,Madison ,South,Lethal Injection,No,No,No,No
+11/19/2015,Marcus Johnson,50,Male,White,1 White Female,Georgia,Dougherty ,South,Lethal Injection,No,No,No,No
+12/9/2015,Brian Terrell,47,Male,Black,1 Black Male,Georgia,Newton ,South,Lethal Injection,No,No,No,No
+1/7/2016,Oscar Bolin,53,Male,White,1 White Female,Florida,Pasco ,South,Lethal Injection,No,No,No,No
+1/20/2016,Richard Masterson,43,Male,White,1 White Male,Texas,Harris ,South,Lethal Injection,No,No,No,No
+1/21/2016,Christopher Brooks,43,Male,White,1 White Female,Alabama,Jefferson ,South,Lethal Injection,No,No,No,No
+1/27/2016,James Freeman,35,Male,White,1 White Male,Texas,Wharton ,South,Lethal Injection,No,No,No,No
+2/3/2016,Brandon Jones,72,Male,Black,1 White Male,Georgia,Cobb ,South,Lethal Injection,No,No,No,No
+2/16/2016,Gustavo Garcia,43,Male,Latinx,1 White Male,Texas,Collin ,South,Lethal Injection,No,No,No,No
+2/17/2016,Travis Hittson,45,Male,White,1 White Male,Georgia,Houston ,South,Lethal Injection,No,No,No,No
+3/9/2016,Coy Wesbrook,58,Male,White,1 Latinx Male,Texas,Harris ,South,Lethal Injection,No,No,No,No
+3/22/2016,Adam Ward,33,Male,White,1 White Male,Texas,Hunt ,South,Lethal Injection,No,No,No,No
+3/31/2016,Joshua Bishop,41,Male,White,1 White Male,Georgia,Baldwin ,South,Lethal Injection,No,No,No,No
+4/6/2016,Pablo Vasquez,38,Male,Latinx,1 Latinx Male,Texas,Hidalgo ,South,Lethal Injection,No,No,No,No
+4/12/2016,Kenneth Fults,47,Male,Black,1 White Female,Georgia,Spalding ,South,Lethal Injection,No,No,No,No
+4/27/2016,Daniel Lucas,37,Male,White,2 White Males,Georgia,Jones ,South,Lethal Injection,No,No,No,No
+5/11/2016,Earl Forrest,66,Male,White,2 White Females,Missouri,Platte ,Midwest,Lethal Injection,No,No,No,No
+7/15/2016,John Conner,60,Male,White,1 White Male,Georgia,Telfair ,South,Lethal Injection,No,No,No,No
+10/5/2016,Barney Fuller,53,Male,White,1 White Male,Texas,Houston ,South,Lethal Injection,No,No,Yes,No
+10/19/2016,Gregory Lawler,63,Male,White,1 White Male,Georgia,Fulton ,South,Lethal Injection,No,No,No,No
+11/16/2016,Steven Spears,54,Male,White,1 White Female,Georgia,Lumpkin ,South,Lethal Injection,No,No,Yes,No
+12/6/2016,William Sallie,50,Male,White,1 White Male,Georgia,Bacon ,South,Lethal Injection,No,No,No,No
+12/8/2016,Ronald Smith,45,Male,White,1 White Male,Alabama,Madison ,South,Lethal Injection,No,No,No,No
+1/11/2017,Christopher Wilkins,48,Male,White,1 Latinx Male,Texas,Tarrant ,South,Lethal Injection,No,No,No,No
+1/18/2017,Ricky Gray,39,Male,Black,2 White Females,Virginia,Richmond city,South,Lethal Injection,No,No,No,No
+1/26/2017,Terry Edwards,43,Male,Black,1 White Female,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+1/31/2017,Mark Christeson,37,Male,White,2 White Females,Missouri,Maries ,Midwest,Lethal Injection,No,No,No,No
+3/7/2017,Rolando Ruiz,44,Male,Latinx,1 Latinx Female,Texas,Bexar ,South,Lethal Injection,No,No,No,No
+3/14/2017,James Bigby,61,Male,White,2 White Males,Texas,Tarrant ,South,Lethal Injection,No,No,No,No
+4/20/2017,Ledell Lee,51,Male,Black,1 White Female,Arkansas,Pulaski ,South,Lethal Injection,No,No,No,No
+4/24/2017,Jack Jones,52,Male,White,1 White Female,Arkansas,White ,South,Lethal Injection,No,No,No,No
+4/24/2017,Marcel Williams,46,Male,Black,1 White Female,Arkansas,Pulaski ,South,Lethal Injection,No,No,No,No
+4/27/2017,Kenneth Williams,38,Male,Black,1 White Male,Arkansas,Lincoln ,South,Lethal Injection,No,No,No,No
+5/17/2017,J.W. Ledford,46,Male,White,1 White Male,Georgia,Murray ,South,Lethal Injection,No,No,No,No
+5/26/2017,Thomas Arthur,75,Male,White,1 White Male,Alabama,Jefferson ,South,Lethal Injection,No,No,No,No
+6/8/2017,Robert Melson,46,Male,Black,1 Black Female,Alabama,Etowah ,South,Lethal Injection,No,No,No,No
+7/6/2017,William Morva,35,Male,White,1 White Male,Virginia,Montgomery ,South,Lethal Injection,No,No,No,No
+7/26/2017,Ronald Phillips,43,Male,White,1 White Female,Ohio,Summit ,Midwest,Lethal Injection,No,No,No,No
+7/27/2017,TaiChin Preyor,46,Male,Black,1 White Female,Texas,Bexar ,South,Lethal Injection,No,No,No,No
+8/24/2017,Mark Asay,53,Male,White,1 Black Male,Florida,Duval ,South,Lethal Injection,No,No,No,No
+9/13/2017,Gary Otte,45,Male,White,1 White Male,Ohio,Cuyahoga ,Midwest,Lethal Injection,No,No,No,No
+10/5/2017,Cary Lambrix,57,Male,White,1 White Male,Florida,Glades ,South,Lethal Injection,No,No,No,No
+10/12/2017,Robert Pruett,38,Male,White,1 White Male,Texas,Bee ,South,Lethal Injection,No,No,No,No
+10/19/2017,Torrey McNabb,40,Male,Black,1 Black Male,Alabama,Montgomery ,South,Lethal Injection,No,No,No,No
+11/8/2017,Patrick Hannon,53,Male,White,2 White Males,Florida,Hillsborough ,South,Lethal Injection,No,No,No,No
+11/8/2017,Ruben Cardenas,47,Male,Latinx,1 Latinx Female,Texas,Hidalgo ,South,Lethal Injection,No,No,No,Yes
+1/18/2018,Anthony Shore,55,Male,White,1 Latinx Female,Texas,Harris ,South,Lethal Injection,No,No,No,No
+1/30/2018,William Rayford,64,Male,Black,1 Black Female,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+2/1/2018,John Battaglia,62,Male,White,2 White Females,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+2/22/2018,Eric Branch,47,Male,White,1 White Female,Florida,Escambia ,South,Lethal Injection,No,No,No,No
+3/15/2018,Michael Eggers,50,Male,White,1 White Female,Alabama,Walker ,South,Lethal Injection,No,No,Yes,No
+3/15/2018,Carlton Gary,67,Male,Black,3 White Females,Georgia,Muscogee ,South,Lethal Injection,No,No,No,No
+3/27/2018,Rosendo Rodriguez,38,Male,Latinx,1 White Female,Texas,Lubbock ,South,Lethal Injection,No,No,No,No
+4/19/2018,Walter Moody,83,Male,White,1 White Male,Alabama,Jefferson ,South,Lethal Injection,No,No,No,No
+4/25/2018,Erick Davila,31,Male,Black,2 Black Females,Texas,Tarrant ,South,Lethal Injection,No,No,No,No
+5/4/2018,Robert Butts,40,Male,Black,1 Black Male,Georgia,Baldwin ,South,Lethal Injection,No,No,No,No
+5/16/2018,Juan Castillo,37,Male,Latinx,1 Latinx Male,Texas,Bexar ,South,Lethal Injection,No,No,No,No
+6/27/2018,Danny Bible,66,Male,White,1 White Female,Texas,Harris ,South,Lethal Injection,No,No,No,No
+7/17/2018,Christopher Young,34,Male,Black,1 Asian Male,Texas,Bexar ,South,Lethal Injection,No,No,No,No
+7/18/2018,Robert Van Hook,58,Male,White,1 White Male,Ohio,Hamilton ,Midwest,Lethal Injection,No,No,No,No
+8/9/2018,Billy Irick,59,Male,White,1 White Female,Tennessee,Knox ,South,Lethal Injection,No,No,No,No
+8/14/2018,Carey Moore,60,Male,White,2 White Males,Nebraska,Douglas ,Midwest,Lethal Injection,No,No,Yes,No
+9/26/2018,Troy Clark,51,Male,White,1 White Female,Texas,Smith ,South,Lethal Injection,No,No,No,No
+9/27/2018,Daniel Acker,46,Male,White,1 White Female,Texas,Hopkins ,South,Lethal Injection,No,No,No,No
+10/29/2018,Rodney Berget,56,Male,White,1 White Male,South Dakota,Minnehaha ,Midwest,Lethal Injection,No,No,Yes,No
+11/1/2018,Edmund Zagorski,63,Male,White,2 White Males,Tennessee,Robertson ,South,Electrocution,No,No,No,No
+11/14/2018,Roberto Ramos,64,Male,Latinx,2 Latinx Females,Texas,Hidalgo ,South,Lethal Injection,No,No,No,Yes
+12/4/2018,Joseph Garcia,47,Male,Latinx,1 White Male,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+12/6/2018,David Miller,61,Male,White,1 White Female,Tennessee,Knox ,South,Electrocution,No,No,No,No
+12/11/2018,Alvin Braziel,43,Male,Black,1 White Male,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+12/13/2018,Jose Jimenez,55,Male,Latinx,1 White Female,Florida,Miami-Dade ,South,Lethal Injection,No,No,No,No
+1/30/2019,Robert Jennings,61,Male,Black,1 Black Male,Texas,Harris ,South,Lethal Injection,No,No,No,No
+2/7/2019,Domineque Ray,42,Male,Black,1 Black Female,Alabama,Dallas ,South,Lethal Injection,No,No,No,No
+2/28/2019,Billie Coble,70,Male,White,2 White Males,Texas,McLennan ,South,Lethal Injection,No,No,No,No
+4/24/2019,John King,44,Male,White,1 Black Male,Texas,Jasper ,South,Lethal Injection,No,No,No,No
+5/2/2019,Scotty Morrow,52,Male,Black,2 Black Females,Georgia,Hall ,South,Lethal Injection,No,No,No,No
+5/16/2019,Michael Samra,42,Male,White,1 White Male,Alabama,Shelby ,South,Lethal Injection,No,No,No,No
+5/16/2019,Donnie Johnson,68,Male,White,1 White Female,Tennessee,Shelby ,South,Lethal Injection,No,No,No,No
+5/23/2019,Robert Long,65,Male,White,1 White Female,Florida,Hillsborough ,South,Lethal Injection,No,No,No,No
+5/30/2019,Christopher Price,46,Male,White,1 White Male,Alabama,Fayette ,South,Lethal Injection,No,No,No,No
+6/20/2019,Marion Wilson,42,Male,Black,1 Black Male,Georgia,Baldwin ,South,Lethal Injection,No,No,No,No
+8/15/2019,Stephen West,56,Male,White,2 White Females,Tennessee,Union ,South,Electrocution,No,No,No,No
+8/21/2019,Larry Swearingen,48,Male,White,1 White Female,Texas,Montgomery ,South,Lethal Injection,No,No,No,No
+8/22/2019,Gary Bowles,57,Male,White,1 White Male,Florida,Duval ,South,Lethal Injection,No,No,No,No
+9/4/2019,Billy Crutsinger,64,Male,White,2 White Females,Texas,Tarrant ,South,Lethal Injection,No,No,No,No
+9/10/2019,Mark Soliz,37,Male,Latinx,1 White Female,Texas,Johnson ,South,Lethal Injection,No,No,No,No
+9/25/2019,Robert Sparks,45,Male,Black,2 Black Males,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+10/1/2019,Russell Bucklew,51,Male,White,1 White Male,Missouri,Cape Girardeau ,Midwest,Lethal Injection,No,No,No,No
+11/4/2019,Charles Rhines,63,Male,White,1 White Male,South Dakota,Pennington ,Midwest,Lethal Injection,No,No,No,No
+11/6/2019,Justen Hall,38,Male,White,1 White Female,Texas,El Paso ,South,Lethal Injection,No,No,Yes,No
+11/13/2019,Ray Cromartie,52,Male,Black,1 White Male,Georgia,Thomas ,South,Lethal Injection,No,No,No,No
+12/5/2019,Lee Hall,53,Male,White,1 White Female,Tennessee,Hamilton ,South,Electrocution,No,No,No,No
+12/11/2019,Travis Runnels,46,Male,Black,1 White Male,Texas,Potter ,South,Lethal Injection,No,No,No,No
+1/15/2020,John Gardner,64,Male,White,1 White Female,Texas,Collin ,South,Lethal Injection,No,No,No,No
+1/29/2020,Donnie Lance,66,Male,White,1 White Male,Georgia,Jackson ,South,Lethal Injection,No,No,No,No
+2/6/2020,Abel Ochoa,47,Male,Latinx,2 Latinx Females,Texas,Dallas ,South,Lethal Injection,No,No,No,No
+2/20/2020,Nicholas Sutton,58,Male,White,1 White Male,Tennessee,Morgan ,South,Electrocution,No,No,No,No
+3/5/2020,Nathaniel Woods,43,Male,Black,3 White Males,Alabama,Jefferson ,South,Lethal Injection,No,No,No,No
+5/19/2020,Walter Barton,64,Male,White,1 White Female,Missouri,Christian ,Midwest,Lethal Injection,No,No,No,No
+7/8/2020,Billy Wardlow,45,Male,White,1 White Male,Texas,Titus ,South,Lethal Injection,No,No,No,No
+7/14/2020,Daniel Lee,47,Male,White,1 White Male,Arkansas,Pope ,South,Lethal Injection,No,Yes,No,No
+7/16/2020,Wesley Purkey,68,Male,White,1 White Female,Missouri,Jackson ,Midwest,Lethal Injection,No,Yes,No,No
+7/17/2020,Dustin Honken,52,Male,White,2 White Females,Iowa,Cerro Gordo ,Midwest,Lethal Injection,No,Yes,No,No
+8/26/2020,Lezmond Mitchell,38,Male,American Indian or Alaska Native,2 American Indian or Alaska Native Females,Arizona,Apache ,West,Lethal Injection,No,Yes,No,No
+8/28/2020,Keith Nelson,45,Male,White,1 White Female,Missouri,Jackson ,Midwest,Lethal Injection,No,Yes,No,No
+9/22/2020,William LeCroy,50,Male,White,1 White Female,Georgia,Gilmer ,South,Lethal Injection,No,Yes,No,No
+9/24/2020,Christopher Vialva,40,Male,Black,1 White Male,Texas,Bell ,South,Lethal Injection,No,Yes,No,No
+11/19/2020,Orlando Hall,49,Male,Black,1 Black Female,Texas,Tarrant ,South,Lethal Injection,No,Yes,No,No
+12/10/2020,Brandon Bernard,40,Male,Black,1 White Male,Texas,Bell ,South,Lethal Injection,No,Yes,No,No
+12/11/2020,Alfred Bourgeois,56,Male,Black,1 Black Female,Texas,Nueces ,South,Lethal Injection,No,Yes,No,No
+1/13/2021,Lisa Montgomery,52,Female,White,1 White Female,Missouri,Nodaway ,Midwest,Lethal Injection,No,Yes,No,No
+1/14/2021,Corey Johnson,52,Male,Black,6 Black Males,Virginia,Richmond city,South,Lethal Injection,No,Yes,No,No
+1/16/2021,Dustin Higgs,48,Male,Black,3 Black Females,Maryland,Prince George's ,South,Lethal Injection,No,Yes,No,No
+5/19/2021,Quintin Jones,41,Male,Black,1 Black Female,Texas,Tarrant ,South,Lethal Injection,No,No,No,No
+6/30/2021,John Hummel,45,Male,White,1 White Male,Texas,Tarrant ,South,Lethal Injection,No,No,No,No
+9/28/2021,Rick Rhoades,57,Male,White,2 White Males,Texas,Harris ,South,Lethal Injection,No,No,No,No
+10/5/2021,Ernest Johnson,61,Male,Black,1 White Female,Missouri,Boone ,Midwest,Lethal Injection,No,No,No,No
+10/21/2021,Willie Smith,,Male,Black,1 White Female,Alabama,Jefferson ,South,Lethal Injection,No,No,No,No
+10/28/2021,John Grant,60,Male,Black,1 White Female,Oklahoma,Osage ,South,Lethal Injection,No,No,No,No
+11/17/2021,David Cox,50,Male,White,1 White Female,Mississippi,Union ,South,Lethal Injection,No,No,Yes,No
+12/9/2021,Bigler Stouffer,79,Male,White,1 White Female,Oklahoma,Oklahoma ,South,Lethal Injection,No,No,No,No
+1/27/2022,Donald Grant,46,Male,Black,2 White Females,Oklahoma,Oklahoma ,South,Lethal Injection,No,No,No,No
+1/27/2022,Matthew Reeves,44,Male,Black,1 Black Male,Alabama,Dallas ,South,Lethal Injection,No,No,No,No
+2/17/2022,Gilbert Postelle,35,Male,White,3 White Males,Oklahoma,Oklahoma ,South,Lethal Injection,No,No,No,No
+4/21/2022,Carl Buntion,78,Male,White,1 White Male,Texas,Harris ,South,Lethal Injection,No,No,No,No
+5/3/2022,Carman Deck,56,Male,White,1 White Female,Missouri,Jefferson ,Midwest,Lethal Injection,No,No,No,No
+5/11/2022,Clarence Dixon,66,Male,American Indian or Alaska Native,1 White Female,Arizona,Maricopa,West,Lethal Injection,No,No,No,No
+6/8/2022,Frank Atwood,65,Male,White,1 White Female,Arizona,Pima ,West,Lethal Injection,No,No,No,No
+7/28/2022,Joe James,50,Male,Black,1 Black Female,Alabama,Jefferson ,South,Lethal Injection,No,No,No,No
+8/17/2022,Kosoul Chanthakoummane,41,Male,Asian,1 White Female,Texas,Collin ,South,Lethal Injection,No,No,No,No
+8/25/2022,James Coddington,,Male,White,1 White Male,Oklahoma,Oklahoma,South,Lethal Injection,No,No,No,No
+10/5/2022,John Ramirez,38,Male,Latinx,1 Latinx Male,Texas,Nueces,South,Lethal Injection,No,No,No,No
+10/20/2022,Benjamin Cole,57,Male,White,1 American Indian or Alaska Native Female,Oklahoma,Rogers,South,Lethal Injection,No,No,No,No
+11/9/2022,Tracy Beatty,61,Male,White,1 White Female,Texas,Smith ,South,Lethal Injection,No,No,No,No
+11/16/2022,Murray Hooper,76,Male,Black,1 White Male,Arizona,Maricopa,West,Lethal Injection,No,No,No,No
+,,,,,1 White Female,,,,,,,,
