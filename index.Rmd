@@ -36,12 +36,38 @@ full2013<- read_csv("ucr/2013ucr.csv")
 full2012<- read_csv("ucr/2012UCR.csv")
 full2011<- read_csv("ucr/2011ucr.csv")
 full2010<- read_csv("ucr/2010ucr.csv")
+full2009<- read_csv("ucr/2009ucr.csv")
+full2008<- read_csv("ucr/2008ucr.csv")
+full2007<- read_csv("ucr/2007ucr.csv")
+full2006<- read_csv("ucr/2006ucr.csv")
+full2005<- read_csv("ucr/2005ucr.csv")
+full2004<- read_csv("ucr/2004ucr.csv")
+
 ```
 
 ##refining the crime data so it is only the variables I want 
 
 ```{r}
-
+full2009<-full2009|>
+select(State, County, Violent_crime, MNNM)|>
+  mutate(Year=2009) |>
+  mutate(DP = if_else(State=="Alabama"|State == "Arkansas"| State == "California"| State == "Florida" | State == "Georgia" | State == 'Idaho'| State == 'Indiana' | State == 'Kansas' | State == "Pennsylvania" | State == 'Kentucky' | State =='Louisiana' | State == 'Mississippi' | State == 'Missouri' | State ==  'Montana' | State ==  'Nebraska' | State ==  'Nevada' | State == 'North Carolina' | State == 'Oklahoma' | State ==  'Ohio' | State ==  'Oregon' | State == 'South Carolina' | State ==  'South Dakota' | State ==  'Tennessee' | State ==  'Texas' | State == 'Utah' | State ==  'Wyoming' | State == "Virginia" | State == "Colorado" | State == "Washington" | State == "New Hampshire" | State == "Illinois" | State == "Maryland" | State == "Delaware" | State ==  "Connecticut"| State ==  "New Mexico", 1, 0)) 
+full2008<-full2008|>
+select(State, County, Violent_crime, MNNM)|>
+  mutate(Year=2008) |>
+  mutate(DP = if_else(State=="Alabama"|State == "Arkansas"| State == "California"| State == "Florida" | State == "Georgia" | State == 'Idaho'| State == 'Indiana' | State == 'Kansas' | State == "Pennsylvania" | State == 'Kentucky' | State =='Louisiana' | State == 'Mississippi' | State == 'Missouri' | State ==  'Montana' | State ==  'Nebraska' | State ==  'Nevada' | State == 'North Carolina' | State == 'Oklahoma' | State ==  'Ohio' | State ==  'Oregon' | State == 'South Carolina' | State ==  'South Dakota' | State ==  'Tennessee' | State ==  'Texas' | State == 'Utah' | State ==  'Wyoming' | State == "Virginia" | State == "Colorado" | State == "Washington" | State == "New Hampshire" | State == "Illinois" | State == "Maryland" | State == "Delaware" | State ==  "Connecticut"| State ==  "New Mexico", 1, 0)) 
+full2007<-full2007|>
+select(State, County, Violent_crime, MNNM)|>
+  mutate(Year=2007) |>
+  mutate(DP = if_else(State=="Alabama"|State == "Arkansas"| State == "California"| State == "Florida" | State == "Georgia" | State == 'Idaho'| State == 'Indiana' | State == 'Kansas' | State == "Pennsylvania" | State == 'Kentucky' | State =='Louisiana' | State == 'Mississippi' | State == 'Missouri' | State ==  'Montana' | State ==  'Nebraska' | State ==  'Nevada' | State == 'North Carolina' | State == 'Oklahoma' | State ==  'Ohio' | State ==  'Oregon' | State == 'South Carolina' | State ==  'South Dakota' | State ==  'Tennessee' | State ==  'Texas' | State == 'Utah' | State ==  'Wyoming' | State == "Virginia" | State == "Colorado" | State == "Washington" | State == "New Hampshire" | State == "Illinois" | State == "Maryland" | State == "Delaware" | State ==  "Connecticut"| State ==  "New Mexico"| State ==  "New Jersey"| State ==  "New York", 1, 0)) 
+full2006<-full2006|>
+select(State, County, Violent_crime, MNNM)|>
+  mutate(Year=2006) |>
+  mutate(DP = if_else(State=="Alabama"|State == "Arkansas"| State == "California"| State == "Florida" | State == "Georgia" | State == 'Idaho'| State == 'Indiana' | State == 'Kansas' | State == "Pennsylvania" | State == 'Kentucky' | State =='Louisiana' | State == 'Mississippi' | State == 'Missouri' | State ==  'Montana' | State ==  'Nebraska' | State ==  'Nevada' | State == 'North Carolina' | State == 'Oklahoma' | State ==  'Ohio' | State ==  'Oregon' | State == 'South Carolina' | State ==  'South Dakota' | State ==  'Tennessee' | State ==  'Texas' | State == 'Utah' | State ==  'Wyoming' | State == "Virginia" | State == "Colorado" | State == "Washington" | State == "New Hampshire" | State == "Illinois" | State == "Maryland" | State == "Delaware" | State ==  "Connecticut"| State ==  "New Mexico"| State ==  "New Jersey"| State ==  "New York", 1, 0)) 
+full2005<-full2005|>
+select(State, County, Violent_crime, MNNM)|>
+  mutate(Year=2005) |>
+  mutate(DP = if_else(State=="Alabama"|State == "Arkansas"| State == "California"| State == "Florida" | State == "Georgia" | State == 'Idaho'| State == 'Indiana' | State == 'Kansas' | State == "Pennsylvania" | State == 'Kentucky' | State =='Louisiana' | State == 'Mississippi' | State == 'Missouri' | State ==  'Montana' | State ==  'Nebraska' | State ==  'Nevada' | State == 'North Carolina' | State == 'Oklahoma' | State ==  'Ohio' | State ==  'Oregon' | State == 'South Carolina' | State ==  'South Dakota' | State ==  'Tennessee' | State ==  'Texas' | State == 'Utah' | State ==  'Wyoming' | State == "Virginia" | State == "Colorado" | State == "Washington" | State == "New Hampshire" | State == "Illinois" | State == "Maryland" | State == "Delaware" | State ==  "Connecticut"| State ==  "New Mexico"| State ==  "New Jersey"| State ==  "New York", 1, 0)) 
 full2010<-full2010|>
 select(State, County, Violent_crime, MNNM)|>
   mutate(Year=2010) |>
@@ -95,7 +121,7 @@ select(State, County, Violent_crime, MNNM)|>
 
 ```{r}
 ##Combining crime data from each year into a big file 
-fullcrime<- rbind(full2010,full2011,full2012,full2013,full2014,full2015,full2016,full2017,full2018,full2019,full2021,full2020)
+fullcrime<- rbind(full2009, full2008,full2007, full2006,full2005,full2010,full2011,full2012,full2013,full2014,full2015,full2016,full2017,full2018,full2019,full2021,full2020)
 
 
 ```
@@ -139,56 +165,6 @@ sentences_count_wide<-sentences_count_wide |>
 
 
 ```{r}
-##make 5 year counts
-sentences_count_wide<-sentences_count_wide |>
-  rowwise() |>
-  mutate(a = sum(c(`2005`, `2006`, `2007`, `2008`, `2009`))) |>
-  mutate(years2010 = if_else(a>0, 1, 0))
-sentences_count_wide<-sentences_count_wide |>
-  rowwise() |>
-  mutate(b = sum(c(`2006`, `2007`, `2008`, `2009`, `2010`))) |>
-  mutate(years2011 = if_else(b>0, 1, 0))
-sentences_count_wide<-sentences_count_wide |>
-  rowwise() |>
-  mutate(c = sum(c(`2007`, `2008`, `2009`, `2010`, `2011`))) |>
-  mutate(years2012 = if_else(c>0, 1, 0))
-sentences_count_wide<-sentences_count_wide |>
-  rowwise() |>
-  mutate(d = sum(c(`2008`, `2009`, `2010`, `2011`, `2012`))) |>
-  mutate(years2013 = if_else(d>0, 1, 0))
-sentences_count_wide<-sentences_count_wide |>
-  rowwise() |>
-  mutate(e = sum(c(`2009`, `2010`, `2011`, `2012`, `2013`, `2014`))) |>
-  mutate(years2014 = if_else(e>0, 1, 0))
-sentences_count_wide<-sentences_count_wide |>
-  rowwise() |>
-  mutate(f = sum(c(`2010`, `2011`, `2012`, `2013`, `2014`, `2015`))) |>
-  mutate(years2015 = if_else(f>0, 1, 0))
-sentences_count_wide<-sentences_count_wide |>
-  rowwise() |>
-  mutate(g = sum(c(`2011`, `2012`, `2013`, `2014`, `2015`, `2016`))) |>
-  mutate(years2016 = if_else(g>0, 1, 0))
-sentences_count_wide<-sentences_count_wide |>
-  rowwise() |>
-  mutate(h = sum(c(`2012`, `2013`, `2014`, `2015`, `2016`, `2017`))) |>
-  mutate(years2017 = if_else(h>0, 1, 0))
-sentences_count_wide<-sentences_count_wide |>
-  rowwise() |>
-  mutate(i = sum(c(`2013`, `2014`, `2015`, `2016`, `2017`, `2018`))) |>
-  mutate(years2018 = if_else(i>0, 1, 0))
-sentences_count_wide<-sentences_count_wide |>
-  rowwise() |>
-  mutate(j = sum(c( `2014`, `2015`, `2016`, `2017`, `2018`, `2019`))) |>
-  mutate(years2019 = if_else(j>0, 1, 0))
-sentences_count_wide<-sentences_count_wide |>
-  rowwise() |>
-  mutate(k = sum(c( `2015`, `2016`, `2017`, `2018`, `2019`, `2020`))) |>
-  mutate(years2020 = if_else(k>0, 1, 0))
-```
-
-
-
-```{r}
 ##Execution date to execution year
 executions$year<- format(as.Date(executions$Date, format="%m/%d/%Y"), "%Y")
 
@@ -205,18 +181,14 @@ names(executions_counties)[names(executions_counties)== "year"]<- "Year"
 #Pivot so I can see data better 
 executions_wide<-executions_counties|>
   pivot_wider(names_from = Year, values_from = exs ) |>
-   select(`State`, County, `2005`, `2006`, `2007`, `2008`, `2009`, `2010`, `2011`, `2012`, `2013`, `2014`, `2015`, `2016`, `2017`, `2018`, `2019`, `2020`, `2021`, `2022`) 
+   select(`State`, County, `2009`, `2010`, `2011`, `2012`, `2013`, `2014`, `2015`, `2016`, `2017`, `2018`, `2019`, `2020`, `2021`, `2022`) 
 
 ```
 
 ```{r}
 ##make na into 0
 executions_wide<- executions_wide|>
-  mutate(`2005` = coalesce(`2005`, 0),
-         `2006` = coalesce(`2006`, 0), 
-         `2007` = coalesce(`2007`, 0),
-         `2008` = coalesce(`2008`, 0),
-         `2009` = coalesce(`2009`, 0),
+  mutate(`2009` = coalesce(`2009`, 0),
          `2010` = coalesce(`2010`, 0),
          `2011` = coalesce(`2011`, 0),
          `2012` = coalesce(`2012`, 0),
@@ -231,63 +203,10 @@ executions_wide<- executions_wide|>
          `2021` = coalesce(`2021`, 0),
          `2022` = coalesce(`2022`, 0))
 ```
-
 ```{r}
-##Make five year counts 
-executions_wide<-executions_wide |>
-  rowwise() |>
-  mutate(a = sum(c(`2005`, `2006`, `2007`, `2008`, `2009`))) |>
-  mutate(eyears2010 = if_else(a>0, 1, 0))
-executions_wide<-executions_wide |>
-  rowwise() |>
-  mutate(b = sum(c(`2006`, `2007`, `2008`, `2009`, `2010`))) |>
-  mutate(eyears2011 = if_else(b>0, 1, 0))
-executions_wide<-executions_wide |>
-  rowwise() |>
-  mutate(c = sum(c(`2007`, `2008`, `2009`, `2010`, `2011`))) |>
-  mutate(eyears2012 = if_else(c>0, 1, 0))
-executions_wide<-executions_wide |>
-  rowwise() |>
-  mutate(d = sum(c(`2008`, `2009`, `2010`, `2011`, `2012`))) |>
-  mutate(eyears2013 = if_else(d>0, 1, 0))
-executions_wide<-executions_wide |>
-  rowwise() |>
-  mutate(e = sum(c(`2009`, `2010`, `2011`, `2012`, `2013`, `2014`))) |>
-  mutate(eyears2014 = if_else(e>0, 1, 0))
-executions_wide<-executions_wide |>
-  rowwise() |>
-  mutate(f = sum(c(`2010`, `2011`, `2012`, `2013`, `2014`, `2015`))) |>
-  mutate(eyears2015 = if_else(f>0, 1, 0))
-executions_wide<-executions_wide |>
-  rowwise() |>
-  mutate(g = sum(c(`2011`, `2012`, `2013`, `2014`, `2015`, `2016`))) |>
-  mutate(eyears2016 = if_else(g>0, 1, 0))
-executions_wide<-executions_wide |>
-  rowwise() |>
-  mutate(h = sum(c(`2012`, `2013`, `2014`, `2015`, `2016`, `2017`))) |>
-  mutate(eyears2017 = if_else(h>0, 1, 0))
-executions_wide<-executions_wide |>
-  rowwise() |>
-  mutate(i = sum(c(`2013`, `2014`, `2015`, `2016`, `2017`, `2018`))) |>
-  mutate(eyears2018 = if_else(i>0, 1, 0))
-executions_wide<-executions_wide |>
-  rowwise() |>
-  mutate(j = sum(c( `2014`, `2015`, `2016`, `2017`, `2018`, `2019`))) |>
-  mutate(eyears2019 = if_else(j>0, 1, 0))
-executions_wide<-executions_wide |>
-  rowwise() |>
-  mutate(k = sum(c( `2015`, `2016`, `2017`, `2018`, `2019`, `2020`))) |>
-  mutate(eyears2020 = if_else(k>0, 1, 0))
-executions_wide<-executions_wide |>
-  rowwise() |>
-  mutate(l = sum(c( `2016`, `2017`, `2018`, `2019`, `2020`, `2021`))) |>
-  mutate(eyears2021 = if_else(l>0, 1, 0))
-executions_wide<-executions_wide |>
-  rowwise() |>
-  mutate(m = sum(c( `2017`, `2018`, `2019`, `2020`, `2021`, `2022`))) |>
-  mutate(eyears2022 = if_else(m>0, 1, 0))
 
 ```
+
 
 ```{r}
 
@@ -303,19 +222,6 @@ mutate(sent = coalesce(sent, 0),
 
 
 ```{r}
-##First analysis! Does the elimination of a death penalty in a state lead to on average lower homicide rates-- Case of Maryland, which eliminated the DP in 2017
-
-alldata |>
-  group_by(DP)|>
-  filter (State == "Maryland")|>
-  summarize(Mean_Homicide = mean(MNNM, na.rm = TRUE))
-
-##This table shows us that maryland's homicide count was higher (at roughly 5.6 homicides on average in each county) before eliminating the death penalty than after eliminating it (roughly 3.64 homicides per county). While this is not causal, this is certainly in line with other findings about the effectivness of the death penalty. 
-
-## Also I feel the need to clarify that I have spent a lot of time on this project I am aware this is not a very detailed analysis but I promise you I have worked a lot (my code for the rest of this should illustrate that) and it has taken me many, many hours. I know these chekpoints are supposed to make sure we are actually doing work so I promise you I am doing work. I realized while doing this analysis that I didn't have the population data for each county yet so I would need to find a different dataset, load it in, and then merge it with my existing one to fully test my hypothesis and it is already almost 5pm and I have been working on this since noon. I will go back and add more work and do that later this week, but for now I am taking a break.
-
-```
-```{r}
 Pops2<- read_csv("Populations/PopulationEstimates20201.csv")
 FIPS<- read.csv("Populations/FIPSCodes.csv")
 
@@ -325,16 +231,17 @@ Pops<- Pops2|>
   left_join(FIPS, by = "FIPS") |>
   select (FIPS, State, `Area name`, `Population 2010`, `Population 2020`, `Population 2021`)
 
-
 ```
-
 
 ```{r}
 load_variables(2020, "acs5")
+load_variables(2005, "acs1")
 ```
+
+
 ```{r}
 appended <- NULL
-for(y in seq(2010, 2020, by = 1)){
+for(y in seq(2009, 2020, by = 1)){
     temp <- data.frame(
         year = y,
         get_acs(
@@ -344,7 +251,9 @@ for(y in seq(2010, 2020, by = 1)){
     )
     appended <- bind_rows(appended, temp)
 }
+
 ```
+
 ```{r}
 ##Rename things to match
 names(FIPS)[names(FIPS) == "StateName"] <- "State"
@@ -368,25 +277,506 @@ alldata<- alldata |>
 
 ```{r}
 #Create population based homicide rate with mutate
-alldata<- alldata|>
-  mutate(violent_pop = (Violent_crime/estimate))
+ alldata<-alldata|>
+  mutate(violent_pop = (Violent_crime/(estimate/100000)))
 alldata <- alldata|>
-  mutate(MNNM_pop = MNNM/estimate)
+  mutate(MNNM_pop = MNNM/(estimate/100000))
 
 ```
 
 ```{r}
-##Two ideas to test: County vs County or County vs Self.
+##Get rid of all the NA Values that somehow made their way in there (note: This is specifically about the values that have no state name or county name and are  just blank)
+alldata<- alldata|>
+  filter(Year > "2008")
 
-##County v county. 
-##Test 1: Homicide rate controlled by VC rate in places with and without DP 
-##Test 2: Homicide rate controlled by VC in places which did or did not execute someone in the past year 
-##Test 3: Homicide rate controlled by VC in places which did or did not sentence someone to death in the past year 
+alldata<-alldata|>
+  drop_na(State)
 
-##County v self-- Refine data to only states that got rid of the DP within the data set 
-## Test 1: homicide rate controlled by VC in year before vs after abolition for all counties
-## Test 2: then homicide rate controlled by VC in year before vs after abolition for counties which did actually execute someone in the last year
-## Test 3: Then homicide rate controlled by VC in year before vs after abolition for counties which sentenced someone in last year 
+alldata<-alldata|>
+  drop_na(County)
 
 ```
 
+
+##This project with explores how county-level application of the death penalty relates to the average homicide rate. Specifically, this project asks whether the availability/presence of the death penalty, the use of executions, and/or the use of death sentences is related to homicides.
+
+##Data and research design: 
+##To investigate this relationship, I am relying on data from four sources: 
+##1. Crime in the US. This dataset is a record of crimes known to law enforcement in each county each year. This data is from the Federal Beauru of Investigation. However, this data has a number of problems: For instance, California rarely reports crimes to the database, and many counties report using unreliable methods. This was still the best data that I could find, but future investigations into this topic should seek out alternative data sources. 
+##2. Death Sentence Data. This data provides a list of all death sentences in the US since 2005, including where these death sentences were given. 
+##3. Execution Database. This data provides a list of all executions in the united states since the 1970s, including the county in which the execution occured. This data is from the Death Penalty Information Center. 
+##4. Tidycensus population data. Because the UCR data only uses a raw count of crimes in the county, I used additional data from TidyCensus to calculate the crime rate per 100,000 people in each county. 
+##This analysis will cover county-level homicide rates, execution records, and sentencing records from 2009 to 2020. When compiled together, this data becomes a database of more than 31,000 individual records of the county, the homicide and violent crime rate in that county, and whether or not an execution or death sentence was given in that county in that year. The research design is observational, correlational analysis. 
+
+##The UCR data provides us with our initial  variable, Murder and Non Negligent Manslaughter (refererred to as MNNM or homicide). When combined with the TidyCensus data, we can create the variable MNNM_pop, or the "homicide rate," which is our outcome variable. The homicide rate ranges from 0 to 257.07 homicides per 100,000 people. Since most counties report 0 or very few homicides each year, the median homicide rate is 0. The average homicide rate per 100,000 people is 1.56. 
+
+
+```{r}
+##Histogram of outcome variable 
+hom_hist<- alldata|>
+  ggplot(aes(x=MNNM_pop)) + 
+  geom_histogram(bins=100) +
+  coord_cartesian(xlim = c(0, 100), ylim = c(0, 3000)) +
+  labs(title= "Distribution of Average Homicide Rate Across All Counties and Years", x = "Homicide rate per 100,000 Population", y = "Number of Instances" )
+```
+
+##For this project, we will be looking at three different explanatory variables: Death penalty (whether or not a state has the death penalty), executions (whether or not a county has executed someone in the past year), and sentences (whether or not a county has sentenced someone in the past year). The death penalty variable is a binary variable of either 0 (indicating a state has abolished the death penalty) or 1 (indicating a state has the death penalty).
+```{r}
+##Histogram of DP variable 
+alldata|>
+  ggplot(aes(x=DP))+
+  geom_bar() +
+  labs(title= "Number of Rows of Data for States With Or Without Death Penalty", x = "Death Penalty Status", y = "Number of Rows" )
+```
+
+##The executions variable ranges from 0-6. There were only 295 instances of counties that executed someone across the whole data set, with almost all of these counties executing only 1 person in a year. However, the executions variable which we will use only has two values: 0, indicating that there were no executions in that year, and 1, indicating that there was at least one execution. 
+
+##The sentences variable ranges from 0-13, with 499 instances of counties that sentenced someone to death across the dataset. However, the sentences variable which we will use only has two values: 0, indicating that there were no sentences in that year, and 1, indicating that there was at least one death sentence. 
+
+##Analysis: 
+##To see the relationship between the death penalty and homicide rates, I visualized the relationship with a scatterplot. The graph below plots the death penalty status on the x-axis and the MNNM_rate (homicide rate per 100,000 people) on the y-axis. 
+
+```{r}
+DP_plot<- alldata|> 
+  mutate(DPYN = if_else(DP == 1, "Death Penalty", "No Death Penalty")) |>
+  ggplot(mapping = aes(x=DPYN, y=MNNM_pop, group =DPYN)) +
+  geom_point() +
+    labs(title= "Homicide Rate by County vs Death Penalty Status", x = "Death Penalty Status in State", y = "Homicide rate per 100,000 Population")
+```
+##Looking at this plot, there appears to be a positive relationship between a higher homicide rate and a positive death penalty status. Additionally, the graph shows that there are more and larger outliers for counties with the death penalty compared to counties without the death penalty. 
+
+##In my next analysis, I calculated the average treatment effect of having the death penalty on a county's homicide rate, finding that there was an ATE of 1.15. This indicates that having the death penalty is associated with a 1.15 increase in the homicide rate. 
+```{r}
+ate_dp<- alldata |>
+mutate(DPYN = if_else(DP == 1, "DPY", "DPN")) |>
+specify(MNNM_pop ~ DPYN) |>
+calculate(stat = "diff in means",
+order = c("DPY", "DPN")) 
+ate_dp
+```
+##I then did a permutation test and calculated the two-sided p-value for the null hypothesis that the true homicide rate is the same across different death penalty statuses. The null distribution of the difference in means is below. 
+```{r}
+nulldist<- alldata |>
+mutate(DPyn = if_else(DP == 1, "DPy", "DPn")) |>
+specify(MNNM_pop~ DPyn) |>
+hypothesize(null = "independence") |>
+generate(reps = 1000,
+type = "permute") |>
+calculate(stat = "diff in means", order = c("DPy", "DPn")) 
+
+nulldist |>
+  visualize() +
+shade_p_value(obs_stat = ate_dp, direction = "both")
+
+get_p_value(nulldist, obs_stat = ate_dp, direction = "both")
+
+```
+##This distribution represents the distribution of the difference in means when the population is sampled at random 1,000 times. 
+##Even just looking at this graph, we can see that it is very unlikely that the ATE of death penalty states seen in the data is just due to random change-- the red line, which indicates the observed ATE of this data falls far outside the range of any of the average homicide rates found within the 1,000 samples. 
+##Based on this null distrobution, we calculate the P value to be 0, which means it is statistically significant at a .05 level. Thus, we can reject the null hypothesis that there is no relationship between the death penalty status and homicide rate of a county. In other words, the treatment effect of the death penalty on homicide rate is statistically significant. 
+
+##I also performed the same tests (calculating the ATE and performing a permutation test) using whether or not a county had an execution or whether or not a county sentenced someone to death as the explanatory variable. 
+```{r}
+ate_exs<- alldata |>
+mutate(exsyn = if_else(exs > 0, "yes", "no")) |>
+specify(MNNM_pop ~ exsyn) |>
+calculate(stat = "diff in means",
+order = c("yes", "no")) 
+
+nulldist_exs<- alldata |>
+mutate(exsyn = if_else(exs > 0, "yes", "no")) |>
+specify(MNNM_pop~ exsyn) |>
+hypothesize(null = "independence") |>
+generate(reps = 1000,
+type = "permute") |>
+calculate(stat = "diff in means", order = c("yes", "no")) 
+
+nulldist |>
+  visualize() +
+shade_p_value(obs_stat = ate_exs, direction = "both")
+
+get_p_value(nulldist, obs_stat = ate_exs, direction = "both")
+
+#####
+
+ate_sent<-alldata |>
+mutate(sentyn = if_else(sent > 0, "yes", "no")) |>
+specify(MNNM_pop ~ sentyn) |>
+calculate(stat = "diff in means",
+order = c("yes", "no"))  
+
+nulldist_sent<- alldata |>
+mutate(sentyn = if_else(sent>0, "yes", "no")) |>
+specify(MNNM_pop~ sentyn) |>
+hypothesize(null = "independence") |>
+generate(reps = 1000,
+type = "permute") |>
+calculate(stat = "diff in means", order = c("yes", "no")) 
+
+nulldist |>
+  visualize() +
+shade_p_value(obs_stat = ate_sent, direction = "both")
+
+get_p_value(nulldist, obs_stat = ate_sent, direction = "both")
+
+```
+##For the first test, which looked at whether or not a county had an execution, the P value is .018, which means it is statistically significant at a .05 level. However, unlike the Death Penalty test, this does not have a p-value of 0, which means there is a chance, albeit low, that these results are simply due to chance. 
+##For the second test, looking at whether or not a county sentenced anyone to death that year, the P value is 0. Given that both of these P values are statistically significant at the .05 level, like with the previous test with the death penalty as the explanatory variable, we can reject the null hypothesis, and we know that the treatment effects of executions and sentencing on the homicide rate are statistically significant. 
+
+
+##Regression results: 
+##In addition to the previous analyses, I performed six regressions on the data– two for each explanatory variable. 
+
+##Death penalty regressions: 
+##The first regression is a bivariate model which regresses the death penalty status on the homicide rate, and the second regression regresses the death penalty status on the homicide rate, but it includes the covariate of violent crime per 100,000 people. 
+```{r}
+library(broom)
+DP_hom_reg_basic<- lm(MNNM_pop~DP, data = alldata)
+tidy(DP_hom_reg_basic) |>
+knitr::kable(digits = 3)
+
+DP_hom_reg<- lm(MNNM_pop ~ DP + violent_pop, data = alldata)
+tidy(DP_hom_reg) |>
+knitr::kable(digits = 3)
+```
+##The bivariate regression suggests that, on average, having the death penalty is associated with a 1.156 increase in homicides per 100,000 people in a county. The multivariable model predicts a weaker, although still significant, association between the death penalty and homicide rates: Holding violent crime rate constant, having the death penalty is associated with a .661 increase in homicides per 100,000 people in a county. 
+##In both models, the association between the death penalty and homicide rate is statistically sigificant at the test level of alpha = .05. The P value on the coefficent in both models is 0, suggesting there is a near 0% probablility that the association is meaningless and due to random chance. This alligns with the results from the null distrobution graph earlier in the report.
+
+Execution regressions: 
+```{r}
+ex_reg_base<- lm(MNNM_pop ~ exs , data = alldata)
+tidy(ex_reg_base) |>
+knitr::kable(digits = 3)
+ex_reg<- lm(MNNM_pop ~ exs + DP, data = alldata)
+tidy(ex_reg) |>
+knitr::kable(digits = 3)
+```
+##The first regression is a bivariate model which regresses the variable exsyn (whether or not a county executed someone that year) on the homicide rate, and the second regression regresses exsyn on the homicide rate but includes the covariate of violent crime per 100,000 people. 
+
+##Both regressions suggest that executing someone is associated with higher (.005 in the bivariate, .013 in the multivariate) homicide rates. However, the P value is .979 in the bivariate calculation and .945 in the mulitvariate one, indicating that these results are not statistically significant. 
+
+Sentences regression: 
+```{r}
+sent_reg_base<- lm(MNNM_pop ~ sent , data = alldata)
+tidy(sent_reg_base) |>
+knitr::kable(digits = 3)
+sent_reg<- lm(MNNM_pop ~ sent + violent_pop, data = alldata)
+tidy(sent_reg) |>
+knitr::kable(digits = 3)
+```
+##The first regression is a bivariate model which regresses the variable “sentyn” (whether or not a county sentenced someone to death that year) on the homicide rate, and the second regression regresses “sentyn” on the homicide rate while accounting for the violent crime rate. 
+
+##Both regressions suggest that sentencing someone to death is associated with a lower  homicide rates. However, the P values of .161 and .23 are still well above the threshhold of .05, meaning these results are not statistically significant. 
+
+
+##Discussion of regressions: 
+##For both the execution and sentences regressions, the results showed no statistical significance. This is a surprising result given that the null distribution tests in the “analysis” section had p values of .018 and 0, respectively. However, the discrepancy between results may be because counties with executions or sentences inherently also have the death penalty, so the results from the previous analysis might have just been essentially a repeat of the analysis of whether or not the death penalty, rather than executions, had an impact on homicide rates. Ultimently, these regressions show that there is no meaningful relationship between whether or not a county executed someone and the homicide rate. It appears the only meaningful relationship which exists is between the death penalty itself and the homicide rate. 
+
+##Causality and Confounders: 
+##The results show that there is a statistically significant, positive correlation between a county's death penalty status and their homicide rate, even when accounting for violent crime rates in those counties. However, there is limited support for the theory that executions or death sentences have any relationship to the homicide rate whether or not you account for violent crime rates. Because the explanatory variable of the death penalty is not randomly assigned as a treatment variable, it cannot be said to causually increase the homicide rate in a county. 
+##The multivariate regression attempts to control for the possible confounder of violent crime. One of the challenges in this project is that a state with a high homicide rate may choose to keep the death penalt in order to address the problem, which would make it seem as though the death penalty status is correlated with higher homicide rates even though the causality may be in the opposite direction. One way to address this issue is by controlling for violent crime rates. Because violent crime is considered to be strongly related to homicide rate, places with higher violent crime rates would typically have higher homicide rates as well. However, unlike homicide, violent crime is not punished with the death penalty and so the death penalty would not have a deterrant impact on violent crime. Controlling for violent crime can address the problems that typically lead to greater crime (such as economic problems) and allow us to examine the imapcts of the death penalty. For instance, if a state with the death penalty and one without the death penalty both have similar violent crime rates but very different homicide rates, it would indicate that the death penalty has some relationship with the homicide rate. Thus, controlling for the variable of violent crime may help address these issues. 
+##However, while we may be able to control for violent crime, we cannot control for other possible confounders due to a lack of data: the willingness of county prosecutors to use the death penalty, how frequently life sentences are given in each county, local media coverage of homicides, and a variety of other confounders could influence this data. For example, if a county does not have the death penalty but does give out many life sentences for homicide, this could also be a deterrant to homicide– particularly if life sentences are seen as more common compared to death sentences. 
+
+
+
+##Additional Analysis: 
+##My final analysis of the data used a simple difference in means structure to see how homicide rates changed in states which got rid of the death penalty vs states which kept their death penalty status the same over the same period of time. To do this, I looked at four states which eliminated the death penalty in the years covered by my dataset and took the average homicide rates before and after the year of abolition for the state of interest and for all other states. It is worth mentioning that there are 5 states which meet that criteria, but unfortunately New Hampshire did not have sufficient data. 
+```{r}
+##Illinois
+IL_change<- alldata|> 
+  mutate(pre2011 = if_else(Year < 2011, "Before 2011", "After 2011"), Illinois = if_else(State == 'Illinois', "Illinois", "Other"))|>
+  group_by(Illinois, pre2011)|>
+  summarize(avg_hom = mean(MNNM_pop, na.rm= TRUE)) |> 
+  pivot_wider(names_from = pre2011, values_from = avg_hom)|>
+  mutate(Change = `Before 2011` - `After 2011`)
+ 
+IL_change
+ 
+##Maryland 
+MD_change<- alldata|> 
+  mutate(pre2013 = if_else(Year < 2013, "Before 2013", "After 2013"), Maryland = if_else(State == 'Maryland', "Maryland", "Other"))|>
+  group_by(Maryland, pre2013)|>
+  summarize(avg_hom = mean(MNNM_pop, na.rm= TRUE)) |> 
+  pivot_wider(names_from = pre2013, values_from = avg_hom)|>
+  mutate(Change = `Before 2013` - `After 2013`)
+ 
+MD_change
+ 
+##Delaware
+DE_change<- alldata|> 
+  mutate(pre2016 = if_else(Year < 2016, "Before 2016", "After 2016"), Delaware = if_else(State == 'Delaware', "Delaware", "Other"))|>
+  group_by(Delaware, pre2016)|>
+  summarize(avg_hom = mean(MNNM_pop, na.rm= TRUE)) |> 
+  pivot_wider(names_from = pre2016, values_from = avg_hom)|>
+  mutate(Change = `Before 2016` - `After 2016`)
+DE_change
+##Washington 
+WA_change<- alldata|> 
+  mutate(pre2018 = if_else(Year < 2018, "Before 2018", "After 2018"), Washington = if_else(State == 'Washington', "Washington", "Other"))|>
+  group_by(Washington, pre2018)|>
+  summarize(avg_hom = mean(MNNM_pop, na.rm= TRUE)) |> 
+  pivot_wider(names_from = pre2018, values_from = avg_hom)|>
+  mutate(Change = `Before 2018` - `After 2018`)
+WA_change
+``` 
+##The results above indicate that states that got rid of the death penalty consistantly saw greater reductions in the homicide rate than states which either kept the death penalty or kept having no death penalty. In the most extreme case, Delaware saw a .4877 decrease in the homicide rate when the homicide rate of the rest of the nation increased by .06 . Even in Washington, which had the smallest shift in homicide rates before and after abolition (.0017), the decrease happened at a time when the national homicide rate increased by .18. In all cases, the abolition of the death penalty was associated with a decreased homicide rate which was far greater than the national average. 
+##Notably, in two states, Delaware and Washington, there were counties that executed or sentenced someone to death within the data prior to the death penalty’s abolition. Compared with the state as a whole, these counties experienced a much lower reduction in homicide rates (see below) Unforutnelty, given that there are only 3 counties in this category, more data would be needed to draw any conclisopm from these results. 
+ 
+```{r}
+##Change in counties pre and post abolition for those that sentenced 
+alldata <- alldata |> mutate(change = if_else(State == "Maryland" | State == "Virginia" | State == "Washington" | State == "New Hampshire" | State == "Connecticut" | State == "Delaware"| State == "Illinois", "Change", "No_change"))
+alldata<- alldata |>
+  mutate(BEA = (case_when(State == "Illinois" & Year > "2011" ~ "After" ,State == "Maryland" & Year > "2013" ~ "After", State == "Washington" & Year > "2018" ~ "After", State == "Delaware" & Year > "2016" ~ "After", State == "New Hampshire" & Year > "2019" ~ "After", State == "Connecticut" & Year > "2012" ~ "After", State == "Illinois" & Year == "2011" ~ "During", State == "Maryland" & Year == "2013" ~ "During", State == "Delaware" & Year == "2016" ~ "During", State == "Washington" & Year == "2018" ~ "During", State == "New Hampshire" & Year == "2019" ~ "During", State == "Connecticut" & Year == "2011" ~ "During", TRUE ~ "Before")))
+alldata|> 
+  filter(change == "Change") |> 
+  filter(sent>0) |> 
+  knitr::kable(digits = 3, caption = "Counties Which Sentenced Someone in States that Eliminated The Death Penalty")
+ 
+alldata|>
+filter(FIPS == "53033"| FIPS ==  '53053' | FIPS == "10003") |> 
+  group_by(FIPS, BEA) |> 
+  summarize(avg_hom = mean(MNNM_pop)) |> 
+  pivot_wider(names_from = BEA, values_from = avg_hom) |> 
+  mutate(Change = `Before` - `After`)|>
+  select(Before, After, Change, FIPS) |>
+   knitr::kable(digits = 3, caption = "Difference in Homicide Rates in Counties Which Sentenced to Death Before and After Abolition")
+ 
+alldata|> 
+  filter(change == "Change") |> 
+  filter(exs>0) |> 
+  knitr::kable(digits = 3, caption = "Counties Which Executed Someone in States that Eliminated The Death Penalty")
+ 
+alldata|>
+filter(FIPS == "53033"| FIPS ==  '10003') |> 
+  group_by(FIPS, BEA) |> 
+  summarize(avg_hom = mean(MNNM_pop)) |> 
+  pivot_wider(names_from = BEA, values_from = avg_hom) |> 
+  mutate(Change = `Before` - `After`)|>
+  select(Before, After, Change, FIPS) |>
+   knitr::kable(digits = 3, caption = "Difference in Homicide Rates in Counties Which Executed Before and After Abolition")
+```
+##Conclusion: 
+##Our analysis is limited by having incomplete data from the FBI Database. The first limitation relates to the fact that we lack homicide rate data for all counties. This is because some counties, including those in major population areas like California, fail to report their crime data to the FBI, meaning their information would not be picked up in the UCR records. 
+##Additionally, the lack of population data going back to 2005 limited the number of states which could be looked at as examples of states which eliminated the death penalty. The TidyCensus package only includes ACS5 data going back to the 2005-2009 survey, meaning that any data before 2009 is inaccessible through this platform. Without population data prior to 2009, 2009 was the earliest year I could calculate the MNNM_pop number for each county. If population data going back to 2005 was available, given that I had UCR data going back to 2005, I could have examined New York, New Jersey, and New Mexico, all states which eliminated their death penalty between 2007-2009. This could have provided more data with which to work, thus leading to a more robust analysis. 
+ 
+##**Next steps:** 
+##Although I will probably not work on this project going forward, I do hope to use my data analysis skills in future classes. I have really enjoyed gov50 this semester!!!
+
+
+
+```{r}
+
+##EVERYTHING BELOW IS JUST EXTRA CODE and NOTES
+##Analysis One: Death penalty status as explanatory variable 
+
+##Histogram of outcome variable 
+hom_hist<- alldata|>
+  ggplot(aes(x=MNNM_pop)) + 
+  geom_histogram(bins=100) +
+  coord_cartesian(xlim = c(0, 100), ylim = c(0, 3000)) +
+  labs(title= "Distribution of Average Homicide Rate Across All Counties and Years", x = "Homicide rate per 100,000 Population", y = "Number of Instances" )
+
+##Histogram of DP variable 
+alldata|>
+  ggplot(aes(x=DP))+
+  geom_bar() +
+  labs(title= "Number of Rows of Data for States With Or Without Death Penalty", x = "Death Penalty Status", y = "Number of Rows" )
+
+##A bivariate plot with your explanatory variable (Death Penalty Status, DP) on the x-axis, and your outcome variable (Homicide rate, MNNM_pop) on the y-axis
+DP_plot<- alldata|> 
+  mutate(DPYN = if_else(DP == 1, "Death Penalty", "No Death Penalty")) |>
+  ggplot(mapping = aes(x=DPYN, y=MNNM_pop, group =DPYN)) +
+  geom_point() +
+    labs(title= "Homicide Rate by County vs Death Penalty Status", x = "Death Penalty Status in State", y = "Homicide rate per 100,000 Population")
+
+##Calculate ATE
+ate_dp<- alldata |>
+mutate(DPYN = if_else(DP == 1, "DPY", "DPN")) |>
+specify(MNNM_pop ~ DPYN) |>
+calculate(stat = "diff in means",
+order = c("DPY", "DPN")) 
+
+ate_exs<- alldata |>
+mutate(exsyn = if_else(exs > 0, "yes", "no")) |>
+specify(MNNM_pop ~ exsyn) |>
+calculate(stat = "diff in means",
+order = c("yes", "no")) 
+
+ate_sent<-alldata |>
+mutate(sentyn = if_else(sent > 0, "yes", "no")) |>
+specify(MNNM_pop ~ sentyn) |>
+calculate(stat = "diff in means",
+order = c("yes", "no")) 
+
+##Do permutation test to see if this could be due to random chance 
+nulldist<- alldata |>
+mutate(DPyn = if_else(DP == 1, "DPy", "DPn")) |>
+specify(MNNM_pop~ DPyn) |>
+hypothesize(null = "independence") |>
+generate(reps = 1000,
+type = "permute") |>
+calculate(stat = "diff in means", order = c("DPy", "DPn")) 
+
+nulldist |>
+  visualize() +
+shade_p_value(obs_stat = ate_dp, direction = "both")
+
+get_p_value(nulldist, obs_stat = ate_dp, direction = "both")
+
+###############################
+
+nulldist_exs<- alldata |>
+mutate(exsyn = if_else(exs > 0, "yes", "no")) |>
+specify(MNNM_pop~ exsyn) |>
+hypothesize(null = "independence") |>
+generate(reps = 1000,
+type = "permute") |>
+calculate(stat = "diff in means", order = c("yes", "no")) 
+
+nulldist |>
+  visualize() +
+shade_p_value(obs_stat = ate_exs, direction = "both")
+
+get_p_value(nulldist, obs_stat = ate_exs, direction = "both")
+
+#####
+nulldist_sent<- alldata |>
+mutate(sentyn = if_else(sent>0, "yes", "no")) |>
+specify(MNNM_pop~ sentyn) |>
+hypothesize(null = "independence") |>
+generate(reps = 1000,
+type = "permute") |>
+calculate(stat = "diff in means", order = c("yes", "no")) 
+
+nulldist |>
+  visualize() +
+shade_p_value(obs_stat = ate_sent, direction = "both")
+
+get_p_value(nulldist, obs_stat = ate_sent, direction = "both")
+
+###
+
+## A table containing regression results from your multivariate model.
+DP_hom_reg_basic<- lm(MNNM_pop~DP, data = alldata)
+tidy(DP_hom_reg_basic) |>
+knitr::kable(digits = 3)
+DP_hom_reg<- lm(MNNM_pop ~ DP + violent_pop, data = alldata)
+tidy(DP_hom_reg) |>
+knitr::kable(digits = 3)
+
+ex_reg_base<- lm(MNNM_pop ~ exs , data = alldata)
+tidy(ex_reg_base) |>
+knitr::kable(digits = 3)
+ex_reg<- lm(MNNM_pop ~ exs + DP, data = alldata)
+tidy(ex_reg) |>
+knitr::kable(digits = 3)
+
+sent_reg_base<- lm(MNNM_pop ~ sent , data = alldata)
+tidy(sent_reg_base) |>
+knitr::kable(digits = 3)
+sent_reg<- lm(MNNM_pop ~ sent + violent_pop, data = alldata)
+tidy(sent_reg) |>
+knitr::kable(digits = 3)
+
+```
+
+
+```{r}
+##Analysis two: Executions or sentences as explanatory variable 
+
+##Bivariate plot with explanatory variable (Exs and sent) on x axis and outcome variable (MNNM_pop) on Y axis
+alldata |> 
+  filter(sent>0)
+executions_plot<- alldata |> 
+  filter(DP==1)|>
+   mutate(exsyn = if_else(exs>0, "Execution", "No Execution")) |>
+  ggplot(mapping = aes(x=exsyn, y=MNNM_pop, group =exsyn)) +
+  geom_point() +
+    labs(title= "Homicide Rate by County vs Executions in County", x = "Executions in County", y = "Homicide rate per 100,000 Population")
+executions_plot
+
+sentences_plot<- alldata |>
+  filter(DP==1)|>
+   mutate(sentyn = if_else(sent>0, "Sentences", "No Sentences")) |>
+  ggplot(mapping = aes(x=sentyn, y=MNNM_pop, group =sentyn)) +
+  geom_point() +
+    labs(title= "Homicide Rate by County vs Death Sentences in County", x = "Death Sentences in County", y = "Homicide rate per 100,000 Population")
+sentences_plot
+
+##A table containing regression results from multivariate model 
+exssent_reg<- lm(MNNM_pop ~ exs + sent, data = alldata)
+tidy(exssent_reg) |>
+knitr::kable(digits = 3)
+```
+
+```{r}
+##Change in homicide rate pre and post abolition
+##This applies to states: Delaware 2016, Illinois 2011, Washington 2018, New Hampshire 2019, Maryland 2013
+##Illinois
+IL_change<- alldata|> 
+  mutate(pre2011 = if_else(Year < 2011, "Before 2011", "After 2011"), Illinois = if_else(State == 'Illinois', "Illinois", "Other"))|>
+  group_by(Illinois, pre2011)|>
+  summarize(avg_hom = mean(MNNM_pop, na.rm= TRUE)) |> 
+  pivot_wider(names_from = pre2011, values_from = avg_hom)|>
+  mutate(Change = `Before 2011` - `After 2011`)
+
+IL_change
+
+##Maryland 
+MD_change<- alldata|> 
+  mutate(pre2013 = if_else(Year < 2013, "Before 2013", "After 2013"), Maryland = if_else(State == 'Maryland', "Maryland", "Other"))|>
+  group_by(Maryland, pre2013)|>
+  summarize(avg_hom = mean(MNNM_pop, na.rm= TRUE)) |> 
+  pivot_wider(names_from = pre2013, values_from = avg_hom)|>
+  mutate(Change = `Before 2013` - `After 2013`)
+
+MD_change
+
+##Delaware
+DE_change<- alldata|> 
+  mutate(pre2016 = if_else(Year < 2016, "Before 2016", "After 2016"), Delaware = if_else(State == 'Delaware', "Delaware", "Other"))|>
+  group_by(Delaware, pre2016)|>
+  summarize(avg_hom = mean(MNNM_pop, na.rm= TRUE)) |> 
+  pivot_wider(names_from = pre2016, values_from = avg_hom)|>
+  mutate(Change = `Before 2016` - `After 2016`)
+DE_change
+##Washington 
+WA_change<- alldata|> 
+  mutate(pre2018 = if_else(Year < 2018, "Before 2018", "After 2018"), Washington = if_else(State == 'Washington', "Washington", "Other"))|>
+  group_by(Washington, pre2018)|>
+  summarize(avg_hom = mean(MNNM_pop, na.rm= TRUE)) |> 
+  pivot_wider(names_from = pre2018, values_from = avg_hom)|>
+  mutate(Change = `Before 2018` - `After 2018`)
+WA_change
+
+##Change in counties pre and post abolition for those that sentenced 
+alldata<- alldata |> 
+  mutate(BEA = (case_when(State == "Illinois" & Year > "2011" ~ "After" ,State == "Maryland" & Year > "2013" ~ "After", State == "Washington" & Year > "2018" ~ "After", State == "Delaware" & Year > "2016" ~ "After", State == "New Hampshire" & Year > "2019" ~ "After", State == "Connecticut" & Year > "2012" ~ "After", State == "Illinois" & Year == "2011" ~ "During", State == "Maryland" & Year == "2013" ~ "During", State == "Delaware" & Year == "2016" ~ "During", State == "Washington" & Year == "2018" ~ "During", State == "New Hampshire" & Year == "2019" ~ "During", State == "Connecticut" & Year == "2011" ~ "During", TRUE ~ "Before")))
+alldata|> 
+  filter(change == "Change") |> 
+  filter(sent>0) |> 
+  knitr::kable(digits = 3, caption = "Counties Which Sentenced Someone in States that Eliminated The Death Penalty")
+
+alldata|>
+filter(FIPS == "53033"| FIPS ==  '53053' | FIPS == "10003") |> 
+  group_by(FIPS, BEA) |> 
+  summarize(avg_hom = mean(MNNM_pop)) |> 
+  pivot_wider(names_from = BEA, values_from = avg_hom) |> 
+  mutate(Change = `Before` - `After`) |>
+  select(Before, After, Change, FIPS) |>
+   knitr::kable(digits = 3, caption = "Difference in Homicide Rates in Counties Which Sentenced to Death Before and After Abolition")
+
+alldata|> 
+  filter(change == "Change") |> 
+  filter(exs>0) |> 
+  knitr::kable(digits = 3, caption = "Counties Which Executed Someone in States that Eliminated The Death Penalty")
+
+alldata|>
+filter(FIPS == "53033"| FIPS ==  '10003') |> 
+  group_by(FIPS, BEA) |> 
+  summarize(avg_hom = mean(MNNM_pop)) |> 
+  pivot_wider(names_from = BEA, values_from = avg_hom) |> 
+  mutate(Change = `Before` - `After`)|>
+  select(Before, After, Change, FIPS) |>
+   knitr::kable(digits = 3, caption = "Difference in Homicide Rates in Counties Which Executed Before and After Abolition")
+```
