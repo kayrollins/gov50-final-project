@@ -380,7 +380,13 @@ alldata <- alldata|>
 
 ##County v county. 
 ##Test 1: Homicide rate controlled by VC rate in places with and without DP 
+test1<- lm(MNNM_pop ~ DP + violent_pop,
+data = alldata)
+test1
+## Analysis: Average homicide rate is 1.514 e ^6 when DP is 0 and Violence is 0. Hom rate is 6.793 when DP there and vilence is 0. 
 ##Test 2: Homicide rate controlled by VC in places which did or did not execute someone in the past year 
+lm(MNNM_pop ~ exs + violent_pop, data = alldata)
+
 ##Test 3: Homicide rate controlled by VC in places which did or did not sentence someone to death in the past year 
 
 ##County v self-- Refine data to only states that got rid of the DP within the data set 
