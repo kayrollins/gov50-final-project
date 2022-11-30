@@ -10,6 +10,9 @@ library(tidyverse)
 library(ggplot2)
 library(dplyr)
 library(infer)
+library(tidycensus)
+census_api_key("8f836b31a97578f52aeb343285ff0bcab24a3752", overwrite = TRUE)
+
 ```
 
 ```{r}
@@ -312,5 +315,78 @@ alldata |>
 ## Also I feel the need to clarify that I have spent a lot of time on this project I am aware this is not a very detailed analysis but I promise you I have worked a lot (my code for the rest of this should illustrate that) and it has taken me many, many hours. I know these chekpoints are supposed to make sure we are actually doing work so I promise you I am doing work. I realized while doing this analysis that I didn't have the population data for each county yet so I would need to find a different dataset, load it in, and then merge it with my existing one to fully test my hypothesis and it is already almost 5pm and I have been working on this since noon. I will go back and add more work and do that later this week, but for now I am taking a break.
 
 ```
+```{r}
+Pops2<- read_csv("Populations/PopulationEstimates20201.csv")
+FIPS<- read.csv("Populations/FIPSCodes.csv")
 
+FIPS$FIPS <- as.character(as.numeric(FIPS$FIPS))
+
+Pops<- Pops2|>
+  left_join(FIPS, by = "FIPS") |>
+  select (FIPS, State, `Area name`, `Population 2010`, `Population 2020`, `Population 2021`)
+
+
+```
+
+
+```{r}
+load_variables(2020, "acs5")
+```
+```{r}
+appended <- NULL
+for(y in seq(2010, 2020, by = 1)){
+    temp <- data.frame(
+        year = y,
+        get_acs(
+            year = y,
+            geography = "county",
+            variables = "B01003_001")
+    )
+    appended <- bind_rows(appended, temp)
+}
+```
+```{r}
+##Rename things to match
+names(FIPS)[names(FIPS) == "StateName"] <- "State"
+names(FIPS)[names(FIPS) == "CountyName"] <- "County"
+names(appended)[names(appended) == "GEOID"] <- "FIPS"
+##Make FIPS Fipscodes the same format as the appended ones
+library(stringr)
+FIPS$FIPS<- str_pad(FIPS$FIPS, 5, pad = "0") 
+
+##Join appended and fips
+appendedFIPS<- appended |>
+  left_join(FIPS, by = "FIPS")
+##Join appendedfips to alldata by county, state, and year 
+names(appendedFIPS)[names(appendedFIPS) == "year"] <- "Year"
+
+alldata<- alldata |>
+  left_join(appendedFIPS, by = c("State", "County","Year")) |>
+  select(State, County, Violent_crime, MNNM, Year, DP, sent, exs, FIPS, estimate)
+
+```
+
+```{r}
+#Create population based homicide rate with mutate
+alldata<- alldata|>
+  mutate(violent_pop = (Violent_crime/estimate))
+alldata <- alldata|>
+  mutate(MNNM_pop = MNNM/estimate)
+
+```
+
+```{r}
+##Two ideas to test: County vs County or County vs Self.
+
+##County v county. 
+##Test 1: Homicide rate controlled by VC rate in places with and without DP 
+##Test 2: Homicide rate controlled by VC in places which did or did not execute someone in the past year 
+##Test 3: Homicide rate controlled by VC in places which did or did not sentence someone to death in the past year 
+
+##County v self-- Refine data to only states that got rid of the DP within the data set 
+## Test 1: homicide rate controlled by VC in year before vs after abolition for all counties
+## Test 2: then homicide rate controlled by VC in year before vs after abolition for counties which did actually execute someone in the last year
+## Test 3: Then homicide rate controlled by VC in year before vs after abolition for counties which sentenced someone in last year 
+
+```
 
