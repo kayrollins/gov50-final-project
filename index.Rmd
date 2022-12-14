@@ -396,6 +396,7 @@ mutate(exsyn = if_else(exs > 0, "yes", "no")) |>
 specify(MNNM_pop ~ exsyn) |>
 calculate(stat = "diff in means",
 order = c("yes", "no")) 
+ate_exs
 
 nulldist_exs<- alldata |>
 mutate(exsyn = if_else(exs > 0, "yes", "no")) |>
@@ -404,8 +405,9 @@ hypothesize(null = "independence") |>
 generate(reps = 1000,
 type = "permute") |>
 calculate(stat = "diff in means", order = c("yes", "no")) 
+nulldist_exs
 
-nulldist |>
+nulldist_exs |>
   visualize() +
 shade_p_value(obs_stat = ate_exs, direction = "both")
 
@@ -417,7 +419,8 @@ ate_sent<-alldata |>
 mutate(sentyn = if_else(sent > 0, "yes", "no")) |>
 specify(MNNM_pop ~ sentyn) |>
 calculate(stat = "diff in means",
-order = c("yes", "no"))  
+order = c("yes", "no")) 
+ate_sent
 
 nulldist_sent<- alldata |>
 mutate(sentyn = if_else(sent>0, "yes", "no")) |>
@@ -427,14 +430,15 @@ generate(reps = 1000,
 type = "permute") |>
 calculate(stat = "diff in means", order = c("yes", "no")) 
 
-nulldist |>
+nulldist_sent |>
   visualize() +
 shade_p_value(obs_stat = ate_sent, direction = "both")
 
 get_p_value(nulldist, obs_stat = ate_sent, direction = "both")
+nulldist_sent
 
 ```
-##For the first test, which looked at whether or not a county had an execution, the P value is .018, which means it is statistically significant at a .05 level. However, unlike the Death Penalty test, this does not have a p-value of 0, which means there is a chance, albeit low, that these results are simply due to chance. 
+##For the first test, which looked at whether or not a county had an execution, the P value is .018, which means it is statistically significant at a .05 level. However, unlike the Death Penalty test, this does not have a p-value of 0, which means there is a chance, albeit low, that these results are simply due to chance. Additionally, the graph shows that the seeming majority of the data falls within the two-sided p value range, meaning that the data, while not by chance, may not be meaningful.  
 ##For the second test, looking at whether or not a county sentenced anyone to death that year, the P value is 0. Given that both of these P values are statistically significant at the .05 level, like with the previous test with the death penalty as the explanatory variable, we can reject the null hypothesis, and we know that the treatment effects of executions and sentencing on the homicide rate are statistically significant. 
 
 
@@ -474,6 +478,7 @@ Sentences regression:
 sent_reg_base<- lm(MNNM_pop ~ sent , data = alldata)
 tidy(sent_reg_base) |>
 knitr::kable(digits = 3)
+
 sent_reg<- lm(MNNM_pop ~ sent + violent_pop, data = alldata)
 tidy(sent_reg) |>
 knitr::kable(digits = 3)
