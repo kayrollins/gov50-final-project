@@ -289,10 +289,10 @@ alldata <- alldata|>
 alldata<- alldata|>
   filter(Year > "2008")
 
-<<<<<<< HEAD
+
 alldata<-alldata|>
   drop_na(State)
-=======
+
 ##County v county. 
 ##Test 1: Homicide rate controlled by VC rate in places with and without DP 
 test1<- lm(MNNM_pop ~ DP + violent_pop,
@@ -303,7 +303,6 @@ test1
 lm(MNNM_pop ~ exs + violent_pop, data = alldata)
 
 ##Test 3: Homicide rate controlled by VC in places which did or did not sentence someone to death in the past year 
->>>>>>> af2809605aa7a304d96d83b7ba7d51f6acbbe402
 
 alldata<-alldata|>
   drop_na(County)
@@ -331,6 +330,7 @@ hom_hist<- alldata|>
   geom_histogram(bins=100) +
   coord_cartesian(xlim = c(0, 100), ylim = c(0, 3000)) +
   labs(title= "Distribution of Average Homicide Rate Across All Counties and Years", x = "Homicide rate per 100,000 Population", y = "Number of Instances" )
+hom_hist
 ```
 
 ##For this project, we will be looking at three different explanatory variables: Death penalty (whether or not a state has the death penalty), executions (whether or not a county has executed someone in the past year), and sentences (whether or not a county has sentenced someone in the past year). The death penalty variable is a binary variable of either 0 (indicating a state has abolished the death penalty) or 1 (indicating a state has the death penalty).
@@ -355,6 +355,7 @@ DP_plot<- alldata|>
   ggplot(mapping = aes(x=DPYN, y=MNNM_pop, group =DPYN)) +
   geom_point() +
     labs(title= "Homicide Rate by County vs Death Penalty Status", x = "Death Penalty Status in State", y = "Homicide rate per 100,000 Population")
+DP_plot
 ```
 ##Looking at this plot, there appears to be a positive relationship between a higher homicide rate and a positive death penalty status. Additionally, the graph shows that there are more and larger outliers for counties with the death penalty compared to counties without the death penalty. 
 
@@ -792,4 +793,5 @@ filter(FIPS == "53033"| FIPS ==  '10003') |>
   mutate(Change = `Before` - `After`)|>
   select(Before, After, Change, FIPS) |>
    knitr::kable(digits = 3, caption = "Difference in Homicide Rates in Counties Which Executed Before and After Abolition")
+
 ```
