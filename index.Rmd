@@ -289,8 +289,21 @@ alldata <- alldata|>
 alldata<- alldata|>
   filter(Year > "2008")
 
+<<<<<<< HEAD
 alldata<-alldata|>
   drop_na(State)
+=======
+##County v county. 
+##Test 1: Homicide rate controlled by VC rate in places with and without DP 
+test1<- lm(MNNM_pop ~ DP + violent_pop,
+data = alldata)
+test1
+## Analysis: Average homicide rate is 1.514 e ^6 when DP is 0 and Violence is 0. Hom rate is 6.793 when DP there and vilence is 0. 
+##Test 2: Homicide rate controlled by VC in places which did or did not execute someone in the past year 
+lm(MNNM_pop ~ exs + violent_pop, data = alldata)
+
+##Test 3: Homicide rate controlled by VC in places which did or did not sentence someone to death in the past year 
+>>>>>>> af2809605aa7a304d96d83b7ba7d51f6acbbe402
 
 alldata<-alldata|>
   drop_na(County)
